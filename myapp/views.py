@@ -30,18 +30,6 @@ def contact(request):
 def dashboard(request):
     return render(request,'dashboard.html')
 
-def error(request):
-    return render(request,'error.html')
-
-
-def blog_details(request):
-    return render(request,'blog_details.html')
-
-def blog(request):
-    return render(request,'blog.html')
-
-def faq(request):
-    return render(request,'faq.html')
 
 def myads(request):
     return render(request,'myads.html')
@@ -55,11 +43,6 @@ def payments(request):
 def post_ads(request):
     return render(request,'post_ads.html')
 
-def pricing(request):
-    return render(request,'pricing.html')
-
-def wishlist(request):
-    return render(request,'wishlist.html')
 
 def privacy_settings(request):
     return render(request,'privacy_settings.html')
