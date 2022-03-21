@@ -22,6 +22,6 @@ urlpatterns = [
     path('privacy_settings/',views.privacy_settings,name='privacy_settings'),
     path('wishlist/',views.wishlist,name='wishlist'),
     path('product_details/',views.product_details,name='product_details'),
-    path('listing/',views.listing,name='listing'),
+    path('product/',views.product,name='product'),
     path('profile_settings/',views.profile_settings,name='profile_settings'),
 ]

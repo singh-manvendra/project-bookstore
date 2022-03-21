@@ -45,9 +45,9 @@
                                         class="sub-nav-toggler"> <span></span> </button></a>
                                 <ul class="sub-menu">
                                     <li><a href="{% url 'about' %}">About</a></li>
-                                    <li><a href="{% url 'listing' %}">Listing</a>
+                                    <li><a href="{% url 'product' %}">product</a>
                                     </li>
-                                    <li><a href="{% url 'product_details' %}">listing
+                                    <li><a href="{% url 'product_details' %}">product
                                             Details</a></li>
                                     <li><a href="{% url 'error' %}">404</a>
                                     </li>
@@ -60,7 +60,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="{% url 'listing' %}">Blog <i
+                            <li><a href="{% url 'product' %}">Blog <i
                                         class="fa fa-angle-down"></i> <span class="line"></span><button
                                         class="sub-nav-toggler"> <span></span> </button></a>
                                 <ul class="sub-menu">
@@ -77,30 +77,30 @@
                         <ul>
                             <li>
                                 <div class="dropdown">
-                                    <a href="{% url 'categories' %}#"
+                                    <a href="{% url 'index' %}"
                                         class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">My Account</a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                         <ul>
-                                            <li><a href="{% url 'dashboard' %}"><i
-                                                        class="fal fa-tachometer-alt-average"></i> Dashboard</a></li>
+                                            <li><a href="{% url 'dashboard' %}">
+                                                <i class="fa-solid fa-gauge"></i> Dashboard</a></li>
                                             <li><a
-                                                    href="{% url 'profile_settings' %}"><i
-                                                        class="fal fa-cog"></i> Profile Settings</a></li>
-                                            <li><a href="{% url 'myads' %}"><i
-                                                        class="fal fa-layer-group"></i> My Ads</a></li>
+                                                    href="{% url 'profile_settings' %}">
+                                                    <i class="fa-solid fa-gear"></i> Profile Settings</a></li>
+                                            <li><a href="{% url 'myads' %}">
+                                                <i class="fa-solid fa-layer-group"></i> My Ads</a></li>
                                             <li><a
-                                                    href="{% url 'offers_msgs' %}"><i
-                                                        class="fal fa-envelope"></i> Offers/Messages</a></li>
-                                            <li><a href="{% url 'payments' %}"><i
-                                                        class="fal fa-wallet"></i> Payments</a></li>
+                                                    href="{% url 'offers_msgs' %}">
+                                                    <i class="fa-solid fa-envelope"></i> Offers/Messages</a></li>
+                                            <li><a href="{% url 'payments' %}">
+                                                <i class="fa-solid fa-wallet"></i> Payments</a></li>
                                             <li><a
                                                     href="{% url 'wishlist' %}"><i
                                                         class="fal fa-heart"></i> My Favourites</a></li>
                                             <li><a
                                                     href="{% url 'privacy_settings' %}"><i
                                                         class="fal fa-star"></i> Privacy Settings</a></li>
-                                            <li><a href="{% url 'listing' %}"><i
+                                            <li><a href="{% url 'index' %}"><i
                                                         class="fal fa-sign-out"></i> Sign Out</a></li>
                                         </ul>
                                     </div>
@@ -118,7 +118,7 @@
                 <div class="page_banner_content">
                     <h3 class="title">All Categories</h3>
                     <ul class="breadcrumb">
-                        <li><a href="{% url 'listing' %}">Home</a></li>
+                        <li><a href="{% url 'product' %}">Home</a></li>
                         <li>All Categories</li>
                     </ul>
                 </div>
@@ -177,7 +177,7 @@
                                     <h5 class="title">Computer &amp; Office</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="{% url 'listing' %}"></a>
+                                <a href="{% url 'product' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -189,7 +189,7 @@
                                     <h5 class="title">Jewelry &amp; Accessories</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="{% url 'listing' %}"></a>
+                                <a href="{% url 'product' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -201,7 +201,7 @@
                                     <h5 class="title">Home &amp; Garden</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="{% url 'listing' %}"></a>
+                                <a href="{% url 'product' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -213,7 +213,7 @@
                                     <h5 class="title">Luggage &amp; Bags</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="{% url 'listing' %}"></a>
+                                <a href="{% url 'product' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -225,7 +225,7 @@
                                     <h5 class="title">Mother &amp; Kids</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="{% url 'listing' %}"></a>
+                                <a href="{% url 'product' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -237,7 +237,7 @@
                                     <h5 class="title">Dress &amp; Clothing</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="{% url 'listing' %}"></a>
+                                <a href="{% url 'product' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -249,7 +249,7 @@
                                     <h5 class="title">Phone &amp; Accesories</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="{% url 'listing' %}"></a>
+                                <a href="{% url 'product' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -261,7 +261,7 @@
                                     <h5 class="title">Camera &amp; Accesories</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="{% url 'listing' %}"></a>
+                                <a href="{% url 'product' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -273,7 +273,7 @@
                                     <h5 class="title">Electronics</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="{% url 'listing' %}"></a>
+                                <a href="{% url 'product' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -285,7 +285,7 @@
                                     <h5 class="title">Vachile</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="{% url 'listing' %}"></a>
+                                <a href="{% url 'product' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -297,7 +297,7 @@
                                     <h5 class="title">Sports &amp; Gaming</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="{% url 'listing' %}"></a>
+                                <a href="{% url 'product' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -309,7 +309,7 @@
                                     <h5 class="title">Watch &amp; Accesories</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="{% url 'listing' %}"></a>
+                                <a href="{% url 'product' %}"></a>
                             </div>
                         </div>
                     </div>
@@ -329,52 +329,52 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">Office
+                                            <li><a href="{% url 'product' %}">Office
                                                     Electronics</a></li>
-                                            <li><a href="{% url 'listing' %}">Computer
+                                            <li><a href="{% url 'product' %}">Computer
                                                     Components</a></li>
-                                            <li><a href="{% url 'listing' %}">Computer
+                                            <li><a href="{% url 'product' %}">Computer
                                                     Peripherals</a></li>
-                                            <li><a href="{% url 'listing' %}">Internal
+                                            <li><a href="{% url 'product' %}">Internal
                                                     Storage</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">External
+                                            <li><a href="{% url 'product' %}">External
                                                     Storage</a></li>
                                             <li><a
-                                                    href="{% url 'listing' %}">Networking</a>
+                                                    href="{% url 'product' %}">Networking</a>
                                             </li>
-                                            <li><a href="{% url 'listing' %}">Laptops
+                                            <li><a href="{% url 'product' %}">Laptops
                                                     Gaming</a></li>
                                             <li><a
-                                                    href="{% url 'listing' %}">Laptops</a>
+                                                    href="{% url 'product' %}">Laptops</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">Laptop
+                                            <li><a href="{% url 'product' %}">Laptop
                                                     Parts</a></li>
-                                            <li><a href="{% url 'listing' %}">Laptop
+                                            <li><a href="{% url 'product' %}">Laptop
                                                     Accessories</a></li>
                                             <li><a
-                                                    href="{% url 'listing' %}">Tablets</a>
+                                                    href="{% url 'product' %}">Tablets</a>
                                             </li>
-                                            <li><a href="{% url 'listing' %}">Tablet
+                                            <li><a href="{% url 'product' %}">Tablet
                                                     Accessories</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">Tablet
+                                            <li><a href="{% url 'product' %}">Tablet
                                                     Parts</a></li>
-                                            <li><a href="{% url 'listing' %}">Mini
+                                            <li><a href="{% url 'product' %}">Mini
                                                     PC</a></li>
-                                            <li><a href="{% url 'listing' %}">Desktops
+                                            <li><a href="{% url 'product' %}">Desktops
                                                     Demo </a></li>
-                                            <li><a href="{% url 'listing' %}">Board
+                                            <li><a href="{% url 'product' %}">Board
                                                     &amp; Accessories</a></li>
                                         </ul>
                                     </div>
@@ -394,52 +394,52 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">Office
+                                            <li><a href="{% url 'product' %}">Office
                                                     Electronics</a></li>
-                                            <li><a href="{% url 'listing' %}">Computer
+                                            <li><a href="{% url 'product' %}">Computer
                                                     Components</a></li>
-                                            <li><a href="{% url 'listing' %}">Computer
+                                            <li><a href="{% url 'product' %}">Computer
                                                     Peripherals</a></li>
-                                            <li><a href="{% url 'listing' %}">Internal
+                                            <li><a href="{% url 'product' %}">Internal
                                                     Storage</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">External
+                                            <li><a href="{% url 'product' %}">External
                                                     Storage</a></li>
                                             <li><a
-                                                    href="{% url 'listing' %}">Networking</a>
+                                                    href="{% url 'product' %}">Networking</a>
                                             </li>
-                                            <li><a href="{% url 'listing' %}">Laptops
+                                            <li><a href="{% url 'product' %}">Laptops
                                                     Gaming</a></li>
                                             <li><a
-                                                    href="{% url 'listing' %}">Laptops</a>
+                                                    href="{% url 'product' %}">Laptops</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">Laptop
+                                            <li><a href="{% url 'product' %}">Laptop
                                                     Parts</a></li>
-                                            <li><a href="{% url 'listing' %}">Laptop
+                                            <li><a href="{% url 'product' %}">Laptop
                                                     Accessories</a></li>
                                             <li><a
-                                                    href="{% url 'listing' %}">Tablets</a>
+                                                    href="{% url 'product' %}">Tablets</a>
                                             </li>
-                                            <li><a href="{% url 'listing' %}">Tablet
+                                            <li><a href="{% url 'product' %}">Tablet
                                                     Accessories</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">Tablet
+                                            <li><a href="{% url 'product' %}">Tablet
                                                     Parts</a></li>
-                                            <li><a href="{% url 'listing' %}">Mini
+                                            <li><a href="{% url 'product' %}">Mini
                                                     PC</a></li>
-                                            <li><a href="{% url 'listing' %}">Desktops
+                                            <li><a href="{% url 'product' %}">Desktops
                                                     Demo </a></li>
-                                            <li><a href="{% url 'listing' %}">Board
+                                            <li><a href="{% url 'product' %}">Board
                                                     &amp; Accessories</a></li>
                                         </ul>
                                     </div>
@@ -459,52 +459,52 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">Office
+                                            <li><a href="{% url 'product' %}">Office
                                                     Electronics</a></li>
-                                            <li><a href="{% url 'listing' %}">Computer
+                                            <li><a href="{% url 'product' %}">Computer
                                                     Components</a></li>
-                                            <li><a href="{% url 'listing' %}">Computer
+                                            <li><a href="{% url 'product' %}">Computer
                                                     Peripherals</a></li>
-                                            <li><a href="{% url 'listing' %}">Internal
+                                            <li><a href="{% url 'product' %}">Internal
                                                     Storage</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">External
+                                            <li><a href="{% url 'product' %}">External
                                                     Storage</a></li>
                                             <li><a
-                                                    href="{% url 'listing' %}">Networking</a>
+                                                    href="{% url 'product' %}">Networking</a>
                                             </li>
-                                            <li><a href="{% url 'listing' %}">Laptops
+                                            <li><a href="{% url 'product' %}">Laptops
                                                     Gaming</a></li>
                                             <li><a
-                                                    href="{% url 'listing' %}">Laptops</a>
+                                                    href="{% url 'product' %}">Laptops</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">Laptop
+                                            <li><a href="{% url 'product' %}">Laptop
                                                     Parts</a></li>
-                                            <li><a href="{% url 'listing' %}">Laptop
+                                            <li><a href="{% url 'product' %}">Laptop
                                                     Accessories</a></li>
                                             <li><a
-                                                    href="{% url 'listing' %}">Tablets</a>
+                                                    href="{% url 'product' %}">Tablets</a>
                                             </li>
-                                            <li><a href="{% url 'listing' %}">Tablet
+                                            <li><a href="{% url 'product' %}">Tablet
                                                     Accessories</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">Tablet
+                                            <li><a href="{% url 'product' %}">Tablet
                                                     Parts</a></li>
-                                            <li><a href="{% url 'listing' %}">Mini
+                                            <li><a href="{% url 'product' %}">Mini
                                                     PC</a></li>
-                                            <li><a href="{% url 'listing' %}">Desktops
+                                            <li><a href="{% url 'product' %}">Desktops
                                                     Demo </a></li>
-                                            <li><a href="{% url 'listing' %}">Board
+                                            <li><a href="{% url 'product' %}">Board
                                                     &amp; Accessories</a></li>
                                         </ul>
                                     </div>
@@ -524,52 +524,52 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">Office
+                                            <li><a href="{% url 'product' %}">Office
                                                     Electronics</a></li>
-                                            <li><a href="{% url 'listing' %}">Computer
+                                            <li><a href="{% url 'product' %}">Computer
                                                     Components</a></li>
-                                            <li><a href="{% url 'listing' %}">Computer
+                                            <li><a href="{% url 'product' %}">Computer
                                                     Peripherals</a></li>
-                                            <li><a href="{% url 'listing' %}">Internal
+                                            <li><a href="{% url 'product' %}">Internal
                                                     Storage</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">External
+                                            <li><a href="{% url 'product' %}">External
                                                     Storage</a></li>
                                             <li><a
-                                                    href="{% url 'listing' %}">Networking</a>
+                                                    href="{% url 'product' %}">Networking</a>
                                             </li>
-                                            <li><a href="{% url 'listing' %}">Laptops
+                                            <li><a href="{% url 'product' %}">Laptops
                                                     Gaming</a></li>
                                             <li><a
-                                                    href="{% url 'listing' %}">Laptops</a>
+                                                    href="{% url 'product' %}">Laptops</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">Laptop
+                                            <li><a href="{% url 'product' %}">Laptop
                                                     Parts</a></li>
-                                            <li><a href="{% url 'listing' %}">Laptop
+                                            <li><a href="{% url 'product' %}">Laptop
                                                     Accessories</a></li>
                                             <li><a
-                                                    href="{% url 'listing' %}">Tablets</a>
+                                                    href="{% url 'product' %}">Tablets</a>
                                             </li>
-                                            <li><a href="{% url 'listing' %}">Tablet
+                                            <li><a href="{% url 'product' %}">Tablet
                                                     Accessories</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">Tablet
+                                            <li><a href="{% url 'product' %}">Tablet
                                                     Parts</a></li>
-                                            <li><a href="{% url 'listing' %}">Mini
+                                            <li><a href="{% url 'product' %}">Mini
                                                     PC</a></li>
-                                            <li><a href="{% url 'listing' %}">Desktops
+                                            <li><a href="{% url 'product' %}">Desktops
                                                     Demo </a></li>
-                                            <li><a href="{% url 'listing' %}">Board
+                                            <li><a href="{% url 'product' %}">Board
                                                     &amp; Accessories</a></li>
                                         </ul>
                                     </div>
@@ -589,52 +589,52 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">Office
+                                            <li><a href="{% url 'product' %}">Office
                                                     Electronics</a></li>
-                                            <li><a href="{% url 'listing' %}">Computer
+                                            <li><a href="{% url 'product' %}">Computer
                                                     Components</a></li>
-                                            <li><a href="{% url 'listing' %}">Computer
+                                            <li><a href="{% url 'product' %}">Computer
                                                     Peripherals</a></li>
-                                            <li><a href="{% url 'listing' %}">Internal
+                                            <li><a href="{% url 'product' %}">Internal
                                                     Storage</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">External
+                                            <li><a href="{% url 'product' %}">External
                                                     Storage</a></li>
                                             <li><a
-                                                    href="{% url 'listing' %}">Networking</a>
+                                                    href="{% url 'product' %}">Networking</a>
                                             </li>
-                                            <li><a href="{% url 'listing' %}">Laptops
+                                            <li><a href="{% url 'product' %}">Laptops
                                                     Gaming</a></li>
                                             <li><a
-                                                    href="{% url 'listing' %}">Laptops</a>
+                                                    href="{% url 'product' %}">Laptops</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">Laptop
+                                            <li><a href="{% url 'product' %}">Laptop
                                                     Parts</a></li>
-                                            <li><a href="{% url 'listing' %}">Laptop
+                                            <li><a href="{% url 'product' %}">Laptop
                                                     Accessories</a></li>
                                             <li><a
-                                                    href="{% url 'listing' %}">Tablets</a>
+                                                    href="{% url 'product' %}">Tablets</a>
                                             </li>
-                                            <li><a href="{% url 'listing' %}">Tablet
+                                            <li><a href="{% url 'product' %}">Tablet
                                                     Accessories</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="{% url 'listing' %}">Tablet
+                                            <li><a href="{% url 'product' %}">Tablet
                                                     Parts</a></li>
-                                            <li><a href="{% url 'listing' %}">Mini
+                                            <li><a href="{% url 'product' %}">Mini
                                                     PC</a></li>
-                                            <li><a href="{% url 'listing' %}">Desktops
+                                            <li><a href="{% url 'product' %}">Desktops
                                                     Demo </a></li>
-                                            <li><a href="{% url 'listing' %}">Board
+                                            <li><a href="{% url 'product' %}">Board
                                                     &amp; Accessories</a></li>
                                         </ul>
                                     </div>
@@ -671,77 +671,6 @@
 
 
     <footer class="footer_area">
-        <div class="footer_widget pt-70 pb-120">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer_link mt-45">
-                            <h5 class="footer_title">Company</h5>
-                            <ul class="link">
-                                <li><a href="{% url 'listing' %}">Home</a></li>
-                                <li><a href="{% url 'listing' %}">About Us</a>
-                                </li>
-                                <li><a href="{% url 'listing' %}">Our
-                                        Factories</a></li>
-                                <li><a href="{% url 'listing' %}">Mission and
-                                        Strategy</a></li>
-                                <li><a href="{% url 'listing' %}">Profitable
-                                        Actions</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer_link mt-45">
-                            <h5 class="footer_title">How to Sell Fast</h5>
-                            <ul class="link">
-                                <li><a href="{% url 'listing' %}">Selling TIps</a>
-                                </li>
-                                <li><a href="{% url 'listing' %}">Buy and Sell
-                                        Quickly</a></li>
-                                <li><a href="{% url 'listing' %}">Membership</a>
-                                </li>
-                                <li><a href="{% url 'listing' %}">Banner
-                                        Advertising</a></li>
-                                <li><a href="{% url 'listing' %}">Promote Your
-                                        Ad</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer_link mt-45">
-                            <h5 class="footer_title">Information</h5>
-                            <ul class="link">
-                                <li><a href="{% url 'listing' %}">Company &amp;
-                                        Contact Info</a></li>
-                                <li><a href="{% url 'listing' %}">Blog &amp;
-                                        Articles</a></li>
-                                <li><a href="{% url 'listing' %}">Sitemap</a></li>
-                                <li><a href="{% url 'listing' %}">Terms of
-                                        Service</a></li>
-                                <li><a href="{% url 'listing' %}">Privacy
-                                        Policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer_link mt-45">
-                            <h5 class="footer_title">Help &amp; Support</h5>
-                            <ul class="link">
-                                <li><a href="{% url 'listing' %}">Live Chat</a>
-                                </li>
-                                <li><a href="{% url 'listing' %}">FAQ</a></li>
-                                <li><a href="{% url 'listing' %}">How to Stay
-                                        Safe</a></li>
-                                <li><a href="{% url 'listing' %}">Terms &amp;
-                                        Conditions</a></li>
-                                <li><a href="{% url 'listing' %}">Contact Us</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="footer_copyright pt-15 pb-30">
             <div class="container">
                 <div class="footer_copyright_wrapper text-center d-sm-flex justify-content-between align-items-center">
@@ -750,18 +679,18 @@
                     </div>
                     <div class="payment mt-15">
                         <ul>
-                            <li><a href="{% url 'listing' %}"><img
-                                        src="{% static 'images/payment-method1.jpg' %}" alt="payment"></a>
-                            </li>
-                            <li><a href="{% url 'listing' %}"><img
-                                        src="{% static 'images//payment-method2.jpg' %}" alt="payment"></a>
-                            </li>
-                            <li><a href="{% url 'listing' %}"><img
-                                        src="{% static 'images//payment-method3.jpg' %}" alt="payment"></a>
-                            </li>
-                            <li><a href="{% url 'listing' %}"><img
-                                        src="{% static 'images/payment-method4.jpg' %}" alt="payment"></a>
-                            </li>
+                            <li><a href="{% url 'product_details'%}"><img
+                                        src="{% static 'images/payment-method1.jpg' %}"
+                                        alt="payment"></a></li>
+                            <li><a href="{% url 'product_details'%}"><img
+                                        src="{% static 'images/payment-method2.jpg' %}"
+                                        alt="payment"></a></li>
+                            <li><a href="{% url 'product_details'%}"><img
+                                        src="{% static 'images/payment-method3.jpg' %}"
+                                        alt="payment"></a></li>
+                            <li><a href="{% url 'product_details'%}"><img
+                                        src="{% static 'images/payment-method4.jpg' %}"
+                                        alt="payment"></a></li>
                         </ul>
                     </div>
                 </div>
