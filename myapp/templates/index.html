@@ -11,6 +11,192 @@
 
 <body class="gray-bg">
 
+    <header class="header_area">
+        <div class="header_navbar">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="{% url 'index' %}">
+                        <img src="{% static 'images/logo.png' %}" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="toggler-icon"></span>
+                        <span class="toggler-icon"></span>
+                        <span class="toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                        <ul class="navbar-nav m-auto">
+                            <li>
+                                <a class="active" href="{% url 'index' %}">Home
+                                    <span class="line"></span></a>
+                            </li>
+                            <li>
+                                <a href="{% url 'categories' %}">Categories <span
+                                        class="line"></span></a>
+                            </li>
+                            <li>
+                                <a href="{% url 'index' %}">Pages 
+                                    <i class="fa-solid fa-angle-down"></i> <span class="line"></span><button
+                                        class="sub-nav-toggler"> <span></span> </button></a>
+                                <ul class="sub-menu">
+                                    <li><a href="{% url 'about' %}">About</a></li>
+                                    <li><a href="{% url 'listing' %}">Listing</a>
+                                    </li>
+                                    <li><a href="{% url 'product_details' %}">listing
+                                            Details</a></li>
+                                    <li><a href="{% url 'error' %}">404</a>
+                                    </li>
+                                    <li><a href="{% url 'faq' %}">FAQ</a></li>
+                                    <li><a href="{% url 'pricing' %}">Pricing</a>
+                                    </li>
+                                    <li><a href="{% url 'signin' %}">Sign In</a>
+                                    </li>
+                                    <li><a href="{% url 'signup' %}">Sign Up</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'index' %}">Blog <i
+                                        class="fa fa-angle-down"></i> <span class="line"></span><button
+                                        class="sub-nav-toggler"> <span></span> </button></a>
+                                <ul class="sub-menu">
+                                    <li><a href="{% url 'blog' %}">Blog</a></li>
+                                    <li><a href="{% url 'blog_details' %}">Blog
+                                            Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'contact' %}">Contact <span
+                                        class="line"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="navbar_btn">
+                        <ul>
+                            <li>
+                                <div class="dropdown">
+                                    <a href="{% url 'index' %}"
+                                        class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">My Account</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <ul>
+                                            <li><a href="{% url 'dashboard' %}">
+                                                <i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                                            <li><a
+                                                    href="{% url 'profile_settings' %}">
+                                                    <i class="fa-solid fa-gear"></i> Profile Settings</a></li>
+                                            <li><a href="{% url 'myads' %}">
+                                                <i class="fa-solid fa-layer-group"></i> My Ads</a></li>
+                                            <li><a
+                                                    href="{% url 'offers_msgs' %}">
+                                                    <i class="fa-solid fa-envelope"></i> Offers/Messages</a></li>
+                                            <li><a href="{% url 'payments' %}">
+                                                <i class="fa-solid fa-wallet"></i> Payments</a></li>
+                                            <li><a
+                                                    href="{% url 'wishlist' %}"><i
+                                                        class="fal fa-heart"></i> My Favourites</a></li>
+                                            <li><a
+                                                    href="{% url 'privacy_settings' %}"><i
+                                                        class="fal fa-star"></i> Privacy Settings</a></li>
+                                            <li><a href="{% url 'index' %}"><i
+                                                        class="fal fa-sign-out"></i> Sign Out</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a class="sign-up"
+                                    href="{% url 'post_ads' %}">Post Ads</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="header_content bg_cover" style="background-image: url({% static 'images/hero.jpg' %})">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <div class="content_wrapper">
+                            <h3 class="title">Welcome to ClassiFied</h3>
+                            <p>Buy And Sell Everything From Used Cars To Mobile Phones And Computers, Or Search For
+                                Property, Jobs And More. Lorem Ipsum is simply dummy text of the printing and
+                                typesetting industry</p>
+                            <ul class="header_btn">
+                                <li><a class="main-btn"
+                                        href="{% url 'listing' %}">Browse Ads</a>
+                                </li>
+                                <li><a class="main-btn main-btn-2"
+                                        href="{% url 'post_ads' %}">Post an Ad</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_search">
+                    <form action="{% url 'index' %}">
+                        <div class="search_wrapper d-flex flex-wrap">
+                            <div class="search_column d-flex flex-wrap">
+                                <div class="search_select mt-15">
+                                    <select style="display: none;">
+                                        <option value="0">Select a Location</option>
+                                        <option value="1">Some option</option>
+                                        <option value="2">Another option</option>
+                                        <option value="4">Potato</option>
+                                    </select>
+                                    <div class="nice-select" tabindex="0"><span class="current">Select a Location</span>
+                                        <ul class="list">
+                                            <li data-value="0" class="option selected">Select a Location</li>
+                                            <li data-value="1" class="option">Some option</li>
+                                            <li data-value="2" class="option">Another option</li>
+                                            <li data-value="4" class="option">Potato</li>
+                                        </ul>
+                                    </div>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="search_select mt-15">
+                                    <select style="display: none;">
+                                        <option value="0">Select Category</option>
+                                        <option value="1">Some option</option>
+                                        <option value="2">Another option</option>
+                                        <option value="4">Potato</option>
+                                    </select>
+                                    <div class="nice-select" tabindex="0"><span class="current">Select Category</span>
+                                        <ul class="list">
+                                            <li data-value="0" class="option selected">Select Category</li>
+                                            <li data-value="1" class="option">Some option</li>
+                                            <li data-value="2" class="option">Another option</li>
+                                            <li data-value="4" class="option">Potato</li>
+                                        </ul>
+                                    </div>
+                                    <i class="fa-solid fa-tags"></i>
+                                </div>
+                            </div>
+                            <div class="search_column d-flex flex-wrap">
+                                <div class="search_form mt-15">
+                                    <input type="text" placeholder="Type Your Keyword">
+                                    <i class="fa-solid fa-i-cursor"></i>
+                                </div>
+                                <div class="search_btn mt-15">
+                                    <button class="main-btn">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="header_keyword d-sm-flex">
+                        <span class="title">Trending Keywords:</span>
+                        <ul class="tags media-body">
+                            <li><a href="{% url 'index' %}">Camera</a></li>
+                            <li><a href="{% url 'index' %}">Mobile</a></li>
+                            <li><a href="{% url 'index' %}">DSLR</a></li>
+                            <li><a href="{% url 'index' %}">Packet</a></li>
+                            <li><a href="{% url 'index' %}">Dress</a></li>
+                            <li><a href="{% url 'index' %}">Shirt</a></li>
+                            <li><a href="{% url 'index' %}">Pant</a></li>
+                            <li><a href="{% url 'index' %}">Shoe</a></li>
+                            <li><a href="{% url 'index' %}">Table</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
    
 
 
@@ -1178,6 +1364,109 @@
         </div>
     </section>
 
+    <footer class="footer_area">
+        <div class="footer_widget pt-70 pb-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer_link mt-45">
+                            <h5 class="footer_title">Company</h5>
+                            <ul class="link">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li><a href="{% url 'index' %}">About Us</a></li>
+                                <li><a href="{% url 'index' %}">Our Factories</a>
+                                </li>
+                                <li><a href="{% url 'index' %}">Mission and
+                                        Strategy</a></li>
+                                <li><a href="{% url 'index' %}">Profitable
+                                        Actions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer_link mt-45">
+                            <h5 class="footer_title">How to Sell Fast</h5>
+                            <ul class="link">
+                                <li><a href="{% url 'index' %}">Selling TIps</a>
+                                </li>
+                                <li><a href="{% url 'index' %}">Buy and Sell
+                                        Quickly</a></li>
+                                <li><a href="{% url 'index' %}">Membership</a>
+                                </li>
+                                <li><a href="{% url 'index' %}">Banner
+                                        Advertising</a></li>
+                                <li><a href="{% url 'index' %}">Promote Your
+                                        Ad</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer_link mt-45">
+                            <h5 class="footer_title">Information</h5>
+                            <ul class="link">
+                                <li><a href="{% url 'index' %}">Company &amp;
+                                        Contact Info</a></li>
+                                <li><a href="{% url 'index' %}">Blog &amp;
+                                        Articles</a></li>
+                                <li><a href="{% url 'index' %}">Sitemap</a></li>
+                                <li><a href="{% url 'index' %}">Terms of
+                                        Service</a></li>
+                                <li><a href="{% url 'index' %}">Privacy
+                                        Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer_link mt-45">
+                            <h5 class="footer_title">Help &amp; Support</h5>
+                            <ul class="link">
+                                <li><a href="{% url 'index' %}">Live Chat</a>
+                                </li>
+                                <li><a href="{% url 'index' %}">FAQ</a></li>
+                                <li><a href="{% url 'index' %}">How to Stay
+                                        Safe</a></li>
+                                <li><a href="{% url 'index' %}">Terms &amp;
+                                        Conditions</a></li>
+                                <li><a href="{% url 'index' %}">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_copyright pt-15 pb-30">
+            <div class="container">
+                <div class="footer_copyright_wrapper text-center d-sm-flex justify-content-between align-items-center">
+                    <div class="copyright mt-15">
+                        <p>Designed and Developed by <a href="https://graygrids.com/" rel="nofollow">GrayGrids</a></p>
+                    </div>
+                    <div class="payment mt-15">
+                        <ul>
+                            <li><a href="{% url 'index' %}"><img
+                                        src="{% static 'images/payment-method1.jpg' %}" alt="payment"></a></li>
+                            <li><a href="{% url 'index' %}"><img
+                                        src="{% static 'images/payment-method2.jpg' %}" alt="payment"></a></li>
+                            <li><a href="{% url 'index' %}"><img
+                                        src="{% static 'images/payment-method3.jpg' %}" alt="payment"></a></li>
+                            <li><a href="{% url 'index' %}"><img
+                                        src="{% static 'images/payment-method4.jpg' %}" alt="payment"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <a href="{% url 'index' %}" class="back-to-top"><i
+            class="fa fa-angle-up"></i></a>
+
+
+
+
+
+    
 
     
 
