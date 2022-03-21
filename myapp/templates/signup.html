@@ -1,3 +1,5 @@
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <!-- saved from url=(0057)https://demo.graygrids.com/themes/classified/sign-up.html -->
 <html
@@ -12,24 +14,24 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="https://demo.graygrids.com/themes/classified/assets/images/favicon.png"
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}"
         type="image/png">
 
-    <link rel="stylesheet" href="./Sign Up _ ClassiFied_files/magnific-popup.css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
 
-    <link rel="stylesheet" href="./Sign Up _ ClassiFied_files/nice-select.css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
 
-    <link rel="stylesheet" href="./Sign Up _ ClassiFied_files/slick.css">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
 
-    <link rel="stylesheet" href="./Sign Up _ ClassiFied_files/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="{% static 'css/ion.rangeSlider.min.css' %}">
 
-    <link rel="stylesheet" href="./Sign Up _ ClassiFied_files/fontawesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
 
-    <link rel="stylesheet" href="./Sign Up _ ClassiFied_files/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
-    <link rel="stylesheet" href="./Sign Up _ ClassiFied_files/default.css">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
 
-    <link rel="stylesheet" href="./Sign Up _ ClassiFied_files/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body class="gray-bg">
@@ -56,8 +58,8 @@
         <div class="header_navbar">
             <div class="container">
                 <nav class="navbar navbar-expand-lg">
-                    <a class="navbar-brand" href="https://demo.graygrids.com/themes/classified/index.html">
-                        <img src="./Sign Up _ ClassiFied_files/logo.png" alt="logo">
+                    <a class="navbar-brand" href="{% url 'index' %}">
+                        <img src="{% static 'imagegs/logo.png' %}" alt="logo">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -69,45 +71,45 @@
                     <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                         <ul class="navbar-nav m-auto">
                             <li>
-                                <a href="https://demo.graygrids.com/themes/classified/index.html">Home <span
+                                <a href="{% url 'index'  %}">Home <span
                                         class="line"></span></a>
                             </li>
                             <li>
-                                <a href="https://demo.graygrids.com/themes/classified/categories.html">Categories <span
+                                <a href="{% url 'categories' %}">Categories <span
                                         class="line"></span></a>
                             </li>
                             <li>
                                 <a class="active"
-                                    href="https://demo.graygrids.com/themes/classified/sign-up.html#">Pages <i
+                                    href="{% url 'sign-up' %}">Pages <i
                                         class="fa fa-angle-down"></i> <span class="line"></span><button
                                         class="sub-nav-toggler"> <span></span> </button></a>
                                 <ul class="sub-menu">
-                                    <li><a href="https://demo.graygrids.com/themes/classified/product.html">Listing</a>
+                                    <li><a href="{% url 'product' %}">Listing</a>
                                     </li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/product-details.html">Product
+                                    <li><a href="{% url 'product-details' %}">Product
                                             Details</a></li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/error-404.html">404</a>
+                                    <li><a href="{% url 'error-404' %}">404</a>
                                     </li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/faq.html">FAQ</a></li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/pricing.html">Pricing</a>
+                                    <li><a href="{% url 'faq' %}">FAQ</a></li>
+                                    <li><a href="{% url 'pricing' %}">Pricing</a>
                                     </li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/sign-in.html">Sign In</a>
+                                    <li><a href="{% url 'sign-in' %}">Sign In</a>
                                     </li>
                                     <li><a class="active"
-                                            href="https://demo.graygrids.com/themes/classified/sign-up.html">Sign Up</a>
+                                            href="{% url 'sign-up' %}">Sign Up</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Blog <i
+                            <li><a href="{% url 'sign-up' %}">Blog <i
                                         class="fa fa-angle-down"></i> <span class="line"></span><button
                                         class="sub-nav-toggler"> <span></span> </button></a>
                                 <ul class="sub-menu">
-                                    <li><a href="https://demo.graygrids.com/themes/classified/blog.html">Blog</a></li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/blog-details.html">Blog
+                                    <li><a href="{% url 'blog' %}">Blog</a></li>
+                                    <li><a href="{% url 'blog-details' %}">Blog
                                             Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="https://demo.graygrids.com/themes/classified/contact.html">Contact <span
+                            <li><a href="{% url 'contact' %}">Contact <span
                                         class="line"></span></a></li>
                         </ul>
                     </div>
@@ -115,48 +117,48 @@
                         <ul>
                             <li>
                                 <div class="dropdown">
-                                    <a href="https://demo.graygrids.com/themes/classified/sign-up.html#"
+                                    <a href="{% url 'sign-up' %}"
                                         class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">My Account</a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                         <ul>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/dashboard.html"><i
+                                            <li><a href="{% url 'dashboard' %}"><i
                                                         class="fal fa-tachometer-alt-average"></i> Dashboard</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/profile-settings.html"><i
+                                                    href="{% url 'profile-settings' %}"><i
                                                         class="fal fa-cog"></i> Profile Settings</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/my-ads.html"><i
+                                            <li><a href="{% url 'my-ads' %}"><i
                                                         class="fal fa-layer-group"></i> My Ads</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/offermessages.html"><i
+                                                    href="{% url 'offermessages' %}"><i
                                                         class="fal fa-envelope"></i> Offers/Messages</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/payments.html"><i
+                                            <li><a href="{% url 'payments' %}"><i
                                                         class="fal fa-wallet"></i> Payments</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/favourite-ads.html"><i
+                                                    href="{% url 'favourite-ads' %}"><i
                                                         class="fal fa-heart"></i> My Favourites</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/privacy-setting.html"><i
+                                                    href="{% url 'privacy-setting' %}"><i
                                                         class="fal fa-star"></i> Privacy Settings</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#"><i
+                                            <li><a href="{% url 'sign-up' %}"><i
                                                         class="fal fa-sign-out"></i> Sign Out</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </li>
                             <li><a class="sign-up"
-                                    href="https://demo.graygrids.com/themes/classified/post-ads.html">Post Ads</a></li>
+                                    href="{% url 'post-ads' %}">Post Ads</a></li>
                         </ul>
                     </div>
                 </nav>
             </div>
         </div>
-        <div class="page_banner bg_cover" style="background-image: url(assets/images/page-banner.jpg)">
+        <div class="page_banner bg_cover" style="background-image: url(images/page-banner.jpg)">
             <div class="container">
                 <div class="page_banner_content">
                     <h3 class="title">Sign up</h3>
                     <ul class="breadcrumb">
-                        <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Home</a></li>
+                        <li><a href="{% url 'sign-up' %}">Home</a></li>
                         <li>Sign up</li>
                     </ul>
                 </div>
@@ -173,7 +175,7 @@
                         <div class="sign_title">
                             <h5 class="title">Sign Up Now</h5>
                         </div>
-                        <form action="https://demo.graygrids.com/themes/classified/sign-up.html#">
+                        <form action="{% url 'sign-up' %}">
                             <div class="sign_form_wrapper">
                                 <div class="single_form">
                                     <input type="text" placeholder="Username">
@@ -220,7 +222,7 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="call_to_action_form mt-50">
-                        <form action="https://demo.graygrids.com/themes/classified/sign-up.html#">
+                        <form action="{% url 'sign-up' %}">
                             <i class="fal fa-envelope"></i>
                             <input type="text" placeholder="Enter your mail address . . .">
                             <button class="main-btn">Subscribe</button>
@@ -240,14 +242,14 @@
                         <div class="footer_link mt-45">
                             <h5 class="footer_title">Company</h5>
                             <ul class="link">
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Home</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">About Us</a>
+                                <li><a href="{% url 'sign-up' %}">Home</a></li>
+                                <li><a href="{% url 'sign-up' %}">About Us</a>
                                 </li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Our
+                                <li><a href="{% url 'sign-up' %}">Our
                                         Factories</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Mission and
+                                <li><a href="{% url 'sign-up' %}">Mission and
                                         Strategy</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Profitable
+                                <li><a href="{% url 'sign-up' %}">Profitable
                                         Actions</a></li>
                             </ul>
                         </div>
@@ -256,15 +258,15 @@
                         <div class="footer_link mt-45">
                             <h5 class="footer_title">How to Sell Fast</h5>
                             <ul class="link">
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Selling
+                                <li><a href="{% url 'sign-up' %}">Selling
                                         TIps</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Buy and Sell
+                                <li><a href="{% url 'sign-up' %}">Buy and Sell
                                         Quickly</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Membership</a>
+                                <li><a href="{% url 'sign-up' %}">Membership</a>
                                 </li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Banner
+                                <li><a href="{% url 'sign-up' %}">Banner
                                         Advertising</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Promote Your
+                                <li><a href="{% url 'sign-up' %}">Promote Your
                                         Ad</a></li>
                             </ul>
                         </div>
@@ -273,15 +275,15 @@
                         <div class="footer_link mt-45">
                             <h5 class="footer_title">Information</h5>
                             <ul class="link">
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Company &amp;
+                                <li><a href="{% url 'sign-up' %}">Company &amp;
                                         Contact Info</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Blog &amp;
+                                <li><a href="{% url 'sign-up' %}">Blog &amp;
                                         Articles</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Sitemap</a>
+                                <li><a href="{% url 'sign-up' %}">Sitemap</a>
                                 </li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Terms of
+                                <li><a href="{% url 'sign-up' %}">Terms of
                                         Service</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Privacy
+                                <li><a href="{% url 'sign-up' %}">Privacy
                                         Policy</a></li>
                             </ul>
                         </div>
@@ -290,14 +292,14 @@
                         <div class="footer_link mt-45">
                             <h5 class="footer_title">Help &amp; Support</h5>
                             <ul class="link">
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Live Chat</a>
+                                <li><a href="{% url 'sign-up' %}">Live Chat</a>
                                 </li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">FAQ</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">How to Stay
+                                <li><a href="{% url 'sign-up' %}">FAQ</a></li>
+                                <li><a href="{% url 'sign-up' %}">How to Stay
                                         Safe</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Terms &amp;
+                                <li><a href="{% url 'sign-up' %}">Terms &amp;
                                         Conditions</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#">Contact Us</a>
+                                <li><a href="{% url 'sign-up' %}">Contact Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -313,14 +315,14 @@
                     </div>
                     <div class="payment mt-15">
                         <ul>
-                            <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#"><img
-                                        src="./Sign Up _ ClassiFied_files/payment-method1.jpg" alt="payment"></a></li>
-                            <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#"><img
-                                        src="./Sign Up _ ClassiFied_files/payment-method2.jpg" alt="payment"></a></li>
-                            <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#"><img
-                                        src="./Sign Up _ ClassiFied_files/payment-method3.jpg" alt="payment"></a></li>
-                            <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html#"><img
-                                        src="./Sign Up _ ClassiFied_files/payment-method4.jpg" alt="payment"></a></li>
+                            <li><a href="{% url 'sign-up' %}"><img
+                                        src="{% static 'imagegs/payment-method1.jpg' %} " alt="payment"></a></li>
+                            <li><a href="{% url 'sign-up' %}"><img
+                                        src="{% static 'imagegs/payment-method2.jpg' %}" alt="payment"></a></li>
+                            <li><a href="{% url 'sign-up' %}"><img
+                                        src="{% static 'imagegs/payment-method3.jpg' %}" alt="payment"></a></li>
+                            <li><a href="{% url 'sign-up' %}"><img
+                                        src="{% static 'imagegs/payment-method4.jpg' %}" alt="payment"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -329,35 +331,37 @@
     </footer>
 
 
-    <a href="https://demo.graygrids.com/themes/classified/sign-up.html#" class="back-to-top"><i
+    <a href="{% url 'sign-up' %}" class="back-to-top"><i
             class="fa fa-angle-up"></i></a>
 
 
 
 
 
-    <script src="./Sign Up _ ClassiFied_files/jquery-1.12.4.min.js.download"></script>
-    <script src="./Sign Up _ ClassiFied_files/modernizr-3.7.1.min.js.download"></script>
+    <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/modernizr-3.7.1.min.js' %}"></script>
 
-    <script src="./Sign Up _ ClassiFied_files/popper.min.js.download"></script>
-    <script src="./Sign Up _ ClassiFied_files/bootstrap.min.js.download"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
-    <script src="./Sign Up _ ClassiFied_files/slick.min.js.download"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
 
-    <script src="./Sign Up _ ClassiFied_files/jquery.magnific-popup.min.js.download"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
 
-    <script src="./Sign Up _ ClassiFied_files/jquery.nice-select.min.js.download"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
 
-    <script src="./Sign Up _ ClassiFied_files/waypoints.min.js.download"></script>
-    <script src="./Sign Up _ ClassiFied_files/jquery.counterup.min.js.download"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
 
-    <script src="./Sign Up _ ClassiFied_files/ion.rangeSlider.min.js.download"></script>
+    <script src="{% static 'js/ion.rangeSlider.min.js' %}"></script>
 
-    <script src="./Sign Up _ ClassiFied_files/ajax-contact.js.download"></script>
+    <script src="{% static 'js/ajax-contact.js' %}"></script>
 
-    <script src="./Sign Up _ ClassiFied_files/main.js.download"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 
 
 </body>
 
 </html>
+
+{% endblock %}
