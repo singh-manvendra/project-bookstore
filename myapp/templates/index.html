@@ -45,26 +45,14 @@
                                     </li>
                                     <li><a href="{% url 'product_details' %}">product
                                             Details</a></li>
-                                    <li><a href="{% url 'error' %}">404</a>
-                                    </li>
-                                    <li><a href="{% url 'faq' %}">FAQ</a></li>
-                                    <li><a href="{% url 'pricing' %}">Pricing</a>
-                                    </li>
+                                    
                                     <li><a href="{% url 'signin' %}">Sign In</a>
                                     </li>
                                     <li><a href="{% url 'signup' %}">Sign Up</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="{% url 'index' %}">Blog <i
-                                        class="fa fa-angle-down"></i> <span class="line"></span><button
-                                        class="sub-nav-toggler"> <span></span> </button></a>
-                                <ul class="sub-menu">
-                                    <li><a href="{% url 'blog' %}">Blog</a></li>
-                                    <li><a href="{% url 'blog_details' %}">Blog
-                                            Details</a></li>
-                                </ul>
-                            </li>
+                            
                             <li><a href="{% url 'contact' %}">Contact <span
                                         class="line"></span></a></li>
                         </ul>
@@ -90,9 +78,7 @@
                                                     <i class="fa-solid fa-envelope"></i> Offers/Messages</a></li>
                                             <li><a href="{% url 'payments' %}">
                                                 <i class="fa-solid fa-wallet"></i> Payments</a></li>
-                                            <li><a
-                                                    href="{% url 'wishlist' %}"><i
-                                                        class="fal fa-heart"></i> My Favourites</a></li>
+                                            
                                             <li><a
                                                     href="{% url 'privacy_settings' %}"><i
                                                         class="fal fa-star"></i> Privacy Settings</a></li>
@@ -1265,82 +1251,7 @@
     </section>
 
 
-    <section class="blog_area pt-115 pb-120">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center pb-15">
-                        <h3 class="title">Latest<br> From The Blog</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-7">
-                    <div class="single_blog mt-30">
-                        <div class="blog_image">
-                            <img src="{% static 'images/blog-1.jpg' %}" alt="blog">
-                        </div>
-                        <div class="blog_content">
-                            <h4 class="title"><a
-                                    href="{% url 'blog_details' %}">Lorem ipsum
-                                    dolor sit amet, consectetur adipiscing elit</a></h4>
-                            <ul class="meta">
-                                <li><i class="fal fa-clock"></i><a
-                                        href="{% url 'index' %}">23 Jan, 2023</a>
-                                </li>
-                                <li><i class="fal fa-comment-dots"></i><a
-                                        href="{% url 'index' %}">4 Comments</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-7">
-                    <div class="single_blog mt-30">
-                        <div class="blog_image">
-                            <img src="{% static 'images/blog-2.jpg' %}" alt="blog">
-                        </div>
-                        <div class="blog_content">
-                            <h4 class="title"><a
-                                    href="{% url 'blog_details' %}">Lorem ipsum
-                                    dolor sit amet, consectetur adipiscing elit</a></h4>
-                            <ul class="meta">
-                                <li><i class="fal fa-clock"></i><a
-                                        href="{% url 'index' %}">23 Jan, 2023</a>
-                                </li>
-                                <li><i class="fal fa-comment-dots"></i><a
-                                        href="{% url 'index' %}">4 Comments</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-7">
-                    <div class="single_blog mt-30">
-                        <div class="blog_image">
-                            <img src="{% static 'images/blog-3.jpg' %}" alt="blog">
-                        </div>
-                        <div class="blog_content">
-                            <h4 class="title"><a
-                                    href="{% url 'blog_details' %}">Lorem ipsum
-                                    dolor sit amet, consectetur adipiscing elit</a></h4>
-                            <ul class="meta">
-                                <li><i class="fal fa-clock"></i><a
-                                        href="{% url 'index' %}">23 Jan, 2023</a>
-                                </li>
-                                <li><i class="fal fa-comment-dots"></i><a
-                                        href="{% url 'index' %}">4 Comments</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="blog_btn text-center mt-50">
-                <a href="{% url 'blog' %}" class="main-btn">View All Post</a>
-            </div>
-        </div>
-    </section>
+    
 
 
     
