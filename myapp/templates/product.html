@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <!DOCTYPE html>
-<!-- saved from url=(0057)https://demo.graygrids.com/themes/classified/product.html -->
+<!-- saved from url=(0057){% url 'product' %} -->
 
 <html
     class="js sizes customelements history pointerevents postmessage webgl websockets cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox picture srcset webworkers"
@@ -19,8 +19,8 @@
         <div class="header_navbar">
             <div class="container">
                 <nav class="navbar navbar-expand-lg">
-                    <a class="navbar-brand" href="https://demo.graygrids.com/themes/classified/index.html">
-                        <img src="./Listing _ ClassiFied_files/logo.png' %}" alt="logo">
+                    <a class="navbar-brand" href="{% url 'index' %}">
+                        <img src="{% static 'images/logo.png' %}" alt="logo">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -32,46 +32,34 @@
                     <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                         <ul class="navbar-nav m-auto">
                             <li>
-                                <a href="https://demo.graygrids.com/themes/classified/index.html">Home <span
+                                <a href="{% url 'index' %}">Home <span
                                         class="line"></span></a>
                             </li>
                             <li>
-                                <a href="https://demo.graygrids.com/themes/classified/categories.html">Categories <span
+                                <a href="{% url 'categories' %}">Categories <span
                                         class="line"></span></a>
                             </li>
                             <li>
                                 <a class="active"
-                                    href="https://demo.graygrids.com/themes/classified/product.html#">Pages <i
+                                    href="{% url 'product' %}">Pages <i
                                         class="fa fa-angle-down"></i> <span class="line"></span><button
                                         class="sub-nav-toggler"> <span></span> </button></a>
                                 <ul class="sub-menu">
-                                    <li><a href="https://demo.graygrids.com/themes/classified/about.html">About</a></li>
+                                    <li><a href="{% url 'about' %}">About</a></li>
                                     <li><a class="active"
-                                            href="https://demo.graygrids.com/themes/classified/product.html">listing</a>
+                                            href="{% url 'product' %}">listing</a>
                                     </li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/product-details.html">Product
+                                    <li><a href="{% url 'product_details' %}">Product
                                             Details</a></li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/error-404.html">404</a>
+                                    
+                                    <li><a href="{% url 'signin' %}">Sign In</a>
                                     </li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/faq.html">FAQ</a></li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/pricing.html">Pricing</a>
-                                    </li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/sign-in.html">Sign In</a>
-                                    </li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html">Sign Up</a>
+                                    <li><a href="{% url 'signup' %}">Sign Up</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Blog <i
-                                        class="fa fa-angle-down"></i> <span class="line"></span><button
-                                        class="sub-nav-toggler"> <span></span> </button></a>
-                                <ul class="sub-menu">
-                                    <li><a href="https://demo.graygrids.com/themes/classified/blog.html">Blog</a></li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/blog-details.html">Blog
-                                            Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="https://demo.graygrids.com/themes/classified/contact.html">Contact <span
+                            
+                            <li><a href="{% url 'contact' %}">Contact <span
                                         class="line"></span></a></li>
                         </ul>
                     </div>
@@ -79,48 +67,46 @@
                         <ul>
                             <li>
                                 <div class="dropdown">
-                                    <a href="https://demo.graygrids.com/themes/classified/product.html#"
+                                    <a href="{% url 'product' %}"
                                         class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">My Account</a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                         <ul>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/dashboard.html"><i
+                                            <li><a href="{% url 'dashboard' %}"><i
                                                         class="fal fa-tachometer-alt-average"></i> Dashboard</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/profile-settings.html"><i
+                                                    href="{% url 'profile_settings' %}"><i
                                                         class="fal fa-cog"></i> Profile Settings</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/my-ads.html"><i
+                                            <li><a href="{% url 'myads' %}"><i
                                                         class="fal fa-layer-group"></i> My Ads</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/offermessages.html"><i
+                                                    href="{% url 'offers_msgs' %}"><i
                                                         class="fal fa-envelope"></i> Offers/Messages</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/payments.html"><i
+                                            <li><a href="{% url 'payments' %}"><i
                                                         class="fal fa-wallet"></i> Payments</a></li>
+                                            
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/favourite-ads.html"><i
-                                                        class="fal fa-heart"></i> My Favourites</a></li>
-                                            <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/privacy-setting.html"><i
+                                                    href="{% url 'privacy_settings' %}"><i
                                                         class="fal fa-star"></i> Privacy Settings</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                            <li><a href="{% url 'product' %}"><i
                                                         class="fal fa-sign-out"></i> Sign Out</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </li>
                             <li><a class="sign-up"
-                                    href="https://demo.graygrids.com/themes/classified/post-ads.html">Post Ads</a></li>
+                                    href="{% url 'post_ads' %}">Post Ads</a></li>
                         </ul>
                     </div>
                 </nav>
             </div>
         </div>
-        <div class="page_banner bg_cover" style="background-image: url(assets/images/page-banner.jpg)">
+        <div class="page_banner bg_cover" style="background-image: url({% static 'images/page-banner.jpg' %})">
             <div class="container">
                 <div class="page_banner_content">
                     <h3 class="title">Product Listing</h3>
                     <ul class="breadcrumb">
-                        <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Home</a></li>
+                        <li><a href="{% url 'product' %}">Home</a></li>
                         <li>Product Listing</li>
                     </ul>
                 </div>
@@ -142,10 +128,10 @@
                                 <div class="accordion" id="accordionExample">
                                     <div class="card">
                                         <div class="card-header" id="headingOne">
-                                            <a href="https://demo.graygrids.com/themes/classified/product.html#"
+                                            <a href="{% url 'product' %}"
                                                 data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                                                 aria-controls="collapseOne"><img
-                                                    src="{% static'./Listing _ ClassiFied_files/categories-1.svg' %}" alt="Icon">
+                                                    src="{% static 'icons/categories-1.svg' %}" alt="Icon">
                                                 Women's Clothing (10)</a>
                                         </div>
                                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
@@ -153,31 +139,31 @@
                                             <div class="card-body">
                                                 <ul class="sidebar_categories_list">
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">iPhones</a>
+                                                            href="{% url 'product' %}">iPhones</a>
                                                     </li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Feature
+                                                            href="{% url 'product' %}">Feature
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Refurbished
+                                                            href="{% url 'product' %}">Refurbished
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Accessories</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Parts</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Phone
+                                                            href="{% url 'product' %}">Phone
                                                             Bags &amp; Cases</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Communication
+                                                            href="{% url 'product' %}">Communication
                                                             Equipment's</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie Parts</a></li>
                                                 </ul>
                                             </div>
@@ -185,10 +171,10 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-header" id="headingTwo">
-                                            <a href="https://demo.graygrids.com/themes/classified/product.html#"
+                                            <a href="{% url 'product' %}"
                                                 class="collapsed" data-toggle="collapse" data-target="#collapseTwo"
                                                 aria-expanded="false" aria-controls="collapseTwo"><img
-                                                    src="{% static'./Listing _ ClassiFied_files/categories-2.svg' %}" alt="Icon">
+                                                    src="{% static 'icons/categories-2.svg' %}" alt="Icon">
                                                 Men's Clothing (87)</a>
                                         </div>
                                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
@@ -196,31 +182,31 @@
                                             <div class="card-body">
                                                 <ul class="sidebar_categories_list">
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">iPhones</a>
+                                                            href="{% url 'product' %}">iPhones</a>
                                                     </li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Feature
+                                                            href="{% url 'product' %}">Feature
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Refurbished
+                                                            href="{% url 'product' %}">Refurbished
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Accessories</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Parts</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Phone
+                                                            href="{% url 'product' %}">Phone
                                                             Bags &amp; Cases</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Communication
+                                                            href="{% url 'product' %}">Communication
                                                             Equipment's</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie Parts</a></li>
                                                 </ul>
                                             </div>
@@ -228,10 +214,10 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-header" id="headingThree">
-                                            <a href="https://demo.graygrids.com/themes/classified/product.html#"
+                                            <a href="{% url 'product' %}"
                                                 class="collapsed" data-toggle="collapse" data-target="#collapseThree"
                                                 aria-expanded="false" aria-controls="collapseThree"><img
-                                                    src="{% static'./Listing _ ClassiFied_files/categories-3.svg' %}" alt="Icon">
+                                                    src="{% static 'icons/categories-3.svg' %}" alt="Icon">
                                                 Telecommunications (25)</a>
                                         </div>
                                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
@@ -239,31 +225,31 @@
                                             <div class="card-body">
                                                 <ul class="sidebar_categories_list">
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">iPhones</a>
+                                                            href="{% url 'product' %}">iPhones</a>
                                                     </li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Feature
+                                                            href="{% url 'product' %}">Feature
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Refurbished
+                                                            href="{% url 'product' %}">Refurbished
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Accessories</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Parts</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Phone
+                                                            href="{% url 'product' %}">Phone
                                                             Bags &amp; Cases</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Communication
+                                                            href="{% url 'product' %}">Communication
                                                             Equipment's</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie Parts</a></li>
                                                 </ul>
                                             </div>
@@ -271,10 +257,10 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-header" id="headingFour">
-                                            <a href="https://demo.graygrids.com/themes/classified/product.html#"
+                                            <a href="{% url 'product' %}"
                                                 class="collapsed" data-toggle="collapse" data-target="#collapseFour"
                                                 aria-expanded="false" aria-controls="collapseFour"><img
-                                                    src="{% static'./Listing _ ClassiFied_files/categories-4.svg' %}" alt="Icon">
+                                                    src="{% static 'icons/categories-4.svg' %}" alt="Icon">
                                                 Cellphones (10078)</a>
                                         </div>
                                         <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
@@ -282,31 +268,31 @@
                                             <div class="card-body">
                                                 <ul class="sidebar_categories_list">
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">iPhones</a>
+                                                            href="{% url 'product' %}">iPhones</a>
                                                     </li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Feature
+                                                            href="{% url 'product' %}">Feature
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Refurbished
+                                                            href="{% url 'product' %}">Refurbished
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Accessories</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Parts</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Phone
+                                                            href="{% url 'product' %}">Phone
                                                             Bags &amp; Cases</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Communication
+                                                            href="{% url 'product' %}">Communication
                                                             Equipment's</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie Parts</a></li>
                                                 </ul>
                                             </div>
@@ -314,10 +300,10 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-header" id="headingFive">
-                                            <a href="https://demo.graygrids.com/themes/classified/product.html#"
+                                            <a href="{% url 'product' %}"
                                                 class="collapsed" data-toggle="collapse" data-target="#collapseFive"
                                                 aria-expanded="false" aria-controls="collapseFive"><img
-                                                    src="{% static'./Listing _ ClassiFied_files/categories-5.svg' %}" alt="Icon">
+                                                    src="{% static 'icons/categories-5.svg' %}" alt="Icon">
                                                 Computer &amp; Office (597)</a>
                                         </div>
                                         <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
@@ -325,31 +311,31 @@
                                             <div class="card-body">
                                                 <ul class="sidebar_categories_list">
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">iPhones</a>
+                                                            href="{% url 'product' %}">iPhones</a>
                                                     </li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Feature
+                                                            href="{% url 'product' %}">Feature
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Refurbished
+                                                            href="{% url 'product' %}">Refurbished
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Accessories</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Parts</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Phone
+                                                            href="{% url 'product' %}">Phone
                                                             Bags &amp; Cases</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Communication
+                                                            href="{% url 'product' %}">Communication
                                                             Equipment's</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie Parts</a></li>
                                                 </ul>
                                             </div>
@@ -357,10 +343,10 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-header" id="headingSix">
-                                            <a href="https://demo.graygrids.com/themes/classified/product.html#"
+                                            <a href="{% url 'product' %}"
                                                 class="collapsed" data-toggle="collapse" data-target="#collapseSix"
                                                 aria-expanded="false" aria-controls="collapseSix"><img
-                                                    src="{% static'./Listing _ ClassiFied_files/categories-6.svg' %}" alt="Icon">
+                                                    src="{% static 'icons/categories-6.svg' %}" alt="Icon">
                                                 Consumer Electronics (27) </a>
                                         </div>
                                         <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
@@ -368,31 +354,31 @@
                                             <div class="card-body">
                                                 <ul class="sidebar_categories_list">
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">iPhones</a>
+                                                            href="{% url 'product' %}">iPhones</a>
                                                     </li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Feature
+                                                            href="{% url 'product' %}">Feature
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Refurbished
+                                                            href="{% url 'product' %}">Refurbished
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Accessories</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Parts</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Phone
+                                                            href="{% url 'product' %}">Phone
                                                             Bags &amp; Cases</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Communication
+                                                            href="{% url 'product' %}">Communication
                                                             Equipment's</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie Parts</a></li>
                                                 </ul>
                                             </div>
@@ -400,10 +386,10 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-header" id="headingSeven">
-                                            <a href="https://demo.graygrids.com/themes/classified/product.html#"
+                                            <a href="{% url 'product' %}"
                                                 class="collapsed" data-toggle="collapse" data-target="#collapseSeven"
                                                 aria-expanded="false" aria-controls="collapseSeven"><img
-                                                    src="{% static'./Listing _ ClassiFied_files/categories-7.svg' %}" alt="Icon">
+                                                    src="{% static 'icons/categories-7.svg' %}" alt="Icon">
                                                 Jewelry &amp; Accessories (92) </a>
                                         </div>
                                         <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven"
@@ -411,31 +397,31 @@
                                             <div class="card-body">
                                                 <ul class="sidebar_categories_list">
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">iPhones</a>
+                                                            href="{% url 'product' %}">iPhones</a>
                                                     </li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Feature
+                                                            href="{% url 'product' %}">Feature
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Refurbished
+                                                            href="{% url 'product' %}">Refurbished
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Accessories</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Parts</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Phone
+                                                            href="{% url 'product' %}">Phone
                                                             Bags &amp; Cases</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Communication
+                                                            href="{% url 'product' %}">Communication
                                                             Equipment's</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie Parts</a></li>
                                                 </ul>
                                             </div>
@@ -443,10 +429,10 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-header" id="headingEight">
-                                            <a href="https://demo.graygrids.com/themes/classified/product.html#"
+                                            <a href="{% url 'product' %}"
                                                 class="collapsed" data-toggle="collapse" data-target="#collapseEight"
                                                 aria-expanded="false" aria-controls="collapseEight"><img
-                                                    src="{% static'./Listing _ ClassiFied_files/categories-8.svg' %}" alt="Icon"> Home
+                                                    src="{% static 'icons/categories-8.svg' %}" alt="Icon"> Home
                                                 &amp; Garden (07) </a>
                                         </div>
                                         <div id="collapseEight" class="collapse" aria-labelledby="headingEight"
@@ -454,31 +440,31 @@
                                             <div class="card-body">
                                                 <ul class="sidebar_categories_list">
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">iPhones</a>
+                                                            href="{% url 'product' %}">iPhones</a>
                                                     </li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Feature
+                                                            href="{% url 'product' %}">Feature
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Refurbished
+                                                            href="{% url 'product' %}">Refurbished
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Accessories</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Parts</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Phone
+                                                            href="{% url 'product' %}">Phone
                                                             Bags &amp; Cases</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Communication
+                                                            href="{% url 'product' %}">Communication
                                                             Equipment's</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie Parts</a></li>
                                                 </ul>
                                             </div>
@@ -486,10 +472,10 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-header" id="headingNine">
-                                            <a href="https://demo.graygrids.com/themes/classified/product.html#"
+                                            <a href="{% url 'product' %}"
                                                 class="collapsed" data-toggle="collapse" data-target="#collapseNine"
                                                 aria-expanded="false" aria-controls="collapseNine"><img
-                                                    src="{% static'./Listing _ ClassiFied_files/categories-9.svg' %}" alt="Icon">
+                                                    src="{% static 'icons/categories-9.svg' %}" alt="Icon">
                                                 Luggage &amp; Bags (346) </a>
                                         </div>
                                         <div id="collapseNine" class="collapse" aria-labelledby="headingNine"
@@ -497,31 +483,31 @@
                                             <div class="card-body">
                                                 <ul class="sidebar_categories_list">
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">iPhones</a>
+                                                            href="{% url 'product' %}">iPhones</a>
                                                     </li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Feature
+                                                            href="{% url 'product' %}">Feature
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Refurbished
+                                                            href="{% url 'product' %}">Refurbished
                                                             Phones</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Accessories</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Mobile
+                                                            href="{% url 'product' %}">Mobile
                                                             Phone Parts</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Phone
+                                                            href="{% url 'product' %}">Phone
                                                             Bags &amp; Cases</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Communication
+                                                            href="{% url 'product' %}">Communication
                                                             Equipment's</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie</a></li>
                                                     <li><a
-                                                            href="https://demo.graygrids.com/themes/classified/product.html#">Walkie
+                                                            href="{% url 'product' %}">Walkie
                                                             Talkie Parts</a></li>
                                                 </ul>
                                             </div>
@@ -702,14 +688,14 @@
                             <ul class="nav justify-content-center" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="active" id="grid-tab" data-toggle="tab"
-                                        href="https://demo.graygrids.com/themes/classified/product.html#grid" role="tab"
+                                        href="{% url 'product' %}grid" role="tab"
                                         aria-controls="grid" aria-selected="true">
                                         <i class="fal fa-th"></i>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a id="list-tab" data-toggle="tab"
-                                        href="https://demo.graygrids.com/themes/classified/product.html#list" role="tab"
+                                        href="{% url 'product' %}list" role="tab"
                                         aria-controls="list" aria-selected="false">
                                         <i class="fal fa-th-list"></i>
                                     </a>
@@ -724,17 +710,17 @@
                                     <div class="col-xl-4 col-sm-6">
                                         <div class="single_ads_card mt-30">
                                             <div class="ads_card_image">
-                                                <img src="{% static'./Listing _ ClassiFied_files/ads-1.png' %}" alt="ads">
+                                                <img src="{% static 'images/ads-1.png' %}" alt="ads">
                                             </div>
                                             <div class="ads_card_content">
                                                 <div class="meta d-flex justify-content-between">
                                                     <p>Ram &amp; Laptop</p>
                                                     <a class="like"
-                                                        href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                        href="{% url 'product' %}"><i
                                                             class="fal fa-heart"></i></a>
                                                 </div>
                                                 <h4 class="title"><a
-                                                        href="https://demo.graygrids.com/themes/classified/product-details.html">8
+                                                        href="{% url 'product_details' %}">8
                                                         GB DDR4 Ram, 4th Gen</a></h4>
                                                 <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                                 <div class="ads_price_date d-flex justify-content-between">
@@ -747,17 +733,17 @@
                                     <div class="col-xl-4 col-sm-6">
                                         <div class="single_ads_card mt-30">
                                             <div class="ads_card_image">
-                                                <img src="{% static'./Listing _ ClassiFied_files/ads-2.png' %}" alt="ads">
+                                                <img src="{% static 'images/ads-2.png' %}" alt="ads">
                                             </div>
                                             <div class="ads_card_content">
                                                 <div class="meta d-flex justify-content-between">
                                                     <p>Ram &amp; Laptop</p>
                                                     <a class="like"
-                                                        href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                        href="{% url 'product' %}"><i
                                                             class="fal fa-heart"></i></a>
                                                 </div>
                                                 <h4 class="title"><a
-                                                        href="https://demo.graygrids.com/themes/classified/product-details.html">8
+                                                        href="{% url 'product_details' %}">8
                                                         GB DDR4 Ram, 4th Gen</a></h4>
                                                 <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                                 <div class="ads_price_date d-flex justify-content-between">
@@ -770,17 +756,17 @@
                                     <div class="col-xl-4 col-sm-6">
                                         <div class="single_ads_card mt-30">
                                             <div class="ads_card_image">
-                                                <img src="{% static'./Listing _ ClassiFied_files/ads-3.png' %}" alt="ads">
+                                                <img src="{% static 'images/ads-3.png' %}" alt="ads">
                                             </div>
                                             <div class="ads_card_content">
                                                 <div class="meta d-flex justify-content-between">
                                                     <p>Ram &amp; Laptop</p>
                                                     <a class="like"
-                                                        href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                        href="{% url 'product' %}"><i
                                                             class="fal fa-heart"></i></a>
                                                 </div>
                                                 <h4 class="title"><a
-                                                        href="https://demo.graygrids.com/themes/classified/product-details.html">8
+                                                        href="{% url 'product_details' %}">8
                                                         GB DDR4 Ram, 4th Gen</a></h4>
                                                 <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                                 <div class="ads_price_date d-flex justify-content-between">
@@ -793,17 +779,17 @@
                                     <div class="col-xl-4 col-sm-6">
                                         <div class="single_ads_card mt-30">
                                             <div class="ads_card_image">
-                                                <img src="{% static'./Listing _ ClassiFied_files/ads-4.png' %}" alt="ads">
+                                                <img src="{% static 'images/ads-4.png' %}" alt="ads">
                                             </div>
                                             <div class="ads_card_content">
                                                 <div class="meta d-flex justify-content-between">
                                                     <p>Ram &amp; Laptop</p>
                                                     <a class="like"
-                                                        href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                        href="{% url 'product' %}"><i
                                                             class="fal fa-heart"></i></a>
                                                 </div>
                                                 <h4 class="title"><a
-                                                        href="https://demo.graygrids.com/themes/classified/product-details.html">8
+                                                        href="{% url 'product_details' %}">8
                                                         GB DDR4 Ram, 4th Gen</a></h4>
                                                 <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                                 <div class="ads_price_date d-flex justify-content-between">
@@ -816,17 +802,17 @@
                                     <div class="col-xl-4 col-sm-6">
                                         <div class="single_ads_card mt-30">
                                             <div class="ads_card_image">
-                                                <img src="{% static'./Listing _ ClassiFied_files/ads-5.png' %}" alt="ads">
+                                                <img src="{% static 'images/ads-5.png' %}" alt="ads">
                                             </div>
                                             <div class="ads_card_content">
                                                 <div class="meta d-flex justify-content-between">
                                                     <p>Ram &amp; Laptop</p>
                                                     <a class="like"
-                                                        href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                        href="{% url 'product' %}"><i
                                                             class="fal fa-heart"></i></a>
                                                 </div>
                                                 <h4 class="title"><a
-                                                        href="https://demo.graygrids.com/themes/classified/product-details.html">8
+                                                        href="{% url 'product_details' %}">8
                                                         GB DDR4 Ram, 4th Gen</a></h4>
                                                 <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                                 <div class="ads_price_date d-flex justify-content-between">
@@ -839,17 +825,17 @@
                                     <div class="col-xl-4 col-sm-6">
                                         <div class="single_ads_card mt-30">
                                             <div class="ads_card_image">
-                                                <img src="{% static'./Listing _ ClassiFied_files/ads-6.png' %}" alt="ads">
+                                                <img src="{% static 'images/ads-6.png' %}" alt="ads">
                                             </div>
                                             <div class="ads_card_content">
                                                 <div class="meta d-flex justify-content-between">
                                                     <p>Ram &amp; Laptop</p>
                                                     <a class="like"
-                                                        href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                        href="{% url 'product' %}"><i
                                                             class="fal fa-heart"></i></a>
                                                 </div>
                                                 <h4 class="title"><a
-                                                        href="https://demo.graygrids.com/themes/classified/product-details.html">8
+                                                        href="{% url 'product_details' %}">8
                                                         GB DDR4 Ram, 4th Gen</a></h4>
                                                 <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                                 <div class="ads_price_date d-flex justify-content-between">
@@ -862,17 +848,17 @@
                                     <div class="col-xl-4 col-sm-6">
                                         <div class="single_ads_card mt-30">
                                             <div class="ads_card_image">
-                                                <img src="{% static'./Listing _ ClassiFied_files/ads-7.png' %}" alt="ads">
+                                                <img src="{% static 'images/ads-7.png' %}" alt="ads">
                                             </div>
                                             <div class="ads_card_content">
                                                 <div class="meta d-flex justify-content-between">
                                                     <p>Ram &amp; Laptop</p>
                                                     <a class="like"
-                                                        href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                        href="{% url 'product' %}"><i
                                                             class="fal fa-heart"></i></a>
                                                 </div>
                                                 <h4 class="title"><a
-                                                        href="https://demo.graygrids.com/themes/classified/product-details.html">8
+                                                        href="{% url 'product_details' %}">8
                                                         GB DDR4 Ram, 4th Gen</a></h4>
                                                 <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                                 <div class="ads_price_date d-flex justify-content-between">
@@ -885,17 +871,17 @@
                                     <div class="col-xl-4 col-sm-6">
                                         <div class="single_ads_card mt-30">
                                             <div class="ads_card_image">
-                                                <img src="{% static'./Listing _ ClassiFied_files/ads-8.png' %}" alt="ads">
+                                                <img src="{% static 'images/ads-8.png' %}" alt="ads">
                                             </div>
                                             <div class="ads_card_content">
                                                 <div class="meta d-flex justify-content-between">
                                                     <p>Ram &amp; Laptop</p>
                                                     <a class="like"
-                                                        href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                        href="{% url 'product' %}"><i
                                                             class="fal fa-heart"></i></a>
                                                 </div>
                                                 <h4 class="title"><a
-                                                        href="https://demo.graygrids.com/themes/classified/product-details.html">8
+                                                        href="{% url 'product_details' %}">8
                                                         GB DDR4 Ram, 4th Gen</a></h4>
                                                 <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                                 <div class="ads_price_date d-flex justify-content-between">
@@ -908,17 +894,17 @@
                                     <div class="col-xl-4 col-sm-6">
                                         <div class="single_ads_card mt-30">
                                             <div class="ads_card_image">
-                                                <img src="{% static'./Listing _ ClassiFied_files/ads-9.png' %}" alt="ads">
+                                                <img src="{% static 'images/ads-9.png' %}" alt="ads">
                                             </div>
                                             <div class="ads_card_content">
                                                 <div class="meta d-flex justify-content-between">
                                                     <p>Ram &amp; Laptop</p>
                                                     <a class="like"
-                                                        href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                        href="{% url 'product' %}"><i
                                                             class="fal fa-heart"></i></a>
                                                 </div>
                                                 <h4 class="title"><a
-                                                        href="https://demo.graygrids.com/themes/classified/product-details.html">8
+                                                        href="{% url 'product_details' %}">8
                                                         GB DDR4 Ram, 4th Gen</a></h4>
                                                 <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                                 <div class="ads_price_date d-flex justify-content-between">
@@ -931,17 +917,17 @@
                                     <div class="col-xl-4 col-sm-6">
                                         <div class="single_ads_card mt-30">
                                             <div class="ads_card_image">
-                                                <img src="{% static'./Listing _ ClassiFied_files/ads-10.png' %}" alt="ads">
+                                                <img src="{% static 'images/ads-10.png' %}" alt="ads">
                                             </div>
                                             <div class="ads_card_content">
                                                 <div class="meta d-flex justify-content-between">
                                                     <p>Ram &amp; Laptop</p>
                                                     <a class="like"
-                                                        href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                        href="{% url 'product' %}"><i
                                                             class="fal fa-heart"></i></a>
                                                 </div>
                                                 <h4 class="title"><a
-                                                        href="https://demo.graygrids.com/themes/classified/product-details.html">8
+                                                        href="{% url 'product_details' %}">8
                                                         GB DDR4 Ram, 4th Gen</a></h4>
                                                 <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                                 <div class="ads_price_date d-flex justify-content-between">
@@ -954,17 +940,17 @@
                                     <div class="col-xl-4 col-sm-6">
                                         <div class="single_ads_card mt-30">
                                             <div class="ads_card_image">
-                                                <img src="{% static'./Listing _ ClassiFied_files/ads-11.png' %}" alt="ads">
+                                                <img src="{% static 'images/ads-11.png' %}" alt="ads">
                                             </div>
                                             <div class="ads_card_content">
                                                 <div class="meta d-flex justify-content-between">
                                                     <p>Ram &amp; Laptop</p>
                                                     <a class="like"
-                                                        href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                        href="{% url 'product' %}"><i
                                                             class="fal fa-heart"></i></a>
                                                 </div>
                                                 <h4 class="title"><a
-                                                        href="https://demo.graygrids.com/themes/classified/product-details.html">8
+                                                        href="{% url 'product_details' %}">8
                                                         GB DDR4 Ram, 4th Gen</a></h4>
                                                 <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                                 <div class="ads_price_date d-flex justify-content-between">
@@ -977,17 +963,17 @@
                                     <div class="col-xl-4 col-sm-6">
                                         <div class="single_ads_card mt-30">
                                             <div class="ads_card_image">
-                                                <img src="{% static'./Listing _ ClassiFied_files/ads-12.png' %}" alt="ads">
+                                                <img src="{% static 'images/ads-12.png' %}" alt="ads">
                                             </div>
                                             <div class="ads_card_content">
                                                 <div class="meta d-flex justify-content-between">
                                                     <p>Ram &amp; Laptop</p>
                                                     <a class="like"
-                                                        href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                        href="{% url 'product' %}"><i
                                                             class="fal fa-heart"></i></a>
                                                 </div>
                                                 <h4 class="title"><a
-                                                        href="https://demo.graygrids.com/themes/classified/product-details.html">8
+                                                        href="{% url 'product_details' %}">8
                                                         GB DDR4 Ram, 4th Gen</a></h4>
                                                 <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                                 <div class="ads_price_date d-flex justify-content-between">
@@ -1004,17 +990,17 @@
                             <div class="product_list">
                                 <div class="single_ads_card ads_list d-sm-flex mt-30">
                                     <div class="ads_card_image">
-                                        <img src="{% static'./Listing _ ClassiFied_files/ads-1.png' %}" alt="ads">
+                                        <img src="{% static 'images/ads-1.png' %}" alt="ads">
                                     </div>
                                     <div class="ads_card_content media-body">
                                         <div class="meta d-flex justify-content-between">
                                             <p>Ram &amp; Laptop</p>
                                             <a class="like"
-                                                href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                href="{% url 'product' %}"><i
                                                     class="fal fa-heart"></i></a>
                                         </div>
                                         <h4 class="title"><a
-                                                href="https://demo.graygrids.com/themes/classified/product.html#">Front+Back
+                                                href="{% url 'product' %}">Front+Back
                                                 Full Body Protect Screen Protector</a></h4>
                                         <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -1027,17 +1013,17 @@
                                 </div>
                                 <div class="single_ads_card ads_list d-sm-flex mt-30">
                                     <div class="ads_card_image">
-                                        <img src="{% static'./Listing _ ClassiFied_files/ads-2.png' %}" alt="ads">
+                                        <img src="{% static 'images/ads-2.png' %}" alt="ads">
                                     </div>
                                     <div class="ads_card_content media-body">
                                         <div class="meta d-flex justify-content-between">
                                             <p>Ram &amp; Laptop</p>
                                             <a class="like"
-                                                href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                href="{% url 'product' %}"><i
                                                     class="fal fa-heart"></i></a>
                                         </div>
                                         <h4 class="title"><a
-                                                href="https://demo.graygrids.com/themes/classified/product.html#">Front+Back
+                                                href="{% url 'product' %}">Front+Back
                                                 Full Body Protect Screen Protector</a></h4>
                                         <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -1050,17 +1036,17 @@
                                 </div>
                                 <div class="single_ads_card ads_list d-sm-flex mt-30">
                                     <div class="ads_card_image">
-                                        <img src="{% static'./Listing _ ClassiFied_files/ads-3.png' %}" alt="ads">
+                                        <img src="{% static 'images/ads-3.png' %}" alt="ads">
                                     </div>
                                     <div class="ads_card_content media-body">
                                         <div class="meta d-flex justify-content-between">
                                             <p>Ram &amp; Laptop</p>
                                             <a class="like"
-                                                href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                href="{% url 'product' %}"><i
                                                     class="fal fa-heart"></i></a>
                                         </div>
                                         <h4 class="title"><a
-                                                href="https://demo.graygrids.com/themes/classified/product.html#">Front+Back
+                                                href="{% url 'product' %}">Front+Back
                                                 Full Body Protect Screen Protector</a></h4>
                                         <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -1073,17 +1059,17 @@
                                 </div>
                                 <div class="single_ads_card ads_list d-sm-flex mt-30">
                                     <div class="ads_card_image">
-                                        <img src="{% static'./Listing _ ClassiFied_files/ads-4.png' %}" alt="ads">
+                                        <img src="{% static 'images/ads-4.png' %}" alt="ads">
                                     </div>
                                     <div class="ads_card_content media-body">
                                         <div class="meta d-flex justify-content-between">
                                             <p>Ram &amp; Laptop</p>
                                             <a class="like"
-                                                href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                href="{% url 'product' %}"><i
                                                     class="fal fa-heart"></i></a>
                                         </div>
                                         <h4 class="title"><a
-                                                href="https://demo.graygrids.com/themes/classified/product.html#">Front+Back
+                                                href="{% url 'product' %}">Front+Back
                                                 Full Body Protect Screen Protector</a></h4>
                                         <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -1096,17 +1082,17 @@
                                 </div>
                                 <div class="single_ads_card ads_list d-sm-flex mt-30">
                                     <div class="ads_card_image">
-                                        <img src="{% static'./Listing _ ClassiFied_files/ads-5.png' %}" alt="ads">
+                                        <img src="{% static 'images/ads-5.png' %}" alt="ads">
                                     </div>
                                     <div class="ads_card_content media-body">
                                         <div class="meta d-flex justify-content-between">
                                             <p>Ram &amp; Laptop</p>
                                             <a class="like"
-                                                href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                href="{% url 'product' %}"><i
                                                     class="fal fa-heart"></i></a>
                                         </div>
                                         <h4 class="title"><a
-                                                href="https://demo.graygrids.com/themes/classified/product.html#">Front+Back
+                                                href="{% url 'product' %}">Front+Back
                                                 Full Body Protect Screen Protector</a></h4>
                                         <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -1119,17 +1105,17 @@
                                 </div>
                                 <div class="single_ads_card ads_list d-sm-flex mt-30">
                                     <div class="ads_card_image">
-                                        <img src="{% static'./Listing _ ClassiFied_files/ads-6.png' %}" alt="ads">
+                                        <img src="{% static 'images/ads-6.png' %}" alt="ads">
                                     </div>
                                     <div class="ads_card_content media-body">
                                         <div class="meta d-flex justify-content-between">
                                             <p>Ram &amp; Laptop</p>
                                             <a class="like"
-                                                href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                                href="{% url 'product' %}"><i
                                                     class="fal fa-heart"></i></a>
                                         </div>
                                         <h4 class="title"><a
-                                                href="https://demo.graygrids.com/themes/classified/product.html#">Front+Back
+                                                href="{% url 'product' %}">Front+Back
                                                 Full Body Protect Screen Protector</a></h4>
                                         <p><i class="far fa-map-marker-alt"></i>New York, USA</p>
                                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -1145,15 +1131,15 @@
                     </div>
                     <div class="pagination_wrapper mt-50">
                         <ul class="pagination justify-content-center">
-                            <li><a class="Previous" href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                            <li><a class="Previous" href="{% url 'product' %}"><i
                                         class="fal fa-angle-left"></i></a></li>
                             <li><a class="number"
-                                    href="https://demo.graygrids.com/themes/classified/product.html#">1</a></li>
+                                    href="{% url 'product' %}">1</a></li>
                             <li><a class="number active"
-                                    href="https://demo.graygrids.com/themes/classified/product.html#">2</a></li>
+                                    href="{% url 'product' %}">2</a></li>
                             <li><a class="number"
-                                    href="https://demo.graygrids.com/themes/classified/product.html#">3</a></li>
-                            <li><a class="next" href="https://demo.graygrids.com/themes/classified/product.html#"><i
+                                    href="{% url 'product' %}">3</a></li>
+                            <li><a class="next" href="{% url 'product' %}"><i
                                         class="fal fa-angle-right"></i></a></li>
                         </ul>
                     </div>
@@ -1173,7 +1159,7 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="call_to_action_form mt-50">
-                        <form action="https://demo.graygrids.com/themes/classified/product.html#">
+                        <form action="{% url 'product' %}">
                             <i class="fal fa-envelope"></i>
                             <input type="text" placeholder="Enter your mail address . . .">
                             <button class="main-btn">Subscribe</button>
@@ -1193,14 +1179,14 @@
                         <div class="footer_link mt-45">
                             <h5 class="footer_title">Company</h5>
                             <ul class="link">
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Home</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">About Us</a>
+                                <li><a href="{% url 'product' %}">Home</a></li>
+                                <li><a href="{% url 'product' %}">About Us</a>
                                 </li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Our
+                                <li><a href="{% url 'product' %}">Our
                                         Factories</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Mission and
+                                <li><a href="{% url 'product' %}">Mission and
                                         Strategy</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Profitable
+                                <li><a href="{% url 'product' %}">Profitable
                                         Actions</a></li>
                             </ul>
                         </div>
@@ -1209,15 +1195,15 @@
                         <div class="footer_link mt-45">
                             <h5 class="footer_title">How to Sell Fast</h5>
                             <ul class="link">
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Selling
+                                <li><a href="{% url 'product' %}">Selling
                                         TIps</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Buy and Sell
+                                <li><a href="{% url 'product' %}">Buy and Sell
                                         Quickly</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Membership</a>
+                                <li><a href="{% url 'product' %}">Membership</a>
                                 </li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Banner
+                                <li><a href="{% url 'product' %}">Banner
                                         Advertising</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Promote Your
+                                <li><a href="{% url 'product' %}">Promote Your
                                         Ad</a></li>
                             </ul>
                         </div>
@@ -1226,15 +1212,15 @@
                         <div class="footer_link mt-45">
                             <h5 class="footer_title">Information</h5>
                             <ul class="link">
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Company &amp;
+                                <li><a href="{% url 'product' %}">Company &amp;
                                         Contact Info</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Blog &amp;
+                                <li><a href="{% url 'product' %}">Blog &amp;
                                         Articles</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Sitemap</a>
+                                <li><a href="{% url 'product' %}">Sitemap</a>
                                 </li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Terms of
+                                <li><a href="{% url 'product' %}">Terms of
                                         Service</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Privacy
+                                <li><a href="{% url 'product' %}">Privacy
                                         Policy</a></li>
                             </ul>
                         </div>
@@ -1243,14 +1229,14 @@
                         <div class="footer_link mt-45">
                             <h5 class="footer_title">Help &amp; Support</h5>
                             <ul class="link">
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Live Chat</a>
+                                <li><a href="{% url 'product' %}">Live Chat</a>
                                 </li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">FAQ</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">How to Stay
+                                <li><a href="{% url 'product' %}">FAQ</a></li>
+                                <li><a href="{% url 'product' %}">How to Stay
                                         Safe</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Terms &amp;
+                                <li><a href="{% url 'product' %}">Terms &amp;
                                         Conditions</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html#">Contact Us</a>
+                                <li><a href="{% url 'product' %}">Contact Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -1266,14 +1252,14 @@
                     </div>
                     <div class="payment mt-15">
                         <ul>
-                            <li><a href="https://demo.graygrids.com/themes/classified/product.html#"><img
-                                        src="./Listing _ ClassiFied_files/payment-method1.jpg" alt="payment"></a></li>
-                            <li><a href="https://demo.graygrids.com/themes/classified/product.html#"><img
-                                        src="./Listing _ ClassiFied_files/payment-method2.jpg" alt="payment"></a></li>
-                            <li><a href="https://demo.graygrids.com/themes/classified/product.html#"><img
-                                        src="./Listing _ ClassiFied_files/payment-method3.jpg" alt="payment"></a></li>
-                            <li><a href="https://demo.graygrids.com/themes/classified/product.html#"><img
-                                        src="./Listing _ ClassiFied_files/payment-method4.jpg" alt="payment"></a></li>
+                            <li><a href="{% url 'product' %}"><img
+                                        src="{% static 'images/payment-method1.jpg' %}" alt="payment"></a></li>
+                            <li><a href="{% url 'product' %}"><img
+                                        src="{% static 'images/payment-method2.jpg' %}" alt="payment"></a></li>
+                            <li><a href="{% url 'product' %}"><img
+                                        src="{% static 'images/payment-method3.jpg' %}" alt="payment"></a></li>
+                            <li><a href="{% url 'product' %}"><img
+                                        src="{% static 'images/payment-method4.jpg' %}" alt="payment"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -1282,7 +1268,7 @@
     </footer>
 
 
-    <a href="https://demo.graygrids.com/themes/classified/product.html#" class="back-to-top"><i
+    <a href="{% url 'product' %}" class="back-to-top"><i
             class="fa fa-angle-up"></i></a>
 
 
