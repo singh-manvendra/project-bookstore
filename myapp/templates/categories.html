@@ -1,5 +1,7 @@
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
-<!-- saved from url=(0060)https://demo.graygrids.com/themes/classified/categories.html -->
+<!-- saved from url=(0060){% url 'categories' %} -->
 <html
     class="js sizes customelements history pointerevents postmessage webgl websockets cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox picture srcset webworkers"
     lang="en">
@@ -12,24 +14,24 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="https://demo.graygrids.com/themes/classified/assets/images/favicon.png"
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}"
         type="image/png">
 
-    <link rel="stylesheet" href="./Categories _ ClassiFied_files/magnific-popup.css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
 
-    <link rel="stylesheet" href="./Categories _ ClassiFied_files/nice-select.css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
 
-    <link rel="stylesheet" href="./Categories _ ClassiFied_files/slick.css">
+    <link rel="stylesheet" href="{% static 'css/slick' %}">
 
-    <link rel="stylesheet" href="./Categories _ ClassiFied_files/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="{% static 'css/ion.rangeSlider.min.css' %}"
 
-    <link rel="stylesheet" href="./Categories _ ClassiFied_files/fontawesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
 
-    <link rel="stylesheet" href="./Categories _ ClassiFied_files/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
-    <link rel="stylesheet" href="./Categories _ ClassiFied_files/default.css">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
 
-    <link rel="stylesheet" href="./Categories _ ClassiFied_files/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body class="gray-bg">
@@ -56,8 +58,8 @@
         <div class="header_navbar">
             <div class="container">
                 <nav class="navbar navbar-expand-lg">
-                    <a class="navbar-brand" href="https://demo.graygrids.com/themes/classified/index.html">
-                        <img src="./Categories _ ClassiFied_files/logo.png" alt="logo">
+                    <a class="navbar-brand" href="{% url 'index' %}">
+                        <img src="{% static 'images/logo.png' %}" alt="logo">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -69,45 +71,45 @@
                     <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                         <ul class="navbar-nav m-auto">
                             <li>
-                                <a href="https://demo.graygrids.com/themes/classified/index.html">Home <span
+                                <a href="{% url 'index' %}">Home <span
                                         class="line"></span></a>
                             </li>
                             <li>
                                 <a class="active"
-                                    href="https://demo.graygrids.com/themes/classified/categories.html">Categories <span
+                                    href="{% url 'categories' %}">Categories <span
                                         class="line"></span></a>
                             </li>
                             <li>
-                                <a href="https://demo.graygrids.com/themes/classified/categories.html#">Pages <i
+                                <a href="{% url 'categories' %}#">Pages <i
                                         class="fa fa-angle-down"></i> <span class="line"></span><button
                                         class="sub-nav-toggler"> <span></span> </button></a>
                                 <ul class="sub-menu">
-                                    <li><a href="https://demo.graygrids.com/themes/classified/about.html">About</a></li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/product.html">Listing</a>
+                                    <li><a href="{% url 'about' %}">About</a></li>
+                                    <li><a href="{% url 'listing' %}">Listing</a>
                                     </li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/product-details.html">Product
+                                    <li><a href="{% url 'product_details' %}">listing
                                             Details</a></li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/error-404.html">404</a>
+                                    <li><a href="{% url 'error' %}">404</a>
                                     </li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/faq.html">FAQ</a></li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/pricing.html">Pricing</a>
+                                    <li><a href="{% url 'faq' %}">FAQ</a></li>
+                                    <li><a href="{% url 'pricing' %}">Pricing</a>
                                     </li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/sign-in.html">Sign In</a>
+                                    <li><a href="{% url 'signin' %}">Sign In</a>
                                     </li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/sign-up.html">Sign Up</a>
+                                    <li><a href="{% url 'signup' %}">Sign Up</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Blog <i
+                            <li><a href="{% url 'listing' %}">Blog <i
                                         class="fa fa-angle-down"></i> <span class="line"></span><button
                                         class="sub-nav-toggler"> <span></span> </button></a>
                                 <ul class="sub-menu">
-                                    <li><a href="https://demo.graygrids.com/themes/classified/blog.html">Blog</a></li>
-                                    <li><a href="https://demo.graygrids.com/themes/classified/blog-details.html">Blog
+                                    <li><a href="{% url 'blog' %}">Blog</a></li>
+                                    <li><a href="{% url 'blog_details' %}">Blog
                                             Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="https://demo.graygrids.com/themes/classified/contact.html">Contact <span
+                            <li><a href="{% url 'contact' %}">Contact <span
                                         class="line"></span></a></li>
                         </ul>
                     </div>
@@ -115,48 +117,48 @@
                         <ul>
                             <li>
                                 <div class="dropdown">
-                                    <a href="https://demo.graygrids.com/themes/classified/categories.html#"
+                                    <a href="{% url 'categories' %}#"
                                         class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">My Account</a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                         <ul>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/dashboard.html"><i
+                                            <li><a href="{% url 'dashboard' %}"><i
                                                         class="fal fa-tachometer-alt-average"></i> Dashboard</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/profile-settings.html"><i
+                                                    href="{% url 'profile_settings' %}"><i
                                                         class="fal fa-cog"></i> Profile Settings</a></li>
-                                            <li><a href="myads.html"><i
+                                            <li><a href="{% url 'myads' %}"><i
                                                         class="fal fa-layer-group"></i> My Ads</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/offermessages.html"><i
+                                                    href="{% url 'offers_msgs' %}"><i
                                                         class="fal fa-envelope"></i> Offers/Messages</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/payments.html"><i
+                                            <li><a href="{% url 'payments' %}"><i
                                                         class="fal fa-wallet"></i> Payments</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/favourite-ads.html"><i
+                                                    href="{% url 'wishlist' %}"><i
                                                         class="fal fa-heart"></i> My Favourites</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/privacy-setting.html"><i
+                                                    href="{% url 'privacy_settings' %}"><i
                                                         class="fal fa-star"></i> Privacy Settings</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html"><i
+                                            <li><a href="{% url 'listing' %}"><i
                                                         class="fal fa-sign-out"></i> Sign Out</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </li>
                             <li><a class="sign-up"
-                                    href="https://demo.graygrids.com/themes/classified/post-ads.html">Post Ads</a></li>
+                                    href="{% url 'post_ads' %}">Post Ads</a></li>
                         </ul>
                     </div>
                 </nav>
             </div>
         </div>
-        <div class="page_banner bg_cover" style="background-image: url(assets/images/page-banner.jpg)">
+        <div class="page_banner bg_cover" style="background-image: url({% static 'images/page-banner.jpg' %})">
             <div class="container">
                 <div class="page_banner_content">
                     <h3 class="title">All Categories</h3>
                     <ul class="breadcrumb">
-                        <li><a href="https://demo.graygrids.com/themes/classified/product.html">Home</a></li>
+                        <li><a href="{% url 'listing' %}">Home</a></li>
                         <li>All Categories</li>
                     </ul>
                 </div>
@@ -188,14 +190,14 @@
                     <ul class="nav" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="active" id="grid-tab" data-toggle="tab"
-                                href="https://demo.graygrids.com/themes/classified/categories.html#grid" role="tab"
+                                href="{% url 'categories' %}#grid" role="tab"
                                 aria-controls="grid" aria-selected="true">
                                 <i class="fal fa-th"></i>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a id="list-tab" data-toggle="tab"
-                                href="https://demo.graygrids.com/themes/classified/categories.html#list" role="tab"
+                                href="{% url 'categories' %}#list" role="tab"
                                 aria-controls="list" aria-selected="false">
                                 <i class="fal fa-th-list"></i>
                             </a>
@@ -215,7 +217,7 @@
                                     <h5 class="title">Computer &amp; Office</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="https://demo.graygrids.com/themes/classified/product.html"></a>
+                                <a href="{% url 'listing' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -227,7 +229,7 @@
                                     <h5 class="title">Jewelry &amp; Accessories</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="https://demo.graygrids.com/themes/classified/product.html"></a>
+                                <a href="{% url 'listing' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -239,7 +241,7 @@
                                     <h5 class="title">Home &amp; Garden</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="https://demo.graygrids.com/themes/classified/product.html"></a>
+                                <a href="{% url 'listing' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -251,7 +253,7 @@
                                     <h5 class="title">Luggage &amp; Bags</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="https://demo.graygrids.com/themes/classified/product.html"></a>
+                                <a href="{% url 'listing' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -263,7 +265,7 @@
                                     <h5 class="title">Mother &amp; Kids</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="https://demo.graygrids.com/themes/classified/product.html"></a>
+                                <a href="{% url 'listing' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -275,7 +277,7 @@
                                     <h5 class="title">Dress &amp; Clothing</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="https://demo.graygrids.com/themes/classified/product.html"></a>
+                                <a href="{% url 'listing' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -287,7 +289,7 @@
                                     <h5 class="title">Phone &amp; Accesories</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="https://demo.graygrids.com/themes/classified/product.html"></a>
+                                <a href="{% url 'listing' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -299,7 +301,7 @@
                                     <h5 class="title">Camera &amp; Accesories</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="https://demo.graygrids.com/themes/classified/product.html"></a>
+                                <a href="{% url 'listing' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -311,7 +313,7 @@
                                     <h5 class="title">Electronics</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="https://demo.graygrids.com/themes/classified/product.html"></a>
+                                <a href="{% url 'listing' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -323,7 +325,7 @@
                                     <h5 class="title">Vachile</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="https://demo.graygrids.com/themes/classified/product.html"></a>
+                                <a href="{% url 'listing' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -335,7 +337,7 @@
                                     <h5 class="title">Sports &amp; Gaming</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="https://demo.graygrids.com/themes/classified/product.html"></a>
+                                <a href="{% url 'listing' %}"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -347,7 +349,7 @@
                                     <h5 class="title">Watch &amp; Accesories</h5>
                                     <p>3 Ads</p>
                                 </div>
-                                <a href="https://demo.graygrids.com/themes/classified/product.html"></a>
+                                <a href="{% url 'listing' %}"></a>
                             </div>
                         </div>
                     </div>
@@ -357,7 +359,7 @@
                         <div class="single_list mt-30">
                             <div class="list_title_icon d-flex align-items-center">
                                 <div class="icon">
-                                    <img src="./Categories _ ClassiFied_files/categories-1.svg" alt="Icon">
+                                    <img src="{% static 'icons/categories-1.svg' %}" alt="Icon">
                                 </div>
                                 <div class="list_title media-body">
                                     <h5 class="title">Computer &amp; Office</h5>
@@ -367,52 +369,52 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Office
+                                            <li><a href="{% url 'listing' %}">Office
                                                     Electronics</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Computer
+                                            <li><a href="{% url 'listing' %}">Computer
                                                     Components</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Computer
+                                            <li><a href="{% url 'listing' %}">Computer
                                                     Peripherals</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Internal
+                                            <li><a href="{% url 'listing' %}">Internal
                                                     Storage</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">External
+                                            <li><a href="{% url 'listing' %}">External
                                                     Storage</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/product.html">Networking</a>
+                                                    href="{% url 'listing' %}">Networking</a>
                                             </li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Laptops
+                                            <li><a href="{% url 'listing' %}">Laptops
                                                     Gaming</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/product.html">Laptops</a>
+                                                    href="{% url 'listing' %}">Laptops</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Laptop
+                                            <li><a href="{% url 'listing' %}">Laptop
                                                     Parts</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Laptop
+                                            <li><a href="{% url 'listing' %}">Laptop
                                                     Accessories</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/product.html">Tablets</a>
+                                                    href="{% url 'listing' %}">Tablets</a>
                                             </li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Tablet
+                                            <li><a href="{% url 'listing' %}">Tablet
                                                     Accessories</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Tablet
+                                            <li><a href="{% url 'listing' %}">Tablet
                                                     Parts</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Mini
+                                            <li><a href="{% url 'listing' %}">Mini
                                                     PC</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Desktops
+                                            <li><a href="{% url 'listing' %}">Desktops
                                                     Demo </a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Board
+                                            <li><a href="{% url 'listing' %}">Board
                                                     &amp; Accessories</a></li>
                                         </ul>
                                     </div>
@@ -422,7 +424,7 @@
                         <div class="single_list mt-30">
                             <div class="list_title_icon d-flex align-items-center">
                                 <div class="icon">
-                                    <img src="./Categories _ ClassiFied_files/categories-2.svg" alt="Icon">
+                                    <img src="{% static 'icons/categories-2.svg' %}" alt="Icon">
                                 </div>
                                 <div class="list_title media-body">
                                     <h5 class="title">Jewelry &amp; Accessories</h5>
@@ -432,52 +434,52 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Office
+                                            <li><a href="{% url 'listing' %}">Office
                                                     Electronics</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Computer
+                                            <li><a href="{% url 'listing' %}">Computer
                                                     Components</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Computer
+                                            <li><a href="{% url 'listing' %}">Computer
                                                     Peripherals</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Internal
+                                            <li><a href="{% url 'listing' %}">Internal
                                                     Storage</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">External
+                                            <li><a href="{% url 'listing' %}">External
                                                     Storage</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/product.html">Networking</a>
+                                                    href="{% url 'listing' %}">Networking</a>
                                             </li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Laptops
+                                            <li><a href="{% url 'listing' %}">Laptops
                                                     Gaming</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/product.html">Laptops</a>
+                                                    href="{% url 'listing' %}">Laptops</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Laptop
+                                            <li><a href="{% url 'listing' %}">Laptop
                                                     Parts</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Laptop
+                                            <li><a href="{% url 'listing' %}">Laptop
                                                     Accessories</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/product.html">Tablets</a>
+                                                    href="{% url 'listing' %}">Tablets</a>
                                             </li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Tablet
+                                            <li><a href="{% url 'listing' %}">Tablet
                                                     Accessories</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Tablet
+                                            <li><a href="{% url 'listing' %}">Tablet
                                                     Parts</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Mini
+                                            <li><a href="{% url 'listing' %}">Mini
                                                     PC</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Desktops
+                                            <li><a href="{% url 'listing' %}">Desktops
                                                     Demo </a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Board
+                                            <li><a href="{% url 'listing' %}">Board
                                                     &amp; Accessories</a></li>
                                         </ul>
                                     </div>
@@ -487,7 +489,7 @@
                         <div class="single_list mt-30">
                             <div class="list_title_icon d-flex align-items-center">
                                 <div class="icon">
-                                    <img src="./Categories _ ClassiFied_files/categories-3.svg" alt="Icon">
+                                    <img src="{% static 'icons/categories-3.svg' %}" alt="Icon">
                                 </div>
                                 <div class="list_title media-body">
                                     <h5 class="title">Home &amp; Garden</h5>
@@ -497,52 +499,52 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Office
+                                            <li><a href="{% url 'listing' %}">Office
                                                     Electronics</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Computer
+                                            <li><a href="{% url 'listing' %}">Computer
                                                     Components</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Computer
+                                            <li><a href="{% url 'listing' %}">Computer
                                                     Peripherals</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Internal
+                                            <li><a href="{% url 'listing' %}">Internal
                                                     Storage</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">External
+                                            <li><a href="{% url 'listing' %}">External
                                                     Storage</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/product.html">Networking</a>
+                                                    href="{% url 'listing' %}">Networking</a>
                                             </li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Laptops
+                                            <li><a href="{% url 'listing' %}">Laptops
                                                     Gaming</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/product.html">Laptops</a>
+                                                    href="{% url 'listing' %}">Laptops</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Laptop
+                                            <li><a href="{% url 'listing' %}">Laptop
                                                     Parts</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Laptop
+                                            <li><a href="{% url 'listing' %}">Laptop
                                                     Accessories</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/product.html">Tablets</a>
+                                                    href="{% url 'listing' %}">Tablets</a>
                                             </li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Tablet
+                                            <li><a href="{% url 'listing' %}">Tablet
                                                     Accessories</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Tablet
+                                            <li><a href="{% url 'listing' %}">Tablet
                                                     Parts</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Mini
+                                            <li><a href="{% url 'listing' %}">Mini
                                                     PC</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Desktops
+                                            <li><a href="{% url 'listing' %}">Desktops
                                                     Demo </a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Board
+                                            <li><a href="{% url 'listing' %}">Board
                                                     &amp; Accessories</a></li>
                                         </ul>
                                     </div>
@@ -552,7 +554,7 @@
                         <div class="single_list mt-30">
                             <div class="list_title_icon d-flex align-items-center">
                                 <div class="icon">
-                                    <img src="./Categories _ ClassiFied_files/categories-4.svg" alt="Icon">
+                                    <img src="{% static 'icons/categories-4.svg' %}" alt="Icon">
                                 </div>
                                 <div class="list_title media-body">
                                     <h5 class="title">Luggage &amp; Bags</h5>
@@ -562,52 +564,52 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Office
+                                            <li><a href="{% url 'listing' %}">Office
                                                     Electronics</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Computer
+                                            <li><a href="{% url 'listing' %}">Computer
                                                     Components</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Computer
+                                            <li><a href="{% url 'listing' %}">Computer
                                                     Peripherals</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Internal
+                                            <li><a href="{% url 'listing' %}">Internal
                                                     Storage</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">External
+                                            <li><a href="{% url 'listing' %}">External
                                                     Storage</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/product.html">Networking</a>
+                                                    href="{% url 'listing' %}">Networking</a>
                                             </li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Laptops
+                                            <li><a href="{% url 'listing' %}">Laptops
                                                     Gaming</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/product.html">Laptops</a>
+                                                    href="{% url 'listing' %}">Laptops</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Laptop
+                                            <li><a href="{% url 'listing' %}">Laptop
                                                     Parts</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Laptop
+                                            <li><a href="{% url 'listing' %}">Laptop
                                                     Accessories</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/product.html">Tablets</a>
+                                                    href="{% url 'listing' %}">Tablets</a>
                                             </li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Tablet
+                                            <li><a href="{% url 'listing' %}">Tablet
                                                     Accessories</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Tablet
+                                            <li><a href="{% url 'listing' %}">Tablet
                                                     Parts</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Mini
+                                            <li><a href="{% url 'listing' %}">Mini
                                                     PC</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Desktops
+                                            <li><a href="{% url 'listing' %}">Desktops
                                                     Demo </a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Board
+                                            <li><a href="{% url 'listing' %}">Board
                                                     &amp; Accessories</a></li>
                                         </ul>
                                     </div>
@@ -617,7 +619,7 @@
                         <div class="single_list mt-30">
                             <div class="list_title_icon d-flex align-items-center">
                                 <div class="icon">
-                                    <img src="./Categories _ ClassiFied_files/categories-5.svg" alt="Icon">
+                                    <img src="{% static 'icons/categories-5.svg' %}" alt="Icon">
                                 </div>
                                 <div class="list_title media-body">
                                     <h5 class="title">Mother &amp; Kids</h5>
@@ -627,52 +629,52 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Office
+                                            <li><a href="{% url 'listing' %}">Office
                                                     Electronics</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Computer
+                                            <li><a href="{% url 'listing' %}">Computer
                                                     Components</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Computer
+                                            <li><a href="{% url 'listing' %}">Computer
                                                     Peripherals</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Internal
+                                            <li><a href="{% url 'listing' %}">Internal
                                                     Storage</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">External
+                                            <li><a href="{% url 'listing' %}">External
                                                     Storage</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/product.html">Networking</a>
+                                                    href="{% url 'listing' %}">Networking</a>
                                             </li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Laptops
+                                            <li><a href="{% url 'listing' %}">Laptops
                                                     Gaming</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/product.html">Laptops</a>
+                                                    href="{% url 'listing' %}">Laptops</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Laptop
+                                            <li><a href="{% url 'listing' %}">Laptop
                                                     Parts</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Laptop
+                                            <li><a href="{% url 'listing' %}">Laptop
                                                     Accessories</a></li>
                                             <li><a
-                                                    href="https://demo.graygrids.com/themes/classified/product.html">Tablets</a>
+                                                    href="{% url 'listing' %}">Tablets</a>
                                             </li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Tablet
+                                            <li><a href="{% url 'listing' %}">Tablet
                                                     Accessories</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <ul class="list">
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Tablet
+                                            <li><a href="{% url 'listing' %}">Tablet
                                                     Parts</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Mini
+                                            <li><a href="{% url 'listing' %}">Mini
                                                     PC</a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Desktops
+                                            <li><a href="{% url 'listing' %}">Desktops
                                                     Demo </a></li>
-                                            <li><a href="https://demo.graygrids.com/themes/classified/product.html">Board
+                                            <li><a href="{% url 'listing' %}">Board
                                                     &amp; Accessories</a></li>
                                         </ul>
                                     </div>
@@ -696,7 +698,7 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="call_to_action_form mt-50">
-                        <form action="https://demo.graygrids.com/themes/classified/categories.html#">
+                        <form action="{% url 'categories' %}#">
                             <i class="fal fa-envelope"></i>
                             <input type="text" placeholder="Enter your mail address . . .">
                             <button class="main-btn">Subscribe</button>
@@ -716,14 +718,14 @@
                         <div class="footer_link mt-45">
                             <h5 class="footer_title">Company</h5>
                             <ul class="link">
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Home</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">About Us</a>
+                                <li><a href="{% url 'listing' %}">Home</a></li>
+                                <li><a href="{% url 'listing' %}">About Us</a>
                                 </li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Our
+                                <li><a href="{% url 'listing' %}">Our
                                         Factories</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Mission and
+                                <li><a href="{% url 'listing' %}">Mission and
                                         Strategy</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Profitable
+                                <li><a href="{% url 'listing' %}">Profitable
                                         Actions</a></li>
                             </ul>
                         </div>
@@ -732,15 +734,15 @@
                         <div class="footer_link mt-45">
                             <h5 class="footer_title">How to Sell Fast</h5>
                             <ul class="link">
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Selling TIps</a>
+                                <li><a href="{% url 'listing' %}">Selling TIps</a>
                                 </li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Buy and Sell
+                                <li><a href="{% url 'listing' %}">Buy and Sell
                                         Quickly</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Membership</a>
+                                <li><a href="{% url 'listing' %}">Membership</a>
                                 </li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Banner
+                                <li><a href="{% url 'listing' %}">Banner
                                         Advertising</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Promote Your
+                                <li><a href="{% url 'listing' %}">Promote Your
                                         Ad</a></li>
                             </ul>
                         </div>
@@ -749,14 +751,14 @@
                         <div class="footer_link mt-45">
                             <h5 class="footer_title">Information</h5>
                             <ul class="link">
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Company &amp;
+                                <li><a href="{% url 'listing' %}">Company &amp;
                                         Contact Info</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Blog &amp;
+                                <li><a href="{% url 'listing' %}">Blog &amp;
                                         Articles</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Sitemap</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Terms of
+                                <li><a href="{% url 'listing' %}">Sitemap</a></li>
+                                <li><a href="{% url 'listing' %}">Terms of
                                         Service</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Privacy
+                                <li><a href="{% url 'listing' %}">Privacy
                                         Policy</a></li>
                             </ul>
                         </div>
@@ -765,14 +767,14 @@
                         <div class="footer_link mt-45">
                             <h5 class="footer_title">Help &amp; Support</h5>
                             <ul class="link">
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Live Chat</a>
+                                <li><a href="{% url 'listing' %}">Live Chat</a>
                                 </li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">FAQ</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">How to Stay
+                                <li><a href="{% url 'listing' %}">FAQ</a></li>
+                                <li><a href="{% url 'listing' %}">How to Stay
                                         Safe</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Terms &amp;
+                                <li><a href="{% url 'listing' %}">Terms &amp;
                                         Conditions</a></li>
-                                <li><a href="https://demo.graygrids.com/themes/classified/product.html">Contact Us</a>
+                                <li><a href="{% url 'listing' %}">Contact Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -788,17 +790,17 @@
                     </div>
                     <div class="payment mt-15">
                         <ul>
-                            <li><a href="https://demo.graygrids.com/themes/classified/product.html"><img
-                                        src="./Categories _ ClassiFied_files/payment-method1.jpg" alt="payment"></a>
+                            <li><a href="{% url 'listing' %}"><img
+                                        src="{% static 'images/payment-method1.jpg' %}" alt="payment"></a>
                             </li>
-                            <li><a href="https://demo.graygrids.com/themes/classified/product.html"><img
-                                        src="./Categories _ ClassiFied_files/payment-method2.jpg" alt="payment"></a>
+                            <li><a href="{% url 'listing' %}"><img
+                                        src="{% static 'images//payment-method2.jpg' %}" alt="payment"></a>
                             </li>
-                            <li><a href="https://demo.graygrids.com/themes/classified/product.html"><img
-                                        src="./Categories _ ClassiFied_files/payment-method3.jpg" alt="payment"></a>
+                            <li><a href="{% url 'listing' %}"><img
+                                        src="{% static 'images//payment-method3.jpg' %}" alt="payment"></a>
                             </li>
-                            <li><a href="https://demo.graygrids.com/themes/classified/product.html"><img
-                                        src="./Categories _ ClassiFied_files/payment-method4.jpg" alt="payment"></a>
+                            <li><a href="{% url 'listing' %}"><img
+                                        src="{% static 'images/payment-method4.jpg' %}" alt="payment"></a>
                             </li>
                         </ul>
                     </div>
@@ -808,35 +810,36 @@
     </footer>
 
 
-    <a href="https://demo.graygrids.com/themes/classified/categories.html#" class="back-to-top"><i
+    <a href="{% url 'categories' %}#" class="back-to-top"><i
             class="fa fa-angle-up"></i></a>
 
 
 
 
 
-    <script src="./Categories _ ClassiFied_files/jquery-1.12.4.min.js.download"></script>
-    <script src="./Categories _ ClassiFied_files/modernizr-3.7.1.min.js.download"></script>
+    <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/modernizr-3.7.1.min.js' %}"></script>
 
-    <script src="./Categories _ ClassiFied_files/popper.min.js.download"></script>
-    <script src="./Categories _ ClassiFied_files/bootstrap.min.js.download"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
-    <script src="./Categories _ ClassiFied_files/slick.min.js.download"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
 
-    <script src="./Categories _ ClassiFied_files/jquery.magnific-popup.min.js.download"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
 
-    <script src="./Categories _ ClassiFied_files/jquery.nice-select.min.js.download"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
 
-    <script src="./Categories _ ClassiFied_files/waypoints.min.js.download"></script>
-    <script src="./Categories _ ClassiFied_files/jquery.counterup.min.js.download"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
 
-    <script src="./Categories _ ClassiFied_files/ion.rangeSlider.min.js.download"></script>
+    <script src="{% static 'js/ion.rangeSlider.min.js' %}"></script>
 
-    <script src="./Categories _ ClassiFied_files/ajax-contact.js.download"></script>
+    <script src="{% static 'js/ajax-contact.js' %}"></script>
 
-    <script src="./Categories _ ClassiFied_files/main.js.download"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 
 
 </body>
 
 </html>
+{% endblock %}
