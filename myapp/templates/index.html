@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}' %}"
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}"
         type="image/png">
 
     <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
@@ -24,13 +24,14 @@
 
     <link rel="stylesheet" href="{% static 'css/ion.rangeSlider.min.css' %}">
 
-    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}"> {% endcomment %}
 
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
     <link rel="stylesheet" href="{% static 'css/default.css' %}">
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/1f475ef94a.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="gray-bg">
@@ -64,7 +65,7 @@
                             </li>
                             <li>
                                 <a href="{% url 'index' %}">Pages 
-                                    <i class="fa fa-angle-down"></i> <span class="line"></span><button
+                                    <i class="fa-solid fa-angle-down"></i> <span class="line"></span><button
                                         class="sub-nav-toggler"> <span></span> </button></a>
                                 <ul class="sub-menu">
                                     <li><a href="{% url 'about' %}">About</a></li>
@@ -105,18 +106,18 @@
                                         aria-haspopup="true" aria-expanded="false">My Account</a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                         <ul>
-                                            <li><a href="{% url 'dashboard' %}"><i
-                                                        class="fal fa-tachometer-alt-average"></i> Dashboard</a></li>
+                                            <li><a href="{% url 'dashboard' %}">
+                                                <i class="fa-solid fa-gauge"></i> Dashboard</a></li>
                                             <li><a
-                                                    href="{% url 'profile_settings' %}"><i
-                                                        class="fal fa-cog"></i> Profile Settings</a></li>
-                                            <li><a href="{% url 'myads' %}"><i
-                                                        class="fal fa-layer-group"></i> My Ads</a></li>
+                                                    href="{% url 'profile_settings' %}">
+                                                    <i class="fa-solid fa-gear"></i> Profile Settings</a></li>
+                                            <li><a href="{% url 'myads' %}">
+                                                <i class="fa-solid fa-layer-group"></i> My Ads</a></li>
                                             <li><a
-                                                    href="{% url 'offers_msgs' %}"><i
-                                                        class="fal fa-envelope"></i> Offers/Messages</a></li>
-                                            <li><a href="{% url 'payments' %}"><i
-                                                        class="fal fa-wallet"></i> Payments</a></li>
+                                                    href="{% url 'offers_msgs' %}">
+                                                    <i class="fa-solid fa-envelope"></i> Offers/Messages</a></li>
+                                            <li><a href="{% url 'payments' %}">
+                                                <i class="fa-solid fa-wallet"></i> Payments</a></li>
                                             <li><a
                                                     href="{% url 'wishlist' %}"><i
                                                         class="fal fa-heart"></i> My Favourites</a></li>
@@ -136,7 +137,7 @@
                 </nav>
             </div>
         </div>
-        <div class="header_content bg_cover" style="background-image: {% static 'images/hero.jpg' %}">
+        <div class="header_content bg_cover" style="background-image: url({% static 'images/hero.jpg' %})">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10">
@@ -175,7 +176,7 @@
                                             <li data-value="4" class="option">Potato</li>
                                         </ul>
                                     </div>
-                                    <i class="far fa-map-marker-alt"></i>
+                                    <i class="fa-solid fa-location-dot"></i>
                                 </div>
                                 <div class="search_select mt-15">
                                     <select style="display: none;">
@@ -192,13 +193,13 @@
                                             <li data-value="4" class="option">Potato</li>
                                         </ul>
                                     </div>
-                                    <i class="far fa-tags"></i>
+                                    <i class="fa-solid fa-tags"></i>
                                 </div>
                             </div>
                             <div class="search_column d-flex flex-wrap">
                                 <div class="search_form mt-15">
                                     <input type="text" placeholder="Type Your Keyword">
-                                    <i class="far fa-i-cursor"></i>
+                                    <i class="fa-solid fa-i-cursor"></i>
                                 </div>
                                 <div class="search_btn mt-15">
                                     <button class="main-btn">Search</button>
@@ -239,7 +240,7 @@
                 <div class="category-column">
                     <div class="single_category text-center mt-30">
                         <div class="icon">
-                            <i class="fal fa-camera"></i>
+                            <i class="fa-solid fa-camera"></i>
                         </div>
                         <div class="content">
                             <h6 class="title">DSLR Camera</h6>
@@ -250,7 +251,7 @@
                 <div class="category-column">
                     <div class="single_category text-center mt-30">
                         <div class="icon">
-                            <i class="fal fa-mobile"></i>
+                            <i class="fa-solid fa-mobile"></i>
                         </div>
                         <div class="content">
                             <h6 class="title">Cell Phone</h6>
@@ -868,7 +869,7 @@
     </section>
 
 
-    <section class="counter_area bg_cover" style="background-image: {% static 'images/counter-bg.jpg' %}">
+    <section class="counter_area bg_cover" style="background-image: url({% static 'images/counter-bg.jpg' %})">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-lg-9">
@@ -949,7 +950,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="single_ads_card mt-30">
                             <div class="ads_card_image">
-                                <img src="{% static 'icons/ads-2.png' %}" alt="ads">
+                                <img src="{% static 'images/ads-2.png' %}" alt="ads">
                                 <p class="sticker sticker_color-1">New</p>
                             </div>
                             <div class="ads_card_content">
@@ -972,7 +973,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="single_ads_card mt-30">
                             <div class="ads_card_image">
-                                <img src="{% static 'icons/ads-3.png' %}" alt="ads">
+                                <img src="{% static 'images/ads-3.png' %}" alt="ads">
                             </div>
                             <div class="ads_card_content">
                                 <div class="meta d-flex justify-content-between">
@@ -994,7 +995,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="single_ads_card mt-30">
                             <div class="ads_card_image">
-                                <img src="{% static 'icons/ads-4.png' %}" alt="ads">
+                                <img src="{% static 'images/ads-4.png' %}" alt="ads">
                             </div>
                             <div class="ads_card_content">
                                 <div class="meta d-flex justify-content-between">
@@ -1016,7 +1017,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="single_ads_card mt-30">
                             <div class="ads_card_image">
-                                <img src="{% static 'icons/ads-5.png' %}" alt="ads">
+                                <img src="{% static 'images/ads-5.png' %}" alt="ads">
                             </div>
                             <div class="ads_card_content">
                                 <div class="meta d-flex justify-content-between">
@@ -1038,7 +1039,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="single_ads_card mt-30">
                             <div class="ads_card_image">
-                                <img src="{% static 'icons/ads-6.png' %}" alt="ads">
+                                <img src="{% static 'images/ads-6.png' %}" alt="ads">
                             </div>
                             <div class="ads_card_content">
                                 <div class="meta d-flex justify-content-between">
@@ -1060,7 +1061,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="single_ads_card mt-30">
                             <div class="ads_card_image">
-                                <img src="{% static 'icons/ads-7.png' %}" alt="ads">
+                                <img src="{% static 'images/ads-7.png' %}" alt="ads">
                                 <p class="sticker sticker_color-2">Popular</p>
                             </div>
                             <div class="ads_card_content">
@@ -1083,7 +1084,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="single_ads_card mt-30">
                             <div class="ads_card_image">
-                                <img src="{% static 'icons/ads-8.png' %}" alt="ads">
+                                <img src="{% static 'images/ads-8.png' %}" alt="ads">
                             </div>
                             <div class="ads_card_content">
                                 <div class="meta d-flex justify-content-between">
