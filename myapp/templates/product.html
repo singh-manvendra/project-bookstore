@@ -1,6 +1,6 @@
-{% extends 'header.html' %} 
-{% load static %} 
-{% block content %}
+{% extends 'header.html' %}
+ {% load static %} 
+ {% block content %}
 <!DOCTYPE html>
 <!-- saved from url=(0057){% url 'product' %} -->
 
@@ -116,12 +116,18 @@
                           >
                         </li>
 
+                        {% if request.session.email %}
+
                         <li>
                           <a href="{% url 'index' %}"
                             ><i class="fa-solid fa-right-from-bracket"></i> Sign
                             Out</a
                           >
                         </li>
+                        {% else %}
+                        <li><a href="{% url 'signin' %}">Sign In</a></li>
+                        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                        {% endif %}
                       </ul>
                     </div>
                   </div>
@@ -748,7 +754,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="sidebar_discount mt-30">
                 <div class="sidebar_title">
                   <h5 class="title">Top Deals</h5>
