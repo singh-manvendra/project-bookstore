@@ -60,6 +60,14 @@ def signup(request):
     else:
         return render(request,'signup.html')
 
+def signout(request):
+    try:
+        del request.session['fname']
+        del request.session['email']
+        return render(request,'signin.html')
+    except:
+        return render(request,'signin.html')
+
 def contact(request):
     return render(request,'contact.html')
 

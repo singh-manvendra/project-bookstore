@@ -82,9 +82,13 @@
                                                     <i class="fa-solid fa-envelope"></i> Offers/Messages</a></li>
                                             <li><a href="{% url 'payments' %}">
                                                 <i class="fa-solid fa-wallet"></i> Payments</a></li>
+                                                {% if request.session.email %}
                                             
-                                            
-                                            <li><a href="{% url 'index' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
+                                                <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
+                                                {% else %}
+                                                <li><a href="{% url 'signin' %}">Sign In</a></li>
+                                                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                                                {% endif %}
                                         </ul>
                                     </div>
                                 </div>
@@ -126,11 +130,11 @@
                         {% csrf_token %}
                             <div class="sign_form_wrapper">
                                 <div class="single_form">
-                                    <input type="email" placeholder="Username">
+                                    <input type="email" name="email" placeholder="Username">
                                     <i class="fa-solid fa-user"></i>
                                 </div>
                                 <div class="single_form">
-                                    <input type="password" placeholder="Password">
+                                    <input type="password" name="password" placeholder="Password">
                                     <i class="fa-solid fa-key"></i>
                                 </div>
                                 <div class="single_form d-sm-flex justify-content-between">
