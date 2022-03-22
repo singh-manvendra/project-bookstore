@@ -71,22 +71,21 @@
                                         aria-haspopup="true" aria-expanded="false">My Account</a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                         <ul>
-                                            <li><a href="{% url 'dashboard' %}"><i
-                                                        class="fal fa-tachometer-alt-average"></i> Dashboard</a></li>
+                                            <li><a href="{% url 'dashboard' %}">
+                                                <i class="fa-solid fa-gauge"></i> Dashboard</a></li>
                                             <li><a
-                                                    href="{% url 'profile_settings' %}"><i
-                                                        class="fal fa-cog"></i> Profile Settings</a></li>
-                                            <li><a href="{% url 'myads' %}"><i
-                                                        class="fal fa-layer-group"></i> My Ads</a></li>
+                                                    href="{% url 'profile_settings' %}">
+                                                    <i class="fa-solid fa-gear"></i> Profile Settings</a></li>
+                                            <li><a href="{% url 'myads' %}">
+                                                <i class="fa-solid fa-layer-group"></i> My Ads</a></li>
                                             <li><a
-                                                    href="{% url 'offers_msgs' %}"><i
-                                                        class="fal fa-envelope"></i> Offers/Messages</a></li>
-                                            <li><a href="{% url 'payments' %}"><i
-                                                        class="fal fa-wallet"></i> Payments</a></li>
+                                                    href="{% url 'offers_msgs' %}">
+                                                    <i class="fa-solid fa-envelope"></i> Offers/Messages</a></li>
+                                            <li><a href="{% url 'payments' %}">
+                                                <i class="fa-solid fa-wallet"></i> Payments</a></li>
                                             
                                             
-                                            <li><a href="{% url 'signup' %}"><i
-                                                        class="fal fa-sign-out"></i> Sign Out</a></li>
+                                            <li><a href="{% url 'index' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -123,28 +122,33 @@
                         <form action="{% url 'signup' %}">
                             <div class="sign_form_wrapper">
                                 <div class="single_form">
-                                    <input type="text" placeholder="Username">
-                                    <i class="fal fa-user"></i>
+                                    <input type="text" placeholder="First Name">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="single_form">
+                                    <input type="text" placeholder="Last Name">
+                                    <i class="fa-solid fa-user"></i>
                                 </div>
                                 <div class="single_form">
                                     <input type="email" placeholder="Email">
-                                    <i class="fal fa-envelope"></i>
+                                    <i class="fa-solid fa-envelope"></i>
                                 </div>
                                 <div class="single_form">
                                     <input type="password" placeholder="Password">
-                                    <i class="fal fa-key"></i>
+                                    <i class="fa-solid fa-key"></i>
                                 </div>
                                 <div class="single_form">
                                     <input type="password" placeholder="Confirm Password">
-                                    <i class="fal fa-key"></i>
+                                    <i class="fa-solid fa-key"></i>
                                 </div>
-                                <div class="single_form">
-                                    <div class="sign_checkbox">
+                                {% comment %} <div class="single_form">
+                                    <div class="sign_checkbox" >
+                                        
                                         <input type="checkbox" id="checkbox">
                                         <label for="checkbox"></label>
                                         <span>By registering, you accept our Terms &amp; Conditions</span>
                                     </div>
-                                </div>
+                                </div> {% endcomment %}
                                 <div class="single_form">
                                     <button class="main-btn">Sign Up</button>
                                 </div>
