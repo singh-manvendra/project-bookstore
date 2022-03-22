@@ -146,7 +146,7 @@ def profile_settings(request):
                     msg="Password And Confirm Password Does Not Matched..."
                     return render(request, 'profile_settings.html',{'msg':msg})
             else:
-                msg="Old Password Doesn't Match!"
+                msg="Old Password Doesn't Match! "
                 return render(request, 'profile_settings.html',{'msg':msg})
         except:
             return render(request, 'profile_settings.html',{'msg':msg})
