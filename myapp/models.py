@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from distutils.command.upload import upload
 from email import message
 import email
@@ -15,6 +16,7 @@ class User(models.Model):
     mobile=models.CharField(max_length=100)
     password=models.CharField(max_length=100)
     cpassword=models.CharField(max_length=100)
+    user_img = models.ImageField(upload_to='images/',default="",null=True,blank=True)
 
     def __str__(self):
         return self.fname+" - "+self.email
@@ -24,7 +26,7 @@ class Book(models.Model):
     book_cat = models.IntegerField()
     book_price = models.IntegerField()
     book_description = models.TextField()
-    book_image = models.ImageField(upload_to='images/')
+    book_image = models.ImageField(upload_to='images/',default="",null=True,blank=True)
     
     def __str__(self):
         return self.book_name

@@ -107,10 +107,10 @@
             <div class="profile_user">
               <div class="user_author d-flex align-items-center">
                 <div class="author">
-                  <img src="{% static 'images/author-1.jpg' %}" alt="">
+                  <img src="{{request.session.user_img}}" alt="">
                 </div>
                 <div class="user_content media-body">
-                  <h6 class="author_name">User</h6>
+                  <h6 class="author_name">{{request.session.fname}}</h6>
                   <p>Administrator</p>
                 </div>
               </div>
@@ -144,7 +144,8 @@
             <div class="post_title">
               <h5 class="title">Profile Settings</h5>
             </div>
-            <form action="{% url 'profile_settings' %}" method="POST" >
+            <form action="{% url 'profile_settings' %}" method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
               <div class="row">
                 
                   <div class="single_form" style="margin-left: 60px">
@@ -185,7 +186,7 @@
                       <span>Or</span>
                       <span class="main-btn">Select Files</span>
                       <span>Maximum upload file size: 500 KB</span>
-                      <input type="file" id="upload" name="book_image">
+                      <input type="file" id="upload" name="user_img">
                   </label>
               </div>
                 

@@ -39,6 +39,7 @@ def signin(request):
             )
             request.session['fname'] = user.fname
             request.session['email'] = user.email
+            request.session['user_img'] = user.user_img.url
             return render(request, 'index.html')
         except:
             msg = "Email& Password is in Incorrect"
@@ -78,6 +79,7 @@ def signout(request):
     try:
         del request.session['fname']
         del request.session['email']
+        del request.session['user_img']
         return render(request, 'signin.html')
     except:
         return render(request, 'index.html')
@@ -128,21 +130,26 @@ def product_details(request):
 
 def profile_settings(request):
     if request.method=="POST":
-        user=User.objects.get(email=request.session['email'])
-        if request.password==request.POST['old_password']:
-            if request.POST['new_password']==request.POST['cnew_password']:
-                user.password=request.POST['new_password']
-                user.cpassword=request.POST['cpassword']
-                user.fname=request.POST['fname']
-                user.lname=request.POST['lname']
-                user.email=request.POST['email']
-                user.mobile=request.POST['mobile']
-                user.save()
-
-
-
-
-
+        try:
+            user=User.objects.get(email=request.session['email'])
+            if user.password==request.POST['old_password']:
+                if request.POST['password']==request.POST['cpassword']:
+                    user.password=request.POST['password']
+                    user.cpassword=request.POST['cpassword']
+                    user.fname=request.POST['fname']
+                    user.lname=request.POST['lname']
+                    user.email=request.POST['email']
+                    user.mobile=request.POST['mobile']
+                    user.user_img=request.FILES['user_img']
+                    user.save()
+                else:
+                    msg="Password And Confirm Password Does Not Matched..."
+                    return render(request, 'profile_settings.html',{'msg':msg})
+            else:
+                msg="Old Password Doesn't Match!"
+                return render(request, 'profile_settings.html',{'msg':msg})
+        except:
+            return render(request, 'profile_settings.html',{'msg':msg})
     else:
         return render(request, 'profile_settings.html')
 
