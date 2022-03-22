@@ -10,11 +10,7 @@ import random
 
 
 def index(request):
-    if 'email' in request.session:
-        del request.session['email']
-        return render(request, 'index.html')
-    else:
-        return render(request, 'index.html')
+    return render(request, 'index.html')
 # Create your views here.
 
 
@@ -44,7 +40,6 @@ def signin(request):
         except:
             msg = "Email& Password is in Incorrect"
             return render(request, 'signin.html', {'msg': msg})
-
     else:
         return render(request, 'signin.html')
 
@@ -92,10 +87,7 @@ def contact(request):
 def dashboard(request):
     if request.method == 'POST':
         try:
-            user = User.objects.all()
-            request.session['fname'] = user.fname
-            request.session['email'] = user.email
-            return render(request, 'dashboard.html', {'fname': user.fname})
+            return render(request, 'dashboard.html')
         except:
 
             return render(request, 'dashboard.html')
@@ -142,14 +134,17 @@ def profile_settings(request):
                     user.mobile=request.POST['mobile']
                     user.user_img=request.FILES['user_img']
                     user.save()
+                    
                 else:
                     msg="Password And Confirm Password Does Not Matched..."
                     return render(request, 'profile_settings.html',{'msg':msg})
             else:
-                msg="Old Password Doesn't Match! "
+                msg="Old Password Doesn't Match!"
                 return render(request, 'profile_settings.html',{'msg':msg})
         except:
             return render(request, 'profile_settings.html',{'msg':msg})
+        
+        return render(request, 'profile_settings.html')
     else:
         return render(request, 'profile_settings.html')
 
