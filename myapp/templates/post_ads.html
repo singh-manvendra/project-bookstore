@@ -150,9 +150,9 @@
                         <div class="post_title">
                             <h5 class="title">Ad Detail</h5>
                         </div>
-                        <form action="{% url 'post_ads' %}">
+                        <form action="{% url 'post_ads' %}" method="Post" enctype="multipart/form-data">
                             <div class="single_form">
-                                <input type="text" placeholder="Project Title">
+                                <input type="text" placeholder="Book Name">
                             </div>
                             <div class="single_form">
                                 <select style="display: none;">
@@ -179,7 +179,7 @@
                                 </div>
                             </div>
                             <div class="single_form">
-                                <input type="text" placeholder="Ad Your Price">
+                                <input type="text" placeholder="Book Price" name="book_price">
                             </div>
                             <div class="single_form">
                                 <input type="checkbox" name="checkbox" id="checkbox">
@@ -187,7 +187,7 @@
                                 <span>Price On Call</span>
                             </div>
                             <div class="single_form">
-                                <textarea placeholder="Ad Post"></textarea>
+                                <textarea placeholder="Book Detail"></textarea>
                             </div>
                             <div class="post_upload_file">
                                 <label for="upload">

@@ -119,23 +119,36 @@
                     <div class="sign_in_form">
                         <div class="sign_title">
                             <h5 class="title">Sign Up Now</h5>
+                            <br>
+                            {% if msg %}
+                              {{msg}}
+                            {% endif %}
                         </div>
-                        <form action="{% url 'signup' %}">
+                        <form action="{% url 'signup' %}" method="POST">
+                            {% csrf_token %}
                             <div class="sign_form_wrapper">
                                 <div class="single_form">
-                                    <input type="text" placeholder="Username">
+                                    <input type="text" placeholder="First name" name="fname">
                                     <i class="fal fa-user"></i>
                                 </div>
                                 <div class="single_form">
-                                    <input type="email" placeholder="Email">
+                                    <input type="text" placeholder="Last name" name="lname">
+                                    <i class="fal fa-user"></i>
+                                </div>
+                                <div class="single_form">
+                                    <input type="email" placeholder="Email" name="email">
                                     <i class="fal fa-envelope"></i>
                                 </div>
                                 <div class="single_form">
-                                    <input type="password" placeholder="Password">
+                                    <input type="text" placeholder="Mobile" name="mobile">
+                                    <i class="fal fa-envelope"></i>
+                                </div>
+                                <div class="single_form">
+                                    <input type="password" placeholder="Password" name="password">
                                     <i class="fal fa-key"></i>
                                 </div>
                                 <div class="single_form">
-                                    <input type="password" placeholder="Confirm Password">
+                                    <input type="password" placeholder="Confirm Password" name="cpassword">
                                     <i class="fal fa-key"></i>
                                 </div>
                                 <div class="single_form">
@@ -146,7 +159,7 @@
                                     </div>
                                 </div>
                                 <div class="single_form">
-                                    <button class="main-btn">Sign Up</button>
+                                    <button class="main-btn" type="submit">Sign Up</button>
                                 </div>
                             </div>
                         </form>
