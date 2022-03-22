@@ -120,7 +120,7 @@
                                     <img src="{% static 'images/author-1.jpg' %}" alt="">
                                 </div>
                                 <div class="user_content media-body">
-                                    <h6 class="author_name">User</h6>
+                                    <h6 class="author_name">{{request.session.fname}}</h6>
                                     <p>Administrator</p>
                                 </div>
                             </div>
@@ -155,10 +155,10 @@
                         </div>
                         <form action="{% url 'post_ads' %}" method="Post" enctype="multipart/form-data">
                             <div class="single_form">
-                                <input type="text" placeholder="Book Name">
+                                <input type="text" placeholder="Book Name" name="book_name">
                             </div>
                             <div class="single_form">
-                                <select style="display: none;">
+                                <select style="display: none;" name="book_cat">
                                     <option value="none">Select Categories</option>
                                     <option value="none">Mobiles</option>
                                     <option value="none">Electronics</option>
@@ -184,13 +184,9 @@
                             <div class="single_form">
                                 <input type="text" placeholder="Book Price" name="book_price">
                             </div>
+                            
                             <div class="single_form">
-                                <input type="checkbox" name="checkbox" id="checkbox">
-                                <label for="checkbox"></label>
-                                <span>Price On Call</span>
-                            </div>
-                            <div class="single_form">
-                                <textarea placeholder="Book Detail"></textarea>
+                                <textarea placeholder="Book Detail" name="book_description"></textarea>
                             </div>
                             <div class="post_upload_file">
                                 <label for="upload">
@@ -198,7 +194,7 @@
                                     <span>Or</span>
                                     <span class="main-btn">Select Files</span>
                                     <span>Maximum upload file size: 500 KB</span>
-                                    <input type="file" id="upload">
+                                    <input type="file" id="upload" name="book_image">
                                 </label>
                             </div>
                         </form>

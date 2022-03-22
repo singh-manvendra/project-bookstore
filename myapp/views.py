@@ -114,7 +114,12 @@ def payments(request):
 
 
 def post_ads(request):
-    return render(request, 'post_ads.html')
+    if request.method == 'POST':
+        
+        return render(request, 'post_ads.html')
+    else:
+        
+        return render(request, 'post_ads.html')
 
 
 def product_details(request):
