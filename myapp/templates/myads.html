@@ -1,8 +1,8 @@
-{% extends 'header' %} 
+{% extends 'header.html' %} 
 {% load static %} 
 {% block content %}
 <!DOCTYPE html>
-<!-- saved from url=(0056){% url 'my-ads' %} -->
+
 <html
   class="js sizes customelements history pointerevents postmessage webgl websockets cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox picture srcset webworkers"
   lang="en"
@@ -110,13 +110,9 @@
                             ><i class="fal fa-wallet"></i> Payments</a
                           >
                         </li>
+                        
                         <li>
-                          <a href="{% url 'favourite_ads' %}"
-                            ><i class="fal fa-heart"></i> My Favourites</a
-                          >
-                        </li>
-                        <li>
-                          <a href="{% url 'privacy_setting' %}"
+                          <a href="{% url 'privacy_settings' %}"
                             ><i class="fal fa-star"></i> Privacy Settings</a
                           >
                         </li>
@@ -139,7 +135,7 @@
       </div>
       <div
         class="page_banner bg_cover"
-        style="background-image: url({%static'images/page-banner.jpg'%})"
+        style="background-image: url({% static 'images/page-banner.jpg' %})"
       >
         <div class="container">
           <div class="page_banner_content">
@@ -187,7 +183,7 @@
                       >
                     </li>
                     <li>
-                      <a href="{% url 'offermessages' %}"
+                      <a href="{% url 'offers_msgs' %}"
                         ><i class="fal fa-envelope"></i> Offers/Messages</a
                       >
                     </li>
@@ -196,13 +192,9 @@
                         ><i class="fal fa-wallet"></i> Payments</a
                       >
                     </li>
+                    
                     <li>
-                      <a href="{% url 'favourite_ads' %}"
-                        ><i class="fal fa-heart"></i> My Favourites</a
-                      >
-                    </li>
-                    <li>
-                      <a href="{% url 'privacy_setting' %}"
+                      <a href="{% url 'privacy_settings' %}"
                         ><i class="fal fa-star"></i> Privacy Settings</a
                       >
                     </li>
