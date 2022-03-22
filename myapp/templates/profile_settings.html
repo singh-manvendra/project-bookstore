@@ -29,32 +29,23 @@
           </button>
           <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto">
-              <li>
-                <a href="{% url 'index' %}">Home <span class="line"></span></a>
-              </li>
-              <li>
-                <a href="{% url 'categories' %}">Categories <span
-                    class="line"></span></a>
-              </li>
-              <li>
-                <a href="{% url 'profile_settings'%} ">Pages <i
-                    class="fa fa-angle-down"></i> <span class="line"></span><button class="sub-nav-toggler">
-                    <span></span> </button></a>
-                <ul class="sub-menu">
-                  <li><a href="{% url 'about' %}">About</a></li>
-                  <li><a href="{% url 'product' %}">Products</a></li>
-                  <li><a href="{% url 'product_details' %}">Product Details</a>
-                  </li>
-                  
-                  <li><a href="{% url 'signin' %}">Sign In</a></li>
-                  <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                </ul>
-              </li>
-              
-              <li><a href="{% url 'contact' %}">Contact <span
-                    class="line"></span></a></li>
+                <li>
+                    <a class="active" href="{% url 'index' %}">Home
+                        <span class="line"></span></a>
+                </li>
+                <li>
+                    <a href="{% url 'categories' %}">Categories <span
+                            class="line"></span></a>
+                </li>
+                
+                <li><a href="{% url 'about' %}">About<span
+                    class="line"></span></a></a></li>
+                <li><a href="{% url 'product' %}">Products<span
+                    class="line"></span></a></a>
+                </li>
+                
             </ul>
-          </div>
+        </div>
           <div class="navbar_btn">
             <ul>
                 <li>
@@ -68,7 +59,7 @@
                             {% if request.session.email %}
                             <li><a href="{% url 'dashboard' %}">
                                 <i class="fa-solid fa-gauge"></i> Dashboard</a></li>
-                            <li><a
+                            <li><a class="active"
                                     href="{% url 'profile_settings' %}">
                                     <i class="fa-solid fa-gear"></i> Profile Settings</a></li>
                             <li><a href="{% url 'myads' %}">

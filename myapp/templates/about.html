@@ -37,23 +37,13 @@
                                 <a href="{% url 'categories' %}">Categories <span
                                         class="line"></span></a>
                             </li>
-                            <li>
-                                <a href="{% url 'about' %}">Pages 
-                                    <i class="fa-solid fa-angle-down"></i> <span class="line"></span><button
-                                        class="sub-nav-toggler"> <span></span> </button></a>
-                                <ul class="sub-menu">
-                                    <li><a href="{% url 'about' %}">About</a></li>
-                                    <li><a href="{% url 'product' %}">Products</a>
-                                    </li>
-                                    <li><a href="{% url 'product_details' %}">Product
-                                            Details</a></li>
-                                    
-                                    
-                                </ul>
+                            
+                            <li><a class="active" href="{% url 'about' %}">About<span
+                                class="line"></span></a></a></li>
+                            <li><a href="{% url 'product' %}">Products<span
+                                class="line"></span></a></a>
                             </li>
                             
-                            <li><a href="{% url 'contact' %}">Contact <span
-                                        class="line"></span></a></li>
                         </ul>
                     </div>
                     <div class="navbar_btn">

@@ -31,36 +31,20 @@
                     <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                         <ul class="navbar-nav m-auto">
                             <li>
-                                <a href="{% url 'index' %}">Home <span
-                                        class="line"></span></a>
+                                <a class="active" href="{% url 'index' %}">Home
+                                    <span class="line"></span></a>
                             </li>
                             <li>
                                 <a href="{% url 'categories' %}">Categories <span
                                         class="line"></span></a>
                             </li>
-                            <li>
-                                <a class="active"
-                                    href="{% url 'signin' %}">Pages <i
-                                        class="fa fa-angle-down"></i> <span class="line"></span><button
-                                        class="sub-nav-toggler"> <span></span> </button></a>
-                                <ul class="sub-menu">
-                                    <li><a href="{% url 'about' %}">About</a></li>
-                                    <li><a href="{% url 'product' %}">Products</a>
-                                    </li>
-                                    <li><a href="{% url 'product_details' %}">Product
-                                            Details</a></li>
-                                    {% if request.session.email %}
-                                            
-                                        <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
-                                    {% else %}
-                                        <li><a href="{% url 'signin' %}">Sign In</a></li>
-                                        <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                                    {% endif %}
-                                </ul>
+                            
+                            <li><a href="{% url 'about' %}">About<span
+                                class="line"></span></a></a></li>
+                            <li><a href="{% url 'product' %}">Products<span
+                                class="line"></span></a></a>
                             </li>
                             
-                            <li><a href="{% url 'contact' %}">Contact <span
-                                        class="line"></span></a></li>
                         </ul>
                     </div>
                     <div class="navbar_btn">
