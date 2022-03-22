@@ -25,7 +25,7 @@ def signin(request):
                 email=request.POST['email'],
                 password=request.POST['password'],
             )
-            request.session['fnamw']=user.fname
+            request.session['fname']=user.fname
             request.session['email']=user.email
             return render(request,'index.html')
         except:
@@ -66,7 +66,7 @@ def signout(request):
         del request.session['email']
         return render(request,'signin.html')
     except:
-        return render(request,'signin.html')
+        return render(request,'index.html')
 
 def contact(request):
     return render(request,'contact.html')
