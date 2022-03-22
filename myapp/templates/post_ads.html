@@ -108,7 +108,7 @@
                         <div class="profile_user">
                             <div class="user_author d-flex align-items-center">
                                 <div class="author">
-                                    <img src="{{request.session.user_img}}" alt="">
+                                    <img src="{{}}" alt="">
                                 </div>
                                 <div class="user_content media-body">
                                     <h6 class="author_name">{{request.session.fname}}</h6>
@@ -210,29 +210,12 @@
                             <div class="single_form">
                                 <input type="email" name="address" placeholder="Enter Address">
                             </div>
-                            
-                            <div class="single_form">
-                                <select style="display: none;">
-                                    <option value="none">Select Country</option>
-                                    <option value="none">Country 1</option>
-                                    <option value="none">Country 2</option>
-                                    <option value="none">Country 3</option>
-                                    <option value="none">Country 4</option>
-                                    <option value="none">Country 5</option>
-                                    <option value="none">Country 6</option>
-                                </select>
                                 <div class="nice-select" tabindex="0"><span class="current">Select Country</span>
                                     <ul class="list">
                                         <li data-value="1" class="option selected">India</li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="single_form">
-                                <select style="display: none;">
-                                    <option value="none">Select State</option>
-                                    <option value="none">Select State</option>
-                                    <option value="none">Select State</option>
-                                </select>
                                 <div class="nice-select" tabindex="0"><span class="current">Select State</span>
                                     <ul class="list">
                                         <li data-value="none" class="option selected">Select State</li>
