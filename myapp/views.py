@@ -43,10 +43,6 @@ def payments(request):
 def post_ads(request):
     return render(request,'post_ads.html')
 
-
-def privacy_settings(request):
-    return render(request,'privacy_settings.html')
-
 def product_details(request):
     return render(request,'product_details.html')
 

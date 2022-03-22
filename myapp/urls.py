@@ -14,7 +14,6 @@ urlpatterns = [
     path('payments/',views.payments,name='payments'),
     path('post_ads/',views.post_ads,name='post_ads'),
     path('categories/',views.categories,name='categories'),
-    path('privacy_settings/',views.privacy_settings,name='privacy_settings'),
     path('product_details/',views.product_details,name='product_details'),
     path('product/',views.product,name='product'),
     path('profile_settings/',views.profile_settings,name='profile_settings'),
