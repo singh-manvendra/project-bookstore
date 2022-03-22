@@ -54,24 +54,26 @@
                     aria-haspopup="true" aria-expanded="false">My Account</a>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <ul>
+                                            
+                      {% if request.session.email %}
                       <li><a href="{% url 'dashboard' %}">
                           <i class="fa-solid fa-gauge"></i> Dashboard</a></li>
-                      <li><a href="{% url 'profile_settings' %}">
-                          <i class="fa-solid fa-gear"></i> Profile Settings</a></li>
+                      <li><a
+                              href="{% url 'profile_settings' %}">
+                              <i class="fa-solid fa-gear"></i> Profile Settings</a></li>
                       <li><a href="{% url 'myads' %}">
                           <i class="fa-solid fa-layer-group"></i> My Ads</a></li>
-                      <li><a href="{% url 'offers_msgs' %}">
-                          <i class="fa-solid fa-envelope"></i> Offers/Messages</a></li>
+                      <li><a
+                              href="{% url 'offers_msgs' %}">
+                              <i class="fa-solid fa-envelope"></i> Offers/Messages</a></li>
                       <li><a href="{% url 'payments' %}">
                           <i class="fa-solid fa-wallet"></i> Payments</a></li>
-                          {% if request.session.email %}
-                                            
-                          <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
-                          {% else %}
-                          <li><a href="{% url 'signin' %}">Sign In</a></li>
-                          <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                          {% endif %}
-                    </ul>
+                      <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
+                      {% else %}
+                      <li><a href="{% url 'signin' %}">Sign In</a></li>
+                      <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                      {% endif %}
+              </ul>
                   </div>
                 </div>
               </li>

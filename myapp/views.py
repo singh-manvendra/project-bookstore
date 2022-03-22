@@ -72,7 +72,17 @@ def contact(request):
     return render(request,'contact.html')
 
 def dashboard(request):
-    return render(request,'dashboard.html')
+    if request.method == 'POST':
+        try:
+            user = User.objects.all()
+            request.session['fname']=user.fname
+            request.session['email']=user.email
+            return render(request,'dashboard.html',{'fname':user.fname})
+        except:
+            
+            return render(request,'dashboard.html')
+    else:
+        return render(request,'dashboard.html')
 
 
 def myads(request):

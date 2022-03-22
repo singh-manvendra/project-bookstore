@@ -66,6 +66,8 @@
                                         aria-haspopup="true" aria-expanded="false">My Account</a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                         <ul>
+                                            
+                                            {% if request.session.email %}
                                             <li><a href="{% url 'dashboard' %}">
                                                 <i class="fa-solid fa-gauge"></i> Dashboard</a></li>
                                             <li><a
@@ -78,14 +80,12 @@
                                                     <i class="fa-solid fa-envelope"></i> Offers/Messages</a></li>
                                             <li><a href="{% url 'payments' %}">
                                                 <i class="fa-solid fa-wallet"></i> Payments</a></li>
-                                                {% if request.session.email %}
-                                            
-                                                <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
-                                                {% else %}
-                                                <li><a href="{% url 'signin' %}">Sign In</a></li>
-                                                <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                                                {% endif %}
-                                        </ul>
+                                            <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
+                                            {% else %}
+                                            <li><a href="{% url 'signin' %}">Sign In</a></li>
+                                            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                                            {% endif %}
+                                    </ul>
                                     </div>
                                 </div>
                             </li>
@@ -115,13 +115,14 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="sidebar_profile mt-50">
+                        
                         <div class="profile_user">
                             <div class="user_author d-flex align-items-center">
                                 <div class="author">
                                     <img src="{% static 'images/author-1.jpg' %}" alt="">
                                 </div>
                                 <div class="user_content media-body">
-                                    <h6 class="author_name">User</h6>
+                                    <h6 class="author_name">{{request.session.fname}}</h6>
                                     <p>Administrator</p>
                                 </div>
                             </div>
@@ -148,6 +149,7 @@
                                 </ul>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
                 <div class="col-lg-9">
