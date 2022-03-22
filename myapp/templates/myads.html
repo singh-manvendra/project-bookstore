@@ -1,790 +1,640 @@
-{% extends 'header.html' %} 
-{% load static %} 
+{% extends 'header.html' %}
+{% load static %}
 {% block content %}
 <!DOCTYPE html>
 
 <html
   class="js sizes customelements history pointerevents postmessage webgl websockets cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox picture srcset webworkers"
-  lang="en"
->
-  <body class="gray-bg">
-    <header class="header_area">
-      <div class="header_navbar">
-        <div class="container">
-          <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="{% url 'index' %}">
-              <img src="{% static 'images/logo.png' %}" alt="logo" />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="toggler-icon"></span>
-              <span class="toggler-icon"></span>
-              <span class="toggler-icon"></span>
-            </button>
-            <div
-              class="collapse navbar-collapse sub-menu-bar"
-              id="navbarSupportedContent"
-            >
-              <ul class="navbar-nav m-auto">
-                <li>
-                  <a href="{% url 'index' %}"
-                    >Home <span class="line"></span
-                  ></a>
-                </li>
-                <li>
-                  <a href="{% url 'categories' %}"
-                    >Categories <span class="line"></span
-                  ></a>
-                </li>
-                <li>
-                  <a href="{% url 'myads' %}"
-                    >Pages <i class="fa fa-angle-down"></i>
-                    <span class="line"></span
-                    ><button class="sub-nav-toggler"><span></span></button
-                  ></a>
-                  <ul class="sub-menu">
-                    <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="{% url 'product' %}">Products</a></li>
-                    <li>
-                      <a href="{% url 'product_details' %}">Product Details</a>
-                    </li>
-                    <li><a href="{% url 'signin' %}">Sign In</a></li>
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="{% url 'contact' %}"
-                    >Contact <span class="line"></span
-                  ></a>
-                </li>
-              </ul>
-            </div>
-            <div class="navbar_btn">
-              <ul>
-                <li>
-                  <div class="dropdown">
-                    <a
-                      href="{% url 'myads' %}"
-                      class="dropdown-toggle"
-                      id="dropdownMenuLink"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      >My Account</a
-                    >
-                    <div
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuLink"
-                    >
-                      <ul>
-                        <li>
-                          <a href="{% url 'dashboard' %}"
-                            ><i class="fal fa-tachometer-alt-average"></i>
-                            Dashboard</a
-                          >
-                        </li>
-                        <li>
-                          <a href="{% url 'profile_settings' %}"
-                            ><i class="fal fa-cog"></i> Profile Settings</a
-                          >
-                        </li>
-                        <li>
-                          <a class="active" href="{% url 'myads' %}"
-                            ><i class="fal fa-layer-group"></i> My Ads</a
-                          >
-                        </li>
-                        <li>
-                          <a href="{% url 'offers_msgs' %}"
-                            ><i class="fal fa-envelope"></i> Offers/Messages</a
-                          >
-                        </li>
-                        <li>
-                          <a href="{% url 'payments' %}"
-                            ><i class="fal fa-wallet"></i> Payments</a
-                          >
-                        </li>
-                        
-                        
-                        <li>
-                          <a href="{% url 'myads' %}"
-                            ><i class="fal fa-sign-out"></i> Sign Out</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
+  lang="en">
+
+<body class="gray-bg">
+  <header class="header_area">
+    <div class="header_navbar">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'images/logo.png' %}" alt="logo" />
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto">
+              <li>
+                <a href="{% url 'index' %}">Home <span class="line"></span></a>
+              </li>
+              <li>
+                <a href="{% url 'categories' %}">Categories <span class="line"></span></a>
+              </li>
+              <li>
+                <a href="{% url 'myads' %}">Pages <i class="fa fa-angle-down"></i>
+                  <span class="line"></span><button class="sub-nav-toggler"><span></span></button></a>
+                <ul class="sub-menu">
+                  <li><a href="{% url 'about' %}">About</a></li>
+                  <li><a href="{% url 'product' %}">Products</a></li>
+                  <li>
+                    <a href="{% url 'product_details' %}">Product Details</a>
+                  </li>
+                  <li><a href="{% url 'signin' %}">Sign In</a></li>
+                  <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="{% url 'contact' %}">Contact <span class="line"></span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar_btn">
+            <ul>
+              <li>
+                <div class="dropdown">
+                  <a href="{% url 'myads' %}" class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">My Account</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <ul>
+                      <li><a href="{% url 'dashboard' %}">
+                          <i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                      <li><a href="{% url 'profile_settings' %}">
+                          <i class="fa-solid fa-gear"></i> Profile Settings</a></li>
+                      <li><a href="{% url 'myads' %}">
+                          <i class="fa-solid fa-layer-group"></i> My Ads</a></li>
+                      <li><a href="{% url 'offers_msgs' %}">
+                          <i class="fa-solid fa-envelope"></i> Offers/Messages</a></li>
+                      <li><a href="{% url 'payments' %}">
+                          <i class="fa-solid fa-wallet"></i> Payments</a></li>
+
+
+                      <li><a href="{% url 'index' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
+                    </ul>
                   </div>
-                </li>
-                <li>
-                  <a class="sign-up" href="{% url 'post_ads' %}">Post Ads</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+                </div>
+              </li>
+              <li>
+                <a class="sign-up" href="{% url 'post_ads' %}">Post Ads</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="page_banner bg_cover" style="background-image: url({%static 'images/page-banner.jpg' %})">
+      <div class="container">
+        <div class="page_banner_content">
+          <h3 class="title">My Ads</h3>
+          <ul class="breadcrumb">
+            <li><a href="{% url 'myads' %}">Home</a></li>
+            <li>My Ads</li>
+          </ul>
         </div>
       </div>
-      <div
-        class="page_banner bg_cover"
-        style="background-image: url({% static 'images/page-banner.jpg' %})"
-      >
-        <div class="container">
-          <div class="page_banner_content">
-            <h3 class="title">My Ads</h3>
-            <ul class="breadcrumb">
-              <li><a href="{% url 'myads' %}">Home</a></li>
-              <li>My Ads</li>
+    </div>
+  </header>
+
+  <section class="my_ads_page pt-70 pb-120">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="sidebar_profile mt-50">
+            <div class="profile_user">
+              <div class="user_author d-flex align-items-center">
+                <div class="author">
+                  <img src="{% static 'images/author-1.jpg' %}" alt="" />
+                </div>
+                <div class="user_content media-body">
+                  <h6 class="author_name">User</h6>
+                  <p>Administrator</p>
+                </div>
+              </div>
+              <div class="user_list">
+                <ul>
+                  <li>
+                    <a href="{% url 'dashboard' %}"><i class="fal fa-tachometer-alt-average"></i>
+                      Dashboard</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'profile_settings' %}"><i class="fal fa-cog"></i> Profile Settings</a>
+                  </li>
+                  <li>
+                    <a class="active" href="{% url 'myads' %}"><i class="fal fa-layer-group"></i> My Ads</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'offers_msgs' %}"><i class="fal fa-envelope"></i> Offers/Messages</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'payments' %}"><i class="fal fa-wallet"></i> Payments</a>
+                  </li>
+
+                  <li>
+                    <a href="{% url 'myads' %}"><i class="fal fa-sign-out"></i> Sign Out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="my_ads mt-50">
+            <div class="post_title">
+              <h5 class="title">My Ads</h5>
+            </div>
+            <div class="my_ads_menu">
+              <ul class="ads_menu">
+                <li>
+                  <a class="active" href="{% url 'myads' %}">All Ads (42)</a>
+                </li>
+                <li><a href="{% url 'myads' %}">Published (88)</a></li>
+                <li><a href="{% url 'myads' %}">Featured (12)</a></li>
+                <li><a href="{% url 'myads' %}">Sold (02)</a></li>
+                <li><a href="{% url 'myads' %}">Active (42)</a></li>
+                <li><a href="{% url 'myads' %}">Expired (01)</a></li>
+              </ul>
+            </div>
+            <div class="ads_table table-responsive mt-30">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="checkbox">
+                      <div class="table_checkbox">
+                        <input type="checkbox" id="checkbox1" />
+                        <label for="checkbox1"></label>
+                      </div>
+                    </th>
+                    <th class="photo">Photo</th>
+                    <th class="title">Title</th>
+                    <th class="category">Category</th>
+                    <th class="status">Ad Status</th>
+                    <th class="price">Price</th>
+                    <th class="action">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="checkbox">
+                      <div class="table_checkbox">
+                        <input type="checkbox" id="checkbox2" />
+                        <label for="checkbox2"></label>
+                      </div>
+                    </td>
+                    <td class="photo">
+                      <div class="table_photo">
+                        <img src="{% static 'images/ads-1.png' %}" alt="ads" />
+                      </div>
+                    </td>
+                    <td class="title">
+                      <div class="table_title">
+                        <h6 class="titles">8 GB DDR4 Ram, 4th Gen</h6>
+                        <p>Ad ID: ng3D5hAMHPajQrM</p>
+                      </div>
+                    </td>
+                    <td class="category">
+                      <div class="table_category">
+                        <p>Ram &amp; Laptop</p>
+                      </div>
+                    </td>
+                    <td class="status">
+                      <div class="table_status">
+                        <span class="active">active</span>
+                      </div>
+                    </td>
+                    <td class="price">
+                      <div class="table_price">
+                        <span>$299.00</span>
+                      </div>
+                    </td>
+                    <td class="action">
+                      <div class="table_action">
+                        <ul>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-eye"></i></a>
+                          </li>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-pencil"></i></a>
+                          </li>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-trash-alt"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="checkbox">
+                      <div class="table_checkbox">
+                        <input type="checkbox" id="checkbox3" />
+                        <label for="checkbox3"></label>
+                      </div>
+                    </td>
+                    <td class="photo">
+                      <div class="table_photo">
+                        <img src="{% static 'images/ads-2.png' %}" alt="ads" />
+                      </div>
+                    </td>
+                    <td class="title">
+                      <div class="table_title">
+                        <h6 class="titles">8 GB DDR4 Ram, 4th Gen</h6>
+                        <p>Ad ID: ng3D5hAMHPajQrM</p>
+                      </div>
+                    </td>
+                    <td class="category">
+                      <div class="table_category">
+                        <p>Ram &amp; Laptop</p>
+                      </div>
+                    </td>
+                    <td class="status">
+                      <div class="table_status">
+                        <span class="active">active</span>
+                      </div>
+                    </td>
+                    <td class="price">
+                      <div class="table_price">
+                        <span>$299.00</span>
+                      </div>
+                    </td>
+                    <td class="action">
+                      <div class="table_action">
+                        <ul>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-eye"></i></a>
+                          </li>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-pencil"></i></a>
+                          </li>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-trash-alt"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="checkbox">
+                      <div class="table_checkbox">
+                        <input type="checkbox" id="checkbox4" />
+                        <label for="checkbox4"></label>
+                      </div>
+                    </td>
+                    <td class="photo">
+                      <div class="table_photo">
+                        <img src="{% static 'images/ads-3.png' %}" alt="ads" />
+                      </div>
+                    </td>
+                    <td class="title">
+                      <div class="table_title">
+                        <h6 class="titles">8 GB DDR4 Ram, 4th Gen</h6>
+                        <p>Ad ID: ng3D5hAMHPajQrM</p>
+                      </div>
+                    </td>
+                    <td class="category">
+                      <div class="table_category">
+                        <p>Ram &amp; Laptop</p>
+                      </div>
+                    </td>
+                    <td class="status">
+                      <div class="table_status">
+                        <span class="sold">Sold</span>
+                      </div>
+                    </td>
+                    <td class="price">
+                      <div class="table_price">
+                        <span>$299.00</span>
+                      </div>
+                    </td>
+                    <td class="action">
+                      <div class="table_action">
+                        <ul>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-eye"></i></a>
+                          </li>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-pencil"></i></a>
+                          </li>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-trash-alt"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="checkbox">
+                      <div class="table_checkbox">
+                        <input type="checkbox" id="checkbox5" />
+                        <label for="checkbox5"></label>
+                      </div>
+                    </td>
+                    <td class="photo">
+                      <div class="table_photo">
+                        <img src="{% static 'images/ads-4.png' %}" alt="ads" />
+                      </div>
+                    </td>
+                    <td class="title">
+                      <div class="table_title">
+                        <h6 class="titles">8 GB DDR4 Ram, 4th Gen</h6>
+                        <p>Ad ID: ng3D5hAMHPajQrM</p>
+                      </div>
+                    </td>
+                    <td class="category">
+                      <div class="table_category">
+                        <p>Ram &amp; Laptop</p>
+                      </div>
+                    </td>
+                    <td class="status">
+                      <div class="table_status">
+                        <span class="expired">Expired</span>
+                      </div>
+                    </td>
+                    <td class="price">
+                      <div class="table_price">
+                        <span>$299.00</span>
+                      </div>
+                    </td>
+                    <td class="action">
+                      <div class="table_action">
+                        <ul>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-eye"></i></a>
+                          </li>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-pencil"></i></a>
+                          </li>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-trash-alt"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="checkbox">
+                      <div class="table_checkbox">
+                        <input type="checkbox" id="checkbox6" />
+                        <label for="checkbox6"></label>
+                      </div>
+                    </td>
+                    <td class="photo">
+                      <div class="table_photo">
+                        <img src="{% static 'images/ads-5.png' %}" alt="ads" />
+                      </div>
+                    </td>
+                    <td class="title">
+                      <div class="table_title">
+                        <h6 class="titles">8 GB DDR4 Ram, 4th Gen</h6>
+                        <p>Ad ID: ng3D5hAMHPajQrM</p>
+                      </div>
+                    </td>
+                    <td class="category">
+                      <div class="table_category">
+                        <p>Ram &amp; Laptop</p>
+                      </div>
+                    </td>
+                    <td class="status">
+                      <div class="table_status">
+                        <span class="inactive">Inactive</span>
+                      </div>
+                    </td>
+                    <td class="price">
+                      <div class="table_price">
+                        <span>$299.00</span>
+                      </div>
+                    </td>
+                    <td class="action">
+                      <div class="table_action">
+                        <ul>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-eye"></i></a>
+                          </li>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-pencil"></i></a>
+                          </li>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-trash-alt"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="checkbox">
+                      <div class="table_checkbox">
+                        <input type="checkbox" id="checkbox7" />
+                        <label for="checkbox7"></label>
+                      </div>
+                    </td>
+                    <td class="photo">
+                      <div class="table_photo">
+                        <img src="{% static 'images/ads-6.png' %}" alt="ads" />
+                      </div>
+                    </td>
+                    <td class="title">
+                      <div class="table_title">
+                        <h6 class="titles">8 GB DDR4 Ram, 4th Gen</h6>
+                        <p>Ad ID: ng3D5hAMHPajQrM</p>
+                      </div>
+                    </td>
+                    <td class="category">
+                      <div class="table_category">
+                        <p>Ram &amp; Laptop</p>
+                      </div>
+                    </td>
+                    <td class="status">
+                      <div class="table_status">
+                        <span class="expired">Expired</span>
+                      </div>
+                    </td>
+                    <td class="price">
+                      <div class="table_price">
+                        <span>$299.00</span>
+                      </div>
+                    </td>
+                    <td class="action">
+                      <div class="table_action">
+                        <ul>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-eye"></i></a>
+                          </li>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-pencil"></i></a>
+                          </li>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-trash-alt"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="checkbox">
+                      <div class="table_checkbox">
+                        <input type="checkbox" id="checkbox7" />
+                        <label for="checkbox7"></label>
+                      </div>
+                    </td>
+                    <td class="photo">
+                      <div class="table_photo">
+                        <img src="{% static 'images/ads-7.png' %}" alt="ads" />
+                      </div>
+                    </td>
+                    <td class="title">
+                      <div class="table_title">
+                        <h6 class="titles">8 GB DDR4 Ram, 4th Gen</h6>
+                        <p>Ad ID: ng3D5hAMHPajQrM</p>
+                      </div>
+                    </td>
+                    <td class="category">
+                      <div class="table_category">
+                        <p>Ram &amp; Laptop</p>
+                      </div>
+                    </td>
+                    <td class="status">
+                      <div class="table_status">
+                        <span class="deleted">Deleted</span>
+                      </div>
+                    </td>
+                    <td class="price">
+                      <div class="table_price">
+                        <span>$299.00</span>
+                      </div>
+                    </td>
+                    <td class="action">
+                      <div class="table_action">
+                        <ul>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-eye"></i></a>
+                          </li>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-pencil"></i></a>
+                          </li>
+                          <li>
+                            <a href="{% url 'myads' %}"><i class="fal fa-trash-alt"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="call_to_action_area pt-20 pb-70">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5">
+          <div class="call_to_action_content mt-45">
+            <h4 class="title">Subscribe For Update</h4>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="call_to_action_form mt-50">
+            <form action="{% url 'myads' %}">
+              <i class="fal fa-envelope"></i>
+              <input type="text" placeholder="Enter your mail address . . ." />
+              <button class="main-btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer_area">
+    <div class="footer_widget pt-70 pb-120">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer_link mt-45">
+              <h5 class="footer_title">Company</h5>
+              <ul class="link">
+                <li><a href="{% url 'myads' %}">Home</a></li>
+                <li><a href="{% url 'myads' %}">About Us</a></li>
+                <li><a href="{% url 'myads' %}">Our Factories</a></li>
+                <li><a href="{% url 'myads' %}">Mission and Strategy</a></li>
+                <li><a href="{% url 'myads' %}">Profitable Actions</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer_link mt-45">
+              <h5 class="footer_title">How to Sell Fast</h5>
+              <ul class="link">
+                <li><a href="{% url 'myads' %}">Selling TIps</a></li>
+                <li><a href="{% url 'myads' %}">Buy and Sell Quickly</a></li>
+                <li><a href="{% url 'myads' %}">Membership</a></li>
+                <li><a href="{% url 'myads' %}">Banner Advertising</a></li>
+                <li><a href="{% url 'myads' %}">Promote Your Ad</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer_link mt-45">
+              <h5 class="footer_title">Information</h5>
+              <ul class="link">
+                <li>
+                  <a href="{% url 'myads' %}">Company &amp; Contact Info</a>
+                </li>
+                <li><a href="{% url 'myads' %}">Blog &amp; Articles</a></li>
+                <li><a href="{% url 'myads' %}">Sitemap</a></li>
+                <li><a href="{% url 'myads' %}">Terms of Service</a></li>
+                <li><a href="{% url 'myads' %}">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer_link mt-45">
+              <h5 class="footer_title">Help &amp; Support</h5>
+              <ul class="link">
+                <li><a href="{% url 'myads' %}">Live Chat</a></li>
+                <li><a href="{% url 'myads' %}">FAQ</a></li>
+                <li><a href="{% url 'myads' %}">How to Stay Safe</a></li>
+                <li>
+                  <a href="{% url 'myads' %}">Terms &amp; Conditions</a>
+                </li>
+                <li><a href="{% url 'myads' %}">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_copyright pt-15 pb-30">
+      <div class="container">
+        <div class="footer_copyright_wrapper text-center d-sm-flex justify-content-between align-items-center">
+          <div class="copyright mt-15">
+            <p>
+              Designed and Developed by
+              <a href="https://graygrids.com/" rel="nofollow">GrayGrids</a>
+            </p>
+          </div>
+          <div class="payment mt-15">
+            <ul>
+              <li>
+                <a href="{% url 'myads' %}"><img src="{% static 'images/payment-method1.jpg' %}" alt="payment" /></a>
+              </li>
+              <li>
+                <a href="{% url 'myads' %}"><img src="{% static 'images/payment-method2.jpg' %}" alt="payment" /></a>
+              </li>
+              <li>
+                <a href="{% url 'myads' %}"><img src="{% static 'images/payment-method3.jpg' %}" alt="payment" /></a>
+              </li>
+              <li>
+                <a href="{% url 'myads' %}"><img src="{% static 'images/payment-method4.jpg' %}" alt="payment" /></a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
-    </header>
+    </div>
+  </footer>
 
-    <section class="my_ads_page pt-70 pb-120">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3">
-            <div class="sidebar_profile mt-50">
-              <div class="profile_user">
-                <div class="user_author d-flex align-items-center">
-                  <div class="author">
-                    <img src="{% static 'images/author-1.jpg' %}" alt="" />
-                  </div>
-                  <div class="user_content media-body">
-                    <h6 class="author_name">User</h6>
-                    <p>Administrator</p>
-                  </div>
-                </div>
-                <div class="user_list">
-                  <ul>
-                    <li>
-                      <a href="{% url 'dashboard' %}"
-                        ><i class="fal fa-tachometer-alt-average"></i>
-                        Dashboard</a
-                      >
-                    </li>
-                    <li>
-                      <a href="{% url 'profile_settings' %}"
-                        ><i class="fal fa-cog"></i> Profile Settings</a
-                      >
-                    </li>
-                    <li>
-                      <a class="active" href="{% url 'myads' %}"
-                        ><i class="fal fa-layer-group"></i> My Ads</a
-                      >
-                    </li>
-                    <li>
-                      <a href="{% url 'offers_msgs' %}"
-                        ><i class="fal fa-envelope"></i> Offers/Messages</a
-                      >
-                    </li>
-                    <li>
-                      <a href="{% url 'payments' %}"
-                        ><i class="fal fa-wallet"></i> Payments</a
-                      >
-                    </li>
-                    
-                    
-                    <li>
-                      <a href="{% url 'myads' %}"
-                        ><i class="fal fa-sign-out"></i> Sign Out</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-9">
-            <div class="my_ads mt-50">
-              <div class="post_title">
-                <h5 class="title">My Ads</h5>
-              </div>
-              <div class="my_ads_menu">
-                <ul class="ads_menu">
-                  <li>
-                    <a class="active" href="{% url 'myads' %}">All Ads (42)</a>
-                  </li>
-                  <li><a href="{% url 'myads' %}">Published (88)</a></li>
-                  <li><a href="{% url 'myads' %}">Featured (12)</a></li>
-                  <li><a href="{% url 'myads' %}">Sold (02)</a></li>
-                  <li><a href="{% url 'myads' %}">Active (42)</a></li>
-                  <li><a href="{% url 'myads' %}">Expired (01)</a></li>
-                </ul>
-              </div>
-              <div class="ads_table table-responsive mt-30">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th class="checkbox">
-                        <div class="table_checkbox">
-                          <input type="checkbox" id="checkbox1" />
-                          <label for="checkbox1"></label>
-                        </div>
-                      </th>
-                      <th class="photo">Photo</th>
-                      <th class="title">Title</th>
-                      <th class="category">Category</th>
-                      <th class="status">Ad Status</th>
-                      <th class="price">Price</th>
-                      <th class="action">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="checkbox">
-                        <div class="table_checkbox">
-                          <input type="checkbox" id="checkbox2" />
-                          <label for="checkbox2"></label>
-                        </div>
-                      </td>
-                      <td class="photo">
-                        <div class="table_photo">
-                          <img
-                            src="{% static 'images/ads-1.png' %}"
-                            alt="ads"
-                          />
-                        </div>
-                      </td>
-                      <td class="title">
-                        <div class="table_title">
-                          <h6 class="titles">8 GB DDR4 Ram, 4th Gen</h6>
-                          <p>Ad ID: ng3D5hAMHPajQrM</p>
-                        </div>
-                      </td>
-                      <td class="category">
-                        <div class="table_category">
-                          <p>Ram &amp; Laptop</p>
-                        </div>
-                      </td>
-                      <td class="status">
-                        <div class="table_status">
-                          <span class="active">active</span>
-                        </div>
-                      </td>
-                      <td class="price">
-                        <div class="table_price">
-                          <span>$299.00</span>
-                        </div>
-                      </td>
-                      <td class="action">
-                        <div class="table_action">
-                          <ul>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-eye"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-pencil"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-trash-alt"></i
-                              ></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox">
-                        <div class="table_checkbox">
-                          <input type="checkbox" id="checkbox3" />
-                          <label for="checkbox3"></label>
-                        </div>
-                      </td>
-                      <td class="photo">
-                        <div class="table_photo">
-                          <img
-                            src="{% static 'images/ads-2.png' %}"
-                            alt="ads"
-                          />
-                        </div>
-                      </td>
-                      <td class="title">
-                        <div class="table_title">
-                          <h6 class="titles">8 GB DDR4 Ram, 4th Gen</h6>
-                          <p>Ad ID: ng3D5hAMHPajQrM</p>
-                        </div>
-                      </td>
-                      <td class="category">
-                        <div class="table_category">
-                          <p>Ram &amp; Laptop</p>
-                        </div>
-                      </td>
-                      <td class="status">
-                        <div class="table_status">
-                          <span class="active">active</span>
-                        </div>
-                      </td>
-                      <td class="price">
-                        <div class="table_price">
-                          <span>$299.00</span>
-                        </div>
-                      </td>
-                      <td class="action">
-                        <div class="table_action">
-                          <ul>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-eye"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-pencil"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-trash-alt"></i
-                              ></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox">
-                        <div class="table_checkbox">
-                          <input type="checkbox" id="checkbox4" />
-                          <label for="checkbox4"></label>
-                        </div>
-                      </td>
-                      <td class="photo">
-                        <div class="table_photo">
-                          <img
-                            src="{% static 'images/ads-3.png' %}"
-                            alt="ads"
-                          />
-                        </div>
-                      </td>
-                      <td class="title">
-                        <div class="table_title">
-                          <h6 class="titles">8 GB DDR4 Ram, 4th Gen</h6>
-                          <p>Ad ID: ng3D5hAMHPajQrM</p>
-                        </div>
-                      </td>
-                      <td class="category">
-                        <div class="table_category">
-                          <p>Ram &amp; Laptop</p>
-                        </div>
-                      </td>
-                      <td class="status">
-                        <div class="table_status">
-                          <span class="sold">Sold</span>
-                        </div>
-                      </td>
-                      <td class="price">
-                        <div class="table_price">
-                          <span>$299.00</span>
-                        </div>
-                      </td>
-                      <td class="action">
-                        <div class="table_action">
-                          <ul>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-eye"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-pencil"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-trash-alt"></i
-                              ></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox">
-                        <div class="table_checkbox">
-                          <input type="checkbox" id="checkbox5" />
-                          <label for="checkbox5"></label>
-                        </div>
-                      </td>
-                      <td class="photo">
-                        <div class="table_photo">
-                          <img
-                            src="{% static 'images/ads-4.png' %}"
-                            alt="ads"
-                          />
-                        </div>
-                      </td>
-                      <td class="title">
-                        <div class="table_title">
-                          <h6 class="titles">8 GB DDR4 Ram, 4th Gen</h6>
-                          <p>Ad ID: ng3D5hAMHPajQrM</p>
-                        </div>
-                      </td>
-                      <td class="category">
-                        <div class="table_category">
-                          <p>Ram &amp; Laptop</p>
-                        </div>
-                      </td>
-                      <td class="status">
-                        <div class="table_status">
-                          <span class="expired">Expired</span>
-                        </div>
-                      </td>
-                      <td class="price">
-                        <div class="table_price">
-                          <span>$299.00</span>
-                        </div>
-                      </td>
-                      <td class="action">
-                        <div class="table_action">
-                          <ul>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-eye"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-pencil"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-trash-alt"></i
-                              ></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox">
-                        <div class="table_checkbox">
-                          <input type="checkbox" id="checkbox6" />
-                          <label for="checkbox6"></label>
-                        </div>
-                      </td>
-                      <td class="photo">
-                        <div class="table_photo">
-                          <img
-                            src="{% static 'images/ads-5.png' %}"
-                            alt="ads"
-                          />
-                        </div>
-                      </td>
-                      <td class="title">
-                        <div class="table_title">
-                          <h6 class="titles">8 GB DDR4 Ram, 4th Gen</h6>
-                          <p>Ad ID: ng3D5hAMHPajQrM</p>
-                        </div>
-                      </td>
-                      <td class="category">
-                        <div class="table_category">
-                          <p>Ram &amp; Laptop</p>
-                        </div>
-                      </td>
-                      <td class="status">
-                        <div class="table_status">
-                          <span class="inactive">Inactive</span>
-                        </div>
-                      </td>
-                      <td class="price">
-                        <div class="table_price">
-                          <span>$299.00</span>
-                        </div>
-                      </td>
-                      <td class="action">
-                        <div class="table_action">
-                          <ul>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-eye"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-pencil"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-trash-alt"></i
-                              ></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox">
-                        <div class="table_checkbox">
-                          <input type="checkbox" id="checkbox7" />
-                          <label for="checkbox7"></label>
-                        </div>
-                      </td>
-                      <td class="photo">
-                        <div class="table_photo">
-                          <img
-                            src="{% static 'images/ads-6.png' %}"
-                            alt="ads"
-                          />
-                        </div>
-                      </td>
-                      <td class="title">
-                        <div class="table_title">
-                          <h6 class="titles">8 GB DDR4 Ram, 4th Gen</h6>
-                          <p>Ad ID: ng3D5hAMHPajQrM</p>
-                        </div>
-                      </td>
-                      <td class="category">
-                        <div class="table_category">
-                          <p>Ram &amp; Laptop</p>
-                        </div>
-                      </td>
-                      <td class="status">
-                        <div class="table_status">
-                          <span class="expired">Expired</span>
-                        </div>
-                      </td>
-                      <td class="price">
-                        <div class="table_price">
-                          <span>$299.00</span>
-                        </div>
-                      </td>
-                      <td class="action">
-                        <div class="table_action">
-                          <ul>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-eye"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-pencil"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-trash-alt"></i
-                              ></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="checkbox">
-                        <div class="table_checkbox">
-                          <input type="checkbox" id="checkbox7" />
-                          <label for="checkbox7"></label>
-                        </div>
-                      </td>
-                      <td class="photo">
-                        <div class="table_photo">
-                          <img
-                            src="{% static 'images/ads-7.png' %}"
-                            alt="ads"
-                          />
-                        </div>
-                      </td>
-                      <td class="title">
-                        <div class="table_title">
-                          <h6 class="titles">8 GB DDR4 Ram, 4th Gen</h6>
-                          <p>Ad ID: ng3D5hAMHPajQrM</p>
-                        </div>
-                      </td>
-                      <td class="category">
-                        <div class="table_category">
-                          <p>Ram &amp; Laptop</p>
-                        </div>
-                      </td>
-                      <td class="status">
-                        <div class="table_status">
-                          <span class="deleted">Deleted</span>
-                        </div>
-                      </td>
-                      <td class="price">
-                        <div class="table_price">
-                          <span>$299.00</span>
-                        </div>
-                      </td>
-                      <td class="action">
-                        <div class="table_action">
-                          <ul>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-eye"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-pencil"></i
-                              ></a>
-                            </li>
-                            <li>
-                              <a href="{% url 'myads' %}"
-                                ><i class="fal fa-trash-alt"></i
-                              ></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <a href="{% url 'myads' %}" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+</body>
 
-    <section class="call_to_action_area pt-20 pb-70">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-5">
-            <div class="call_to_action_content mt-45">
-              <h4 class="title">Subscribe For Update</h4>
-            </div>
-          </div>
-          <div class="col-lg-7">
-            <div class="call_to_action_form mt-50">
-              <form action="{% url 'myads' %}">
-                <i class="fal fa-envelope"></i>
-                <input
-                  type="text"
-                  placeholder="Enter your mail address . . ."
-                />
-                <button class="main-btn">Subscribe</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer_area">
-      <div class="footer_widget pt-70 pb-120">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-sm-6">
-              <div class="footer_link mt-45">
-                <h5 class="footer_title">Company</h5>
-                <ul class="link">
-                  <li><a href="{% url 'myads' %}">Home</a></li>
-                  <li><a href="{% url 'myads' %}">About Us</a></li>
-                  <li><a href="{% url 'myads' %}">Our Factories</a></li>
-                  <li><a href="{% url 'myads' %}">Mission and Strategy</a></li>
-                  <li><a href="{% url 'myads' %}">Profitable Actions</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="footer_link mt-45">
-                <h5 class="footer_title">How to Sell Fast</h5>
-                <ul class="link">
-                  <li><a href="{% url 'myads' %}">Selling TIps</a></li>
-                  <li><a href="{% url 'myads' %}">Buy and Sell Quickly</a></li>
-                  <li><a href="{% url 'myads' %}">Membership</a></li>
-                  <li><a href="{% url 'myads' %}">Banner Advertising</a></li>
-                  <li><a href="{% url 'myads' %}">Promote Your Ad</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="footer_link mt-45">
-                <h5 class="footer_title">Information</h5>
-                <ul class="link">
-                  <li>
-                    <a href="{% url 'myads' %}">Company &amp; Contact Info</a>
-                  </li>
-                  <li><a href="{% url 'myads' %}">Blog &amp; Articles</a></li>
-                  <li><a href="{% url 'myads' %}">Sitemap</a></li>
-                  <li><a href="{% url 'myads' %}">Terms of Service</a></li>
-                  <li><a href="{% url 'myads' %}">Privacy Policy</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="footer_link mt-45">
-                <h5 class="footer_title">Help &amp; Support</h5>
-                <ul class="link">
-                  <li><a href="{% url 'myads' %}">Live Chat</a></li>
-                  <li><a href="{% url 'myads' %}">FAQ</a></li>
-                  <li><a href="{% url 'myads' %}">How to Stay Safe</a></li>
-                  <li>
-                    <a href="{% url 'myads' %}">Terms &amp; Conditions</a>
-                  </li>
-                  <li><a href="{% url 'myads' %}">Contact Us</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer_copyright pt-15 pb-30">
-        <div class="container">
-          <div
-            class="footer_copyright_wrapper text-center d-sm-flex justify-content-between align-items-center"
-          >
-            <div class="copyright mt-15">
-              <p>
-                Designed and Developed by
-                <a href="https://graygrids.com/" rel="nofollow">GrayGrids</a>
-              </p>
-            </div>
-            <div class="payment mt-15">
-              <ul>
-                <li>
-                  <a href="{% url 'myads' %}"
-                    ><img
-                      src="{% static 'images/payment-method1.jpg' %}"
-                      alt="payment"
-                  /></a>
-                </li>
-                <li>
-                  <a href="{% url 'myads' %}"
-                    ><img
-                      src="{% static 'images/payment-method2.jpg' %}"
-                      alt="payment"
-                  /></a>
-                </li>
-                <li>
-                  <a href="{% url 'myads' %}"
-                    ><img
-                      src="{% static 'images/payment-method3.jpg' %}"
-                      alt="payment"
-                  /></a>
-                </li>
-                <li>
-                  <a href="{% url 'myads' %}"
-                    ><img
-                      src="{% static 'images/payment-method4.jpg' %}"
-                      alt="payment"
-                  /></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <a href="{% url 'myads' %}" class="back-to-top"
-      ><i class="fa fa-angle-up"></i
-    ></a>
-  </body>
 </html>
 {% endblock %}

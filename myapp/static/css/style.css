@@ -5161,7 +5161,7 @@ p {
 .post_form .single_form input[type="checkbox"] + label::before {
   position: absolute;
   content: "\f00c";
-  font-family: "font awesome 5 pro";
+  font-family: "Font Awesome 6 Free";
   font-weight: 400;
   background: 0 0;
   color: #fff;
@@ -5415,7 +5415,7 @@ p {
 .ads_table .table_checkbox input[type="checkbox"] + label::before {
   position: absolute;
   content: "\f00c";
-  font-family: "font awesome 5 pro";
+  font-family: "Font Awesome 6 Free";
   font-weight: 400;
   background: 0 0;
   color: #fff;
@@ -5769,7 +5769,7 @@ p {
 .order_details_table .radio input[type="radio"] + label::before {
   position: absolute;
   content: "\f00c";
-  font-family: "font awesome 5 pro";
+  font-family: "Font Awesome 6 Free";
   font-weight: 400;
   background: 0 0;
   color: #fff;
@@ -5892,7 +5892,7 @@ p {
 .single_privacy_list .list_checkbox input[type="checkbox"] + label::before {
   position: absolute;
   content: "\f00c";
-  font-family: "font awesome 5 pro";
+  font-family: "Font Awesome 6 Free";
   font-weight: 400;
   background: 0 0;
   color: #fff;
@@ -5987,7 +5987,7 @@ p {
 .faq_accordion .accordion .card .card-header a::before {
   position: absolute;
   content: "\f068";
-  font-family: "font awesome 5 pro";
+  font-family: "Font Awesome 6 Free";
   font-weight: 300;
   right: 20px;
   top: 50%;

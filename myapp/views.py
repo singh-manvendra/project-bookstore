@@ -19,7 +19,22 @@ def product(request):
     return render(request,'product.html')
 
 def signin(request):
-    return render(request,'signin.html')
+    if request.method=="POST":
+        try:
+            user=User.objects.get(
+                email=request.POST['email'],
+                password=request.POST['password'],
+            )
+            request.session['fnamw']=user.fname
+            request.session['email']=user.email
+            return render(request,'index.html')
+        except:
+            msg="Email& Password is in Incorrect"
+            return render(request,'signin.html',{'msg':msg})
+
+
+    else:
+        return render(request,'signin.html')
 
 def signup(request):
     if request.method=="POST":
