@@ -5393,7 +5393,7 @@ p {
 }
 
 .profile_user .user_author {
-    background-color: #ff4367;
+    background-color: #495057;
     padding: 15px;
     border-radius: 10px;
 }
@@ -5401,9 +5401,10 @@ p {
 .profile_user .user_author .author img {
     border-radius: 50%;
     max-width: 80px;
-    max-height: 80px;
-    width: auto;
-    height: auto;
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    object-position: 0 0;
 }
 
 .profile_user .user_author .user_content {
@@ -6294,7 +6295,7 @@ p {
 
 .outgoing_msg .outgoing_msg_content {
     display: inline-block;
-    float: right;
+    /* float: right; */
     width: 60%;
 }
 
