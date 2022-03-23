@@ -206,7 +206,7 @@ def new_password(request):
             msg="Password And Confirm Password Does Not Matched..."
             return render(request,'new_password.html',{'msg':msg,'email':email})
     except:
-        msg =request.POST['email']
+        msg = "Invalid!"
         return render(request,'new_password.html',{'msg':msg})
     
 
