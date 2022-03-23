@@ -188,19 +188,25 @@ def otp(request):
 
 
 def new_password(request):
-    email=request.POST['email']
-    password=request.POST['password']
-    cpassword=request.POST['cpassword']
-
-    if password==cpassword:
-        user=User.objects.get(email=email)
-        user.password=password
-        user.cpassword=cpassword    
-        user.save()
-        msg="Password Updated successfully..."
-        return render(request,'signin.html',{'msg':msg})
-    else:
-        msg="Password And Confirm Password Does Not Matched..."
-        return render(request,'new_password.html',{'msg':msg,'email':email})
-
+    
+    try: 
+        user=User.objects.get(email=request.POST['email'])
+            
+        password=request.POST['password']
+        cpassword=request.POST['cpassword']
+            
+        if password==cpassword:
+                
+            user.password=password
+            user.cpassword=cpassword    
+            user.save()
+            msg="Password Updated successfully..."
+            return render(request,'signin.html',{'msg':msg})
+        else:
+            msg="Password And Confirm Password Does Not Matched..."
+            return render(request,'new_password.html',{'msg':msg,'email':email})
+    except:
+        msg =request.POST['email']
+        return render(request,'new_password.html',{'msg':msg})
+    
 
