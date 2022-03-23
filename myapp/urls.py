@@ -18,4 +18,7 @@ urlpatterns = [
     path('product_details/',views.product_details,name='product_details'),
     path('product/',views.product,name='product'),
     path('profile_settings/',views.profile_settings,name='profile_settings'),
+    path('forgot_password/',views.forgot_password,name='forgot_password'),
+    path('otp/',views.otp,name='otp'),
+    path('new_password/',views.new_password,name='new_password'),
 ]
