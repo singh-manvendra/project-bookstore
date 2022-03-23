@@ -1,5 +1,6 @@
 from asyncio.log import logger
 import email
+import re
 from unicodedata import name
 from django.forms import PasswordInput
 from django.shortcuts import render,redirect
@@ -10,11 +11,8 @@ import random
 
 
 def index(request):
-    if 'email' in request.session:
-        del request.session['email']
-        return render(request, 'index.html')
-    else:
-        return render(request, 'index.html')
+    
+    return render(request, 'index.html')
 # Create your views here.
 
 
@@ -39,12 +37,11 @@ def signin(request):
             )
             request.session['fname'] = user.fname
             request.session['email'] = user.email
-            # request.session['user_img'] = user.user_img.url
+            request.session['user_img'] = user.user_img.url
             return render(request, 'index.html')
         except:
             msg = "Email& Password is in Incorrect"
             return render(request, 'signin.html', {'msg': msg})
-
     else:
         return render(request, 'signin.html')
 
@@ -80,7 +77,7 @@ def signout(request):
         del request.session['fname']
         del request.session['email']
         del request.session['user_img']
-        return render(request, 'signin.html')
+        return render(request, 'index.html')
     except:
         return render(request, 'index.html')
 
@@ -92,10 +89,7 @@ def contact(request):
 def dashboard(request):
     if request.method == 'POST':
         try:
-            user = User.objects.all()
-            request.session['fname'] = user.fname
-            request.session['email'] = user.email
-            return render(request, 'dashboard.html', {'fname': user.fname})
+            return render(request, 'dashboard.html')
         except:
 
             return render(request, 'dashboard.html')
@@ -136,20 +130,27 @@ def profile_settings(request):
                 if request.POST['password']==request.POST['cpassword']:
                     user.password=request.POST['password']
                     user.cpassword=request.POST['cpassword']
-                    user.fname=request.POST['fname']
-                    user.lname=request.POST['lname']
+                    # user.address=request.POST['address']
                     user.email=request.POST['email']
                     user.mobile=request.POST['mobile']
                     user.user_img=request.FILES['user_img']
                     user.save()
+                    msg="Profile updated successfully!"
+                    request.session['fname'] = user.fname
+                    request.session['email'] = user.email
+                    request.session['user_img'] = user.user_img.url
+                    return render(request, 'profile_settings.html',{'msg':msg})
+                    
                 else:
                     msg="Password And Confirm Password Does Not Matched..."
                     return render(request, 'profile_settings.html',{'msg':msg})
             else:
-                msg="Old Password Doesn't Match! "
+                msg="Old Password Doesn't Match!"
                 return render(request, 'profile_settings.html',{'msg':msg})
         except:
-            return render(request, 'profile_settings.html',{'msg':msg})
+            return render(request, 'profile_settings.html')
+        
+        # return render(request, 'profile_settings.html')
     else:
         return render(request, 'profile_settings.html')
 
@@ -161,7 +162,7 @@ def forgot_password(request):
             user = User.objects.get(email=email)
             otp=random.randint(1000,9999)
             subject = 'OTP For Forgot Password'
-            message = 'Hello User, YOur OTP Is For Forgot Password Is '+str(otp)
+            message = "Hello User, Your OTP for Forgot Password Is "+str(otp)
             email_from = settings.EMAIL_HOST_USER
             recipient_list = [user.email,]
             send_mail( subject, message, email_from, recipient_list )
