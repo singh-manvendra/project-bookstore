@@ -71,9 +71,6 @@
                                                     <i class="fa-solid fa-gear"></i> Profile Settings</a></li>
                                             <li><a href="{% url 'myads' %}">
                                                 <i class="fa-solid fa-layer-group"></i> My Ads</a></li>
-                                            <li><a
-                                                    href="{% url 'offers_msgs' %}">
-                                                    <i class="fa-solid fa-envelope"></i> Offers/Messages</a></li>
                                             <li><a href="{% url 'payments' %}">
                                                 <i class="fa-solid fa-wallet"></i> Payments</a></li>
                                             <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
@@ -114,11 +111,11 @@
                         <div class="profile_user">
                             <div class="user_author d-flex align-items-center">
                                 <div class="author">
-                                    <img src="{% static 'images/author-1.jpg' %}" alt="">
+                                    <img src="{{request.session.user_img}}" alt="">
                                 </div>
                                 <div class="user_content media-body">
-                                    <h6 class="author_name">User</h6>
-                                    <p>Administrator</p>
+                                    <h6 class="author_name">{{request.session.fname}}</h6>
+                                    
                                 </div>
                             </div>
                             <div class="user_list">
@@ -129,8 +126,6 @@
                                                 class="fal fa-cog"></i> Profile Settings</a></li>
                                     <li><a href="{% url 'myads' %}"><i
                                                 class="fal fa-layer-group"></i> My Ads</a></li>
-                                    <li><a href="{% url 'offers_msgs' %}"><i
-                                                class="fal fa-envelope"></i> Offers/Messages</a></li>
                                     <li><a class="active"
                                             href="{% url 'payments' %}"><i
                                                 class="fal fa-wallet"></i> Payments</a></li>
