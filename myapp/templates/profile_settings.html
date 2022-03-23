@@ -45,9 +45,6 @@
                   <li><a href="{% url 'product' %}">Products</a></li>
                   <li><a href="{% url 'product_details' %}">Product Details</a>
                   </li>
-                  
-                  <li><a href="{% url 'signin' %}">Sign In</a></li>
-                  <li><a href="{% url 'signup' %}">Sign Up</a></li>
                 </ul>
               </li>
               
@@ -153,7 +150,8 @@
             <div class="post_title">
               <h5 class="title">Profile Settings</h5>
             </div>
-            <form action="{% url 'profile_settings'%} ">
+            <form action="{% url 'profile_settings' %}" method="POST" >
+              {% csrf_token %}
               <div class="row">
                 <div class="col-md-6">
                   <div class="single_form">
@@ -172,7 +170,12 @@
                 </div>
                 <div class="col-md-6">
                   <div class="single_form">
-                    <input type="text" placeholder="Phone Number">
+                    <input type="text" placeholder="Mobile">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="single_form">
+                    <input type="password" placeholder="Old Password">
                   </div>
                 </div>
                 <div class="col-md-6">

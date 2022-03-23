@@ -55,10 +55,6 @@
                                     <li><a href="{% url 'product_details' %}">Product
                                             Details</a></li>
                                     
-                                    <li><a href="{% url 'signin' %}">Sign In</a>
-                                    </li>
-                                    <li><a href="{% url 'signup' %}">Sign Up</a>
-                                    </li>
                                 </ul>
                             </li>
                             
@@ -165,7 +161,8 @@
                         <div class="post_title">
                             <h5 class="title">Payments</h5>
                         </div>
-                        <form action="{% url 'payments' %}">
+                        <form action="{% url 'payments' %}" method="POST">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="order_details mt-30">
