@@ -18,4 +18,23 @@ class User(models.Model):
 
     def __str__(self):
         return self.fname+" - "+self.email
+    
+class Book(models.Model):
+    book_name = models.CharField(max_length=100)
+    book_cat = models.IntegerField()
+    book_price = models.IntegerField()
+    book_description = models.TextField()
+    book_image = models.ImageField(upload_to='images/')
+    
+    def __str__(self):
+        return self.book_name
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    subject = models.CharField(max_length=100)
+    remarks = models.TextField()
+
+    def __str__(self):
+        return self.name   
 

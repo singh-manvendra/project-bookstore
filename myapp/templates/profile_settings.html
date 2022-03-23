@@ -45,6 +45,9 @@
                   <li><a href="{% url 'product' %}">Products</a></li>
                   <li><a href="{% url 'product_details' %}">Product Details</a>
                   </li>
+                  
+                  <li><a href="{% url 'signin' %}">Sign In</a></li>
+                  <li><a href="{% url 'signup' %}">Sign Up</a></li>
                 </ul>
               </li>
               
@@ -145,57 +148,55 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-9">
-          <div class="post_form mt-50">
+        <div class="col-lg-4">
+          <div class="sidebar_post_form mt-50">
             <div class="post_title">
               <h5 class="title">Profile Settings</h5>
             </div>
-            <form action="{% url 'profile_settings' %}" method="POST" >
-              {% csrf_token %}
+            <form action="{% url 'profile_settings'%} ">
               <div class="row">
-                <div class="col-md-6">
-                  <div class="single_form">
+                
+                  <div class="single_form" style="margin-left: 60px">
                     <input type="text" placeholder="First Name">
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="single_form">
+                
+                
+                  <div class="single_form" style="margin-left: 60px">
                     <input type="text" placeholder="Last Name">
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="single_form">
+                
+                
+                  <div class="single_form" style="margin-left: 60px">
                     <input type="email" placeholder="E-mail Address">
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="single_form">
-                    <input type="text" placeholder="Mobile">
+                
+                
+                  <div class="single_form" style="margin-left: 60px">
+                    <input type="text" placeholder="Phone Number">
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="single_form">
-                    <input type="password" placeholder="Old Password">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="single_form">
+                
+                
+                  <div class="single_form" style="margin-left: 60px">
                     <input type="password" placeholder="New Password">
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="single_form">
+                
+                
+                  <div class="single_form" style="margin-left: 60px">
                     <input type="password" placeholder="Confirm Password">
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="single_form">
-                    <input type="checkbox" name="checkbox" id="checkbox">
-                    <label for="checkbox"></label>
-                    <span>Subscribe me to Newsletter</span>
-                  </div>
-                </div>
-                <div class="col-md-6">
+                
+                <div class="post_upload_file" style="margin-left: 18px" >
+                  <label for="upload">
+                      <span>Upload Profile Picture</span>
+                      <span>Or</span>
+                      <span class="main-btn">Select Files</span>
+                      <span>Maximum upload file size: 500 KB</span>
+                      <input type="file" id="upload" name="book_image">
+                  </label>
+              </div>
+                
+                
+                <div class="col-md-6" style="margin-left: 80px">
                   <div class="single_form">
                     <button class="main-btn">Update</button>
                   </div>
