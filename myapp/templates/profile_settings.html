@@ -144,36 +144,39 @@
             <div class="post_title">
               <h5 class="title">Profile Settings</h5>
             </div>
-            <form action="{% url 'profile_settings'%} ">
+            <form action="{% url 'profile_settings' %}" method="POST" >
               <div class="row">
                 
                   <div class="single_form" style="margin-left: 60px">
-                    <input type="text" placeholder="First Name">
+                    <input type="text" placeholder="First Name" name="fname">
                   </div>
                 
                 
                   <div class="single_form" style="margin-left: 60px">
-                    <input type="text" placeholder="Last Name">
+                    <input type="text" placeholder="Last Name" name="lname">
                   </div>
                 
                 
                   <div class="single_form" style="margin-left: 60px">
-                    <input type="email" placeholder="E-mail Address">
+                    <input type="email" placeholder="E-mail Address" name="email">
                   </div>
                 
                 
                   <div class="single_form" style="margin-left: 60px">
-                    <input type="text" placeholder="Phone Number">
+                    <input type="text" placeholder="Phone Number" name="mobile">
+                  </div>
+                
+                  <div class="single_form" style="margin-left: 60px">
+                    <input type="password" placeholder="Old Password" name="old_password">
+                  </div>
+                
+                  <div class="single_form" style="margin-left: 60px">
+                    <input type="password" placeholder="New Password" name="password">
                   </div>
                 
                 
                   <div class="single_form" style="margin-left: 60px">
-                    <input type="password" placeholder="New Password">
-                  </div>
-                
-                
-                  <div class="single_form" style="margin-left: 60px">
-                    <input type="password" placeholder="Confirm Password">
+                    <input type="password" placeholder="Confirm New Password" name="cpassword">
                   </div>
                 
                 <div class="post_upload_file" style="margin-left: 18px" >

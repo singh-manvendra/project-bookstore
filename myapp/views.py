@@ -2,7 +2,7 @@ from asyncio.log import logger
 import email
 from unicodedata import name
 from django.forms import PasswordInput
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
 from django.conf import settings
 from django.core.mail import send_mail
@@ -127,7 +127,24 @@ def product_details(request):
 
 
 def profile_settings(request):
-    return render(request, 'profile_settings.html')
+    if request.method=="POST":
+        user=User.objects.get(email=request.session['email'])
+        if request.password==request.POST['old_password']:
+            if request.POST['new_password']==request.POST['cnew_password']:
+                user.password=request.POST['new_password']
+                user.cpassword=request.POST['cpassword']
+                user.fname=request.POST['fname']
+                user.lname=request.POST['lname']
+                user.email=request.POST['email']
+                user.mobile=request.POST['mobile']
+                user.save()
+
+
+
+
+
+    else:
+        return render(request, 'profile_settings.html')
 
 
 def forgot_password(request):
