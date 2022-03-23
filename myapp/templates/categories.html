@@ -100,51 +100,16 @@
 
     <section class="categories_page pt-70 pb-120">
         <div class="container">
-            <div class="categories_top_bar d-flex align-items-center justify-content-between pb-30">
-                <div class="categories_story mt-50">
-                    <select style="display: none;">
-                        <option value="0">Story by Acceding</option>
-                        <option value="1">Some option</option>
-                        <option value="2">Another option</option>
-                        <option value="4">Potato</option>
-                    </select>
-                    <div class="nice-select" tabindex="0"><span class="current">Story by Acceding</span>
-                        <ul class="list">
-                            <li data-value="0" class="option selected">Story by Acceding</li>
-                            <li data-value="1" class="option">Some option</li>
-                            <li data-value="2" class="option">Another option</li>
-                            <li data-value="4" class="option">Potato</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="categories_tab_menu mt-50">
-                    <ul class="nav" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="active" id="grid-tab" data-toggle="tab"
-                                href="#grid" role="tab"
-                                aria-controls="grid" aria-selected="true">
-                                <i class="fal fa-th"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="list-tab" data-toggle="tab"
-                                href="#list" role="tab"
-                                aria-controls="list" aria-selected="false">
-                                <i class="fal fa-th-list"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="grid-tab">
                     <div class="row">
                         <div class="col-lg-3 col-6">
                             <div class="single_categories text-center mt-30">
                                 <div class="categories_icon">
-                                    <i class="fal fa-desktop"></i>
+                                    <i class="fa-solid fa-plus-minus"></i>
                                 </div>
-                                <br>
+                                
                                 <div class="categories_content">
                                     <h5 class="title">Commerce</h5>
                                     <p> B.com - M.com - Other</p>
@@ -155,10 +120,10 @@
                         <div class="col-lg-3 col-6">
                             <div class="single_categories text-center mt-30">
                                 <div class="categories_icon">
-                                    <i class="fal fa-gem"></i>
+                                    <i class="fa-solid fa-atom"></i>
                                 </div>
                                 <div class="categories_content">
-                                    <h5 class="title">Science</h5>
+                                    <h5 class="title">Physics</h5>
                                     <p>B.sc - M.sc - Other</p>
                                 </div>
                                 <a href="{% url 'product' %}"></a>
@@ -167,10 +132,34 @@
                         <div class="col-lg-3 col-6">
                             <div class="single_categories text-center mt-30">
                                 <div class="categories_icon">
-                                    <i class="fal fa-home"></i>
+                                    <i class="fa-solid fa-flask-vial"></i>
                                 </div>
                                 <div class="categories_content">
-                                    <h5 class="title">IT</h5>
+                                    <h5 class="title">Chemistry</h5>
+                                    <p>B.sc - M.sc - Other</p>
+                                </div>
+                                <a href="{% url 'product' %}"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="single_categories text-center mt-30">
+                                <div class="categories_icon">
+                                    <i class="fa-solid fa-dna"></i>
+                                </div>
+                                <div class="categories_content">
+                                    <h5 class="title">Biology</h5>
+                                    <p>B.sc - M.sc - Other</p>
+                                </div>
+                                <a href="{% url 'product' %}"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="single_categories text-center mt-30">
+                                <div class="categories_icon">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </div>
+                                <div class="categories_content">
+                                    <h5 class="title">Computer</h5>
                                     <p>BCA - MCA - Other</p>
                                 </div>
                                 <a href="{% url 'product' %}"></a>
@@ -179,7 +168,7 @@
                         <div class="col-lg-3 col-6">
                             <div class="single_categories text-center mt-30">
                                 <div class="categories_icon">
-                                    <i class="fal fa-briefcase"></i>
+                                    <i class="fa-solid fa-square-root-variable"></i>
                                 </div>
                                 <div class="categories_content">
                                     <h5 class="title">Maths</h5>
@@ -191,7 +180,7 @@
                         <div class="col-lg-3 col-6">
                             <div class="single_categories text-center mt-30">
                                 <div class="categories_icon">
-                                    <i class="fal fa-child"></i>
+                                    <i class="fa-solid fa-user-astronaut"></i>
                                 </div>
                                 <div class="categories_content">
                                     <h5 class="title">Fiction/Nonfiction</h5>
@@ -203,10 +192,10 @@
                         <div class="col-lg-3 col-6">
                             <div class="single_categories text-center mt-30">
                                 <div class="categories_icon">
-                                    <i class="fal fa-tshirt"></i>
+                                    <i class="fa-solid fa-person-hiking"></i>
                                 </div>
                                 <div class="categories_content">
-                                    <h5 class="title">Advencture/Sports</h5>
+                                    <h5 class="title">Adventure/Sports</h5>
                                     <p>3 Ads</p>
                                 </div>
                                 <a href="{% url 'product' %}"></a>
@@ -215,7 +204,7 @@
                         <div class="col-lg-3 col-6">
                             <div class="single_categories text-center mt-30">
                                 <div class="categories_icon">
-                                    <i class="fal fa-mobile-alt"></i>
+                                    <i class="fa-solid fa-book-bookmark"></i>
                                 </div>
                                 <div class="categories_content">
                                     <h5 class="title">Biography</h5>
@@ -227,7 +216,7 @@
                         <div class="col-lg-3 col-6">
                             <div class="single_categories text-center mt-30">
                                 <div class="categories_icon">
-                                    <i class="fal fa-camera-retro"></i>
+                                    <i class="fa-solid fa-indian-rupee-sign"></i>
                                 </div>
                                 <div class="categories_content">
                                     <h5 class="title">Finance</h5>
@@ -239,7 +228,7 @@
                         <div class="col-lg-3 col-6">
                             <div class="single_categories text-center mt-30">
                                 <div class="categories_icon">
-                                    <i class="fal fa-tv"></i>
+                                    <i class="fa-solid fa-briefcase"></i>
                                 </div>
                                 <div class="categories_content">
                                     <h5 class="title">Bussiness</h5>
@@ -248,13 +237,15 @@
                                 <a href="{% url 'product' %}"></a>
                             </div>
                         </div>
+                        
+                        
                         <div class="col-lg-3 col-6">
                             <div class="single_categories text-center mt-30">
                                 <div class="categories_icon">
-                                    <i class="fal fa-motorcycle"></i>
+                                    <i class="fa-solid fa-brain"></i>
                                 </div>
                                 <div class="categories_content">
-                                    <h5 class="title">Entertenment</h5>
+                                    <h5 class="title">Motivational</h5>
                                     <p>3 Ads</p>
                                 </div>
                                 <a href="{% url 'product' %}"></a>
@@ -263,71 +254,25 @@
                         <div class="col-lg-3 col-6">
                             <div class="single_categories text-center mt-30">
                                 <div class="categories_icon">
-                                    <i class="fal fa-bullseye-arrow"></i>
+                                    <i class="fa-solid fa-book-open"></i>
                                 </div>
                                 <div class="categories_content">
-                                    <h5 class="title">Games</h5>
+                                    <h5 class="title">Poetry/Story</h5>
                                     <p>3 Ads</p>
                                 </div>
                                 <a href="{% url 'product' %}"></a>
                             </div>
                         </div>
+                        
+                        
                         <div class="col-lg-3 col-6">
                             <div class="single_categories text-center mt-30">
                                 <div class="categories_icon">
-                                    <i class="fal fa-watch"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Motivation</h5>
-                                    <p>3 Ads</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fal fa-motorcycle"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Poetry/story</h5>
-                                    <p>3 Ads</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fal fa-motorcycle"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Kids</h5>
-                                    <p>3 Ads</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fal fa-motorcycle"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Devotional</h5>
-                                    <p>3 Ads</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fal fa-motorcycle"></i>
+                                    <i class="fa-solid fa-palette"></i>
                                 </div>
                                 <div class="categories_content">
                                     <h5 class="title">
-                                        Arts/crafts</h5>
+                                        Arts/Crafts</h5>
                                     <p>3 Ads</p>
                                 </div>
                                 <a href="{% url 'product' %}"></a>
@@ -336,7 +281,7 @@
                         <div class="col-lg-3 col-6">
                             <div class="single_categories text-center mt-30">
                                 <div class="categories_icon">
-                                    <i class="fal fa-motorcycle"></i>
+                                    <i class="fa-solid fa-graduation-cap"></i>
                                 </div>
                                 <div class="categories_content">
                                     <h5 class="title">Diploma Courses</h5>
@@ -345,22 +290,11 @@
                                 <a href="{% url 'product' %}"></a>
                             </div>
                         </div>
+                        
                         <div class="col-lg-3 col-6">
                             <div class="single_categories text-center mt-30">
                                 <div class="categories_icon">
-                                    <i class="fal fa-motorcycle"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Other Courses</h5>
-                                    <p>3 Ads</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fal fa-motorcycle"></i>
+                                    <i class="fa-solid fa-book"></i>
                                 </div>
                                 <div class="categories_content">
                                     <h5 class="title">Other Books</h5>
