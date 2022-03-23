@@ -127,30 +127,101 @@ def profile_settings(request):
         try:
             user=User.objects.get(email=request.session['email'])
             if user.password==request.POST['old_password']:
-                if request.POST['password']==request.POST['cpassword']:
-                    user.password=request.POST['password']
-                    user.cpassword=request.POST['cpassword']
-                    # user.address=request.POST['address']
-                    user.email=request.POST['email']
-                    user.mobile=request.POST['mobile']
-                    user.user_img=request.FILES['user_img']
-                    user.save()
-                    msg="Profile updated successfully!"
-                    request.session['fname'] = user.fname
-                    request.session['email'] = user.email
-                    request.session['user_img'] = user.user_img.url
-                    return render(request, 'profile_settings.html',{'msg':msg})
-                    
+                if request.POST['password'] and request.POST['cpassword'] != "":
+                    print('pass works!')
+                    if request.POST['mobile'] != "":
+                        print('pass and mo works!')
+                        if request.FILES.get('user_img',False):
+                            print('all works!')
+                            user.password=request.POST['password']
+                            user.cpassword=request.POST['cpassword']
+                            user.mobile=request.POST['mobile']
+                            user.user_img=request.FILES['user_img']
+                            user.save()
+                            msg="Profile updated successfully!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})
+                        else:
+                            
+                            user.password=request.POST['password']
+                            user.cpassword=request.POST['cpassword']
+                            user.mobile=request.POST['mobile']
+                            user.save()
+                            msg="Password and mobile updated successfully!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})
+                    else:
+                        
+                        if request.FILES.get('user_img',False):
+                            
+                            user.password=request.POST['password']
+                            user.cpassword=request.POST['cpassword']
+                            user.user_img=request.FILES['user_img']
+                            user.save()
+                            msg="Password and Profile Photo updated successfully!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})
+                        else:
+                            
+                            user.password=request.POST['password']
+                            user.cpassword=request.POST['cpassword']
+                            user.save()
+                            msg="Password updated successfully!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})
                 else:
-                    msg="Password And Confirm Password Does Not Matched..."
-                    return render(request, 'profile_settings.html',{'msg':msg})
+                    if request.POST['mobile'] != "":
+                        
+                        if request.FILES.get('user_img',False):
+                            
+                            user.mobile=request.POST['mobile']
+                            user.user_img=request.FILES['user_img']
+                            user.save()
+                            msg="Mobile and image updated successfully!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})
+                        else:
+                            user.mobile=request.POST['mobile']
+                            user.save()
+                            msg="Mobile updated successfully!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})
+                    else:
+                        if request.FILES.get('user_img',False) :
+                            user.user_img=request.FILES['user_img']
+                            user.save()
+                            msg="Profile Photo updated successfully!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email        
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})
+                        else:
+                            msg="No new Data found!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})  
+                        
             else:
                 msg="Old Password Doesn't Match!"
                 return render(request, 'profile_settings.html',{'msg':msg})
         except:
+            request.session['fname'] = user.fname
+            request.session['email'] = user.email
+            request.session['user_img'] = user.user_img.url
             return render(request, 'profile_settings.html')
-        
-        # return render(request, 'profile_settings.html')
     else:
         return render(request, 'profile_settings.html')
 
