@@ -68,7 +68,7 @@
                                             
                                             <li><a href="{% url 'payments' %}">
                                                 <i class="fa-solid fa-wallet"></i> Payments</a></li>
-                                            <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
+                                            <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out ({{request.session.fname}})</a></li>
                                             {% else %}
                                             <li><a href="{% url 'signin' %}">Sign In</a></li>
                                             <li><a href="{% url 'signup' %}">Sign Up</a></li>
@@ -110,8 +110,7 @@
                                     <img src="{{request.session.user_img}}" alt="">
                                 </div>
                                 <div class="user_content media-body">
-                                    <h6 class="author_name">{{request.session.fname}}</h6>
-                                    
+                                    <h6 class="author_name">{{request.session.fname}}</h6>                                    
                                 </div>
                             </div>
                             <div class="user_list">
@@ -127,7 +126,7 @@
                                                 class="fal fa-wallet"></i> Payments</a></li>
                                     {% if request.session.email %}
                                             
-                                        <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
+                                        <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out ({{request.session.fname}})</a></li>
                                     {% else %}
                                         <li><a href="{% url 'signin' %}">Sign In</a></li>
                                         <li><a href="{% url 'signup' %}">Sign Up</a></li>
