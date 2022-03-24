@@ -133,4 +133,3 @@ EMAIL_HOST_USER = "sp6987362@gmail.com"
 EMAIL_HOST_PASSWORD = "Sahil@007"
 
 
-
