@@ -10,11 +10,7 @@ import random
 
 
 def index(request):
-    if 'email' in request.session:
-        del request.session['email']
-        return render(request, 'index.html')
-    else:
-        return render(request, 'index.html')
+    return render(request, 'index.html')
 # Create your views here.
 
 
@@ -39,7 +35,7 @@ def signin(request):
             )
             request.session['fname'] = user.fname
             request.session['email'] = user.email
-            # request.session['user_img'] = user.user_img.url
+            request.session['user_img'] = user.user_img.url
             return render(request, 'index.html')
         except:
             msg = "Email& Password is in Incorrect"
@@ -92,10 +88,8 @@ def contact(request):
 def dashboard(request):
     if request.method == 'POST':
         try:
-            user = User.objects.all()
-            request.session['fname'] = user.fname
-            request.session['email'] = user.email
-            return render(request, 'dashboard.html', {'fname': user.fname})
+            
+            return render(request, 'dashboard.html')
         except:
 
             return render(request, 'dashboard.html')
@@ -105,10 +99,14 @@ def dashboard(request):
 
 def myads(request):
     try:
-        book_sell = User.objects.get(email=request.session['email'])
-        books = Book.objects.filter(book_sell=book_sell)
-        return render(request, 'myads.html', { books})
+        # email = request.session['email']
+        books = Book.objects.filter(book_sell=request.session['email'])
+        
+        print('this is working ')
+        return render(request, 'myads.html',{'books':books})
+        
     except:
+        print('this is not working')
         return render(request, 'myads.html')
 
 
@@ -122,19 +120,25 @@ def payments(request):
 
 def post_ads(request):
     if request.method == "POST":
-        Book.objects.create(
-            book_name=request.POST['book_name'],
-            book_cat=request.POST['book_cat'],
-            book_price=request.POST['book_price'],
-            book_description=request.POST['book_description'],
-            book_image=request.FILES['book_image'],
-            address=request.POST['address'],
-            country=request.POST['country'],
-            state=request.POST['state'],
-            city=request.POST['city']
-        )
-        msg = "BOOK ADDED SUCCESSFULLY"
-        return render(request, 'post_ads.html', {'msg': msg})
+        try:
+            user=User.objects.get(email=request.session['email'])
+            Book.objects.create(
+                book_sell=user,
+                book_name=request.POST['book_name'],
+                book_cat=request.POST['book_cat'],
+                book_price=request.POST['book_price'],
+                book_description=request.POST['book_description'],
+                book_image=request.FILES['book_image'],
+                address=request.POST['address'],
+                country=request.POST['country'],
+                state=request.POST['state'],
+                city=request.POST['city']
+            )   
+            msg = "BOOK ADDED SUCCESSFULLY"
+            return render(request, 'post_ads.html', {'msg': msg})
+        except:
+            msg = "Did Nothing"
+            return render(request, 'post_ads.html', {'msg': msg})
     else:
 
         return render(request, 'post_ads.html')
@@ -145,44 +149,121 @@ def product_details(request):
 
 
 def profile_settings(request):
-    if request.method == "POST":
+    if request.method=="POST":
         try:
-            user = User.objects.get(email=request.session['email'])
-            if user.password == request.POST['old_password']:
-                if request.POST['password'] == request.POST['cpassword']:
-                    user.password = request.POST['password']
-                    user.cpassword = request.POST['cpassword']
-                    user.fname = request.POST['fname']
-                    user.lname = request.POST['lname']
-                    user.email = request.POST['email']
-                    user.mobile = request.POST['mobile']
-                    user.user_img = request.FILES['user_img']
-                    user.save()
+            user=User.objects.get(email=request.session['email'])
+            if user.password==request.POST['old_password']:
+                if request.POST['password'] and request.POST['cpassword'] != "":
+                    print('pass works!')
+                    if request.POST['mobile'] != "":
+                        print('pass and mo works!')
+                        if request.FILES.get('user_img',False):
+                            print('all works!')
+                            user.password=request.POST['password']
+                            user.cpassword=request.POST['cpassword']
+                            user.mobile=request.POST['mobile']
+                            user.user_img=request.FILES['user_img']
+                            user.save()
+                            msg="Profile updated successfully!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})
+                        else:
+                            
+                            user.password=request.POST['password']
+                            user.cpassword=request.POST['cpassword']
+                            user.mobile=request.POST['mobile']
+                            user.save()
+                            msg="Password and mobile updated successfully!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})
+                    else:
+                        
+                        if request.FILES.get('user_img',False):
+                            
+                            user.password=request.POST['password']
+                            user.cpassword=request.POST['cpassword']
+                            user.user_img=request.FILES['user_img']
+                            user.save()
+                            msg="Password and Profile Photo updated successfully!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})
+                        else:
+                            
+                            user.password=request.POST['password']
+                            user.cpassword=request.POST['cpassword']
+                            user.save()
+                            msg="Password updated successfully!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})
                 else:
-                    msg = "Password And Confirm Password Does Not Matched..."
-                    return render(request, 'profile_settings.html', {'msg': msg})
+                    if request.POST['mobile'] != "":
+                        
+                        if request.FILES.get('user_img',False):
+                            
+                            user.mobile=request.POST['mobile']
+                            user.user_img=request.FILES['user_img']
+                            user.save()
+                            msg="Mobile and image updated successfully!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})
+                        else:
+                            user.mobile=request.POST['mobile']
+                            user.save()
+                            msg="Mobile updated successfully!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})
+                    else:
+                        if request.FILES.get('user_img',False) :
+                            user.user_img=request.FILES['user_img']
+                            user.save()
+                            msg="Profile Photo updated successfully!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email        
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})
+                        else:
+                            msg="No new Data found!"
+                            request.session['fname'] = user.fname
+                            request.session['email'] = user.email
+                            request.session['user_img'] = user.user_img.url
+                            return render(request, 'profile_settings.html',{'msg':msg})  
+                        
             else:
-                msg = "Old Password Doesn't Match! "
-                return render(request, 'profile_settings.html', {'msg': msg})
+                msg="Old Password Doesn't Match!"
+                return render(request, 'profile_settings.html',{'msg':msg})
         except:
-            return render(request, 'profile_settings.html', {'msg': msg})
+            request.session['fname'] = user.fname
+            request.session['email'] = user.email
+            request.session['user_img'] = user.user_img.url
+            return render(request, 'profile_settings.html')
     else:
         return render(request, 'profile_settings.html')
 
 
 def forgot_password(request):
-    if request.method == "POST":
+    if request.method=="POST":
         email = request.POST['email']
         try:
             user = User.objects.get(email=email)
-            otp = random.randint(1000, 9999)
+            otp=random.randint(1000,9999)
             subject = 'OTP For Forgot Password'
-            message = 'Hello User, YOur OTP Is For Forgot Password Is ' + \
-                str(otp)
+            message = "Hello User, Your OTP for Forgot Password Is "+str(otp)
             email_from = settings.EMAIL_HOST_USER
-            recipient_list = [user.email, ]
-            send_mail(subject, message, email_from, recipient_list)
-            return render(request, 'otp.html', {'otp': otp, 'email': email})
+            recipient_list = [user.email,]
+            send_mail( subject, message, email_from, recipient_list )
+            return render(request,'otp.html', {'otp':otp,'email':email})
 
         except:
             msg = "Email Not Registered..."
@@ -191,31 +272,36 @@ def forgot_password(request):
     else:
         return render(request, 'forgot_password.html')
 
-
 def otp(request):
-    otp = request.POST['otp']
-    uotp = request.POST['uotp']
-    email = request.POST['email']
+    otp=request.POST['otp']
+    uotp=request.POST['uotp']
+    email=request.POST['email']
 
-    if otp == uotp:
-        return render(request, 'new_password.html', {'email': email})
+    if otp==uotp:
+        return render(request,'new_password.html',{'email':email})
     else:
-        msg = "Entered OTP is Invalid..."
-        return render(request, 'otp.html', {'otp': otp, 'email': email, 'msg': msg})
+        msg="Entered OTP is Invalid..."
+        return render(request,'otp.html',{'otp':otp,'email':email,'msg':msg})
 
 
 def new_password(request):
-    email = request.POST['email']
-    password = request.POST['password']
-    cpassword = request.POST['cpassword']
-
-    if password == cpassword:
-        user = User.objects.get(email=email)
-        user.password = password
-        user.cpassword = cpassword
-        user.save()
-        msg = "Password Updated successfully..."
-        return render(request, 'signin.html', {'msg': msg})
-    else:
-        msg = "Password And Confirm Password Does Not Matched..."
-        return render(request, 'new_password.html', {'msg': msg, 'email': email})
+    
+    try: 
+        user=User.objects.get(email=request.POST['email'])
+            
+        password=request.POST['password']
+        cpassword=request.POST['cpassword']
+            
+        if password==cpassword:
+                
+            user.password=password
+            user.cpassword=cpassword    
+            user.save()
+            msg="Password Updated successfully..."
+            return render(request,'signin.html',{'msg':msg})
+        else:
+            msg="Password And Confirm Password Does Not Matched..."
+            return render(request,'new_password.html',{'msg':msg,'email':email})
+    except:
+        msg = "Invalid!"
+        return render(request,'new_password.html',{'msg':msg})

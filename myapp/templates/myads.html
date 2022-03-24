@@ -60,7 +60,7 @@
                       
                       <li><a href="{% url 'payments' %}">
                           <i class="fa-solid fa-wallet"></i> Payments</a></li>
-                      <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out ({{request.session.fname}})</a></li>
+                      <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
                       {% else %}
                       <li><a href="{% url 'signin' %}">Sign In</a></li>
                       <li><a href="{% url 'signup' %}">Sign Up</a></li>
@@ -122,7 +122,7 @@
                   </li>
                   {% if request.session.email %}
                                             
-                  <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out ({{request.session.fname}})</a></li>
+                  <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
                   {% else %}
                   <li><a href="{% url 'signin' %}">Sign In</a></li>
                   <li><a href="{% url 'signup' %}">Sign Up</a></li>
@@ -150,7 +150,7 @@
               </ul>
             </div>
             <div class="ads_table table-responsive mt-30">
-              {% for i in books %}
+              
               <table class="table">
                 <thead>
                   <tr>
@@ -169,6 +169,7 @@
                   </tr>
                 </thead>
                 <tbody>
+                  {% for i in books %}
                   <tr>
                     <td class="checkbox">
                       <div class="table_checkbox">
@@ -219,10 +220,11 @@
                         </ul>
                       </div>
                     </td>
-                  {% comment %} </tr> {% endcomment %}
+                  </tr>
+                  {% endfor %}
                 </tbody>
               </table>
-              {% endfor %}
+              
             </div>
        
           </div>
