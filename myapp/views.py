@@ -2,7 +2,7 @@ from asyncio.log import logger
 import email
 from unicodedata import name
 from django.forms import PasswordInput
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from .models import *
 from django.conf import settings
 from django.core.mail import send_mail
@@ -75,7 +75,7 @@ def signup(request):
 
 
 def signout(request):
-    
+
     try:
         del request.session['fname']
         del request.session['email']
@@ -104,7 +104,12 @@ def dashboard(request):
 
 
 def myads(request):
-    return render(request, 'myads.html')
+    try:
+        book_sell = User.objects.get(email=request.session['email'])
+        books = Book.objects.filter(book_sell=book_sell)
+        return render(request, 'myads.html', { books})
+    except:
+        return render(request, 'myads.html')
 
 
 def offers_msgs(request):
@@ -116,11 +121,22 @@ def payments(request):
 
 
 def post_ads(request):
-    if request.method == 'POST':
-        
-        return render(request, 'post_ads.html')
+    if request.method == "POST":
+        Book.objects.create(
+            book_name=request.POST['book_name'],
+            book_cat=request.POST['book_cat'],
+            book_price=request.POST['book_price'],
+            book_description=request.POST['book_description'],
+            book_image=request.FILES['book_image'],
+            address=request.POST['address'],
+            country=request.POST['country'],
+            state=request.POST['state'],
+            city=request.POST['city']
+        )
+        msg = "BOOK ADDED SUCCESSFULLY"
+        return render(request, 'post_ads.html', {'msg': msg})
     else:
-        
+
         return render(request, 'post_ads.html')
 
 
@@ -129,43 +145,44 @@ def product_details(request):
 
 
 def profile_settings(request):
-    if request.method=="POST":
+    if request.method == "POST":
         try:
-            user=User.objects.get(email=request.session['email'])
-            if user.password==request.POST['old_password']:
-                if request.POST['password']==request.POST['cpassword']:
-                    user.password=request.POST['password']
-                    user.cpassword=request.POST['cpassword']
-                    user.fname=request.POST['fname']
-                    user.lname=request.POST['lname']
-                    user.email=request.POST['email']
-                    user.mobile=request.POST['mobile']
-                    user.user_img=request.FILES['user_img']
+            user = User.objects.get(email=request.session['email'])
+            if user.password == request.POST['old_password']:
+                if request.POST['password'] == request.POST['cpassword']:
+                    user.password = request.POST['password']
+                    user.cpassword = request.POST['cpassword']
+                    user.fname = request.POST['fname']
+                    user.lname = request.POST['lname']
+                    user.email = request.POST['email']
+                    user.mobile = request.POST['mobile']
+                    user.user_img = request.FILES['user_img']
                     user.save()
                 else:
-                    msg="Password And Confirm Password Does Not Matched..."
-                    return render(request, 'profile_settings.html',{'msg':msg})
+                    msg = "Password And Confirm Password Does Not Matched..."
+                    return render(request, 'profile_settings.html', {'msg': msg})
             else:
-                msg="Old Password Doesn't Match! "
-                return render(request, 'profile_settings.html',{'msg':msg})
+                msg = "Old Password Doesn't Match! "
+                return render(request, 'profile_settings.html', {'msg': msg})
         except:
-            return render(request, 'profile_settings.html',{'msg':msg})
+            return render(request, 'profile_settings.html', {'msg': msg})
     else:
         return render(request, 'profile_settings.html')
 
 
 def forgot_password(request):
-    if request.method=="POST":
+    if request.method == "POST":
         email = request.POST['email']
         try:
             user = User.objects.get(email=email)
-            otp=random.randint(1000,9999)
+            otp = random.randint(1000, 9999)
             subject = 'OTP For Forgot Password'
-            message = 'Hello User, YOur OTP Is For Forgot Password Is '+str(otp)
+            message = 'Hello User, YOur OTP Is For Forgot Password Is ' + \
+                str(otp)
             email_from = settings.EMAIL_HOST_USER
-            recipient_list = [user.email,]
-            send_mail( subject, message, email_from, recipient_list )
-            return render(request,'otp.html', {'otp':otp,'email':email})
+            recipient_list = [user.email, ]
+            send_mail(subject, message, email_from, recipient_list)
+            return render(request, 'otp.html', {'otp': otp, 'email': email})
 
         except:
             msg = "Email Not Registered..."
@@ -174,32 +191,31 @@ def forgot_password(request):
     else:
         return render(request, 'forgot_password.html')
 
-def otp(request):
-    otp=request.POST['otp']
-    uotp=request.POST['uotp']
-    email=request.POST['email']
 
-    if otp==uotp:
-        return render(request,'new_password.html',{'email':email})
+def otp(request):
+    otp = request.POST['otp']
+    uotp = request.POST['uotp']
+    email = request.POST['email']
+
+    if otp == uotp:
+        return render(request, 'new_password.html', {'email': email})
     else:
-        msg="Entered OTP is Invalid..."
-        return render(request,'otp.html',{'otp':otp,'email':email,'msg':msg})
+        msg = "Entered OTP is Invalid..."
+        return render(request, 'otp.html', {'otp': otp, 'email': email, 'msg': msg})
 
 
 def new_password(request):
-    email=request.POST['email']
-    password=request.POST['password']
-    cpassword=request.POST['cpassword']
+    email = request.POST['email']
+    password = request.POST['password']
+    cpassword = request.POST['cpassword']
 
-    if password==cpassword:
-        user=User.objects.get(email=email)
-        user.password=password
-        user.cpassword=cpassword    
+    if password == cpassword:
+        user = User.objects.get(email=email)
+        user.password = password
+        user.cpassword = cpassword
         user.save()
-        msg="Password Updated successfully..."
-        return render(request,'signin.html',{'msg':msg})
+        msg = "Password Updated successfully..."
+        return render(request, 'signin.html', {'msg': msg})
     else:
-        msg="Password And Confirm Password Does Not Matched..."
-        return render(request,'new_password.html',{'msg':msg,'email':email})
-
-
+        msg = "Password And Confirm Password Does Not Matched..."
+        return render(request, 'new_password.html', {'msg': msg, 'email': email})
