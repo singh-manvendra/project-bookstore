@@ -464,16 +464,18 @@
                                         <p>Member Since 2014</p>
                                     </div>
                                 </div>
+                                {% for i in books %}
                                 <div class="owner_address d-flex">
                                     <div class="address_icon">
                                         <i class="far fa-map-marker-alt"></i>
                                     </div>
                                     <div class="address_content media-body">
-                                        <p>2202 Pooh Bear Lane, Maine 3818 Oxford Court, BOISE</p>
+                                        <p>{{i.city}}</p>
                                         <a href="{% url 'product_details'%}">View
                                             Store</a>
                                     </div>
                                 </div>
+                                {% endfor %}
                                 <div class="owner_call">
                                     <a class="main-btn"
                                         href="{% url 'product_details'%}"><i

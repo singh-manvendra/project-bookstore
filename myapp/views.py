@@ -194,8 +194,20 @@ def post_ads(request):
 
 
 def product_details(request):
-    
-    return render(request, 'product_details.html')
+    try:
+        # cats = Category.objects.all()
+        user=User.objects.get(email=request.session['email'])
+        books=Book.objects.all()
+        request.session['fname'] = user.fname
+        request.session['email'] = user.email
+        request.session['user_img'] = user.user_img.url
+        print('this is working ')
+        return render(request, 'product_details.html',{'books':books})    
+    except Exception as e:
+        print(e)
+        print('this is not working')
+        return render(request, 'product_details.html')
+   
 
 
 def profile_settings(request):
