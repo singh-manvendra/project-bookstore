@@ -136,7 +136,8 @@ def post_ads(request):
             )   
             msg = "BOOK ADDED SUCCESSFULLY"
             return render(request, 'post_ads.html', {'msg': msg})
-        except:
+        except Exception as e:
+            print(e)
             msg = "Did Nothing"
             return render(request, 'post_ads.html', {'msg': msg})
     else:
@@ -305,3 +306,6 @@ def new_password(request):
     except:
         msg = "Invalid!"
         return render(request,'new_password.html',{'msg':msg})
+
+def category(self):
+    s=self.category

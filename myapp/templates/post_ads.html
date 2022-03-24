@@ -143,33 +143,35 @@
                             {% csrf_token %}
                             <div class="single_form">
                                 {% if msg %}
+
                                 {{msg}}
+
                                 {% endif %}
                                 <input type="text" placeholder="Book Name" name="book_name">
                                 <input type="hidden" placeholder="Book Name" name={{"email"}}>
                             </div>
                             <div class="single_form">
                                  <select style="display: none;" name="book_cat">
-                                    <option value="1">Select Categories</option>
-                                    <option value="2">commerce</option>
-                                    <option value="3">science</option>
-                                    <option value="4">fiction/non fiction</option>
-                                    <option value="5">arts/crafts</option>
-                                    <option value="6">finance</option>
-                                    <option value="7">Training</option>
-                                    <option value="8">communication</option>
-                                    <option value="9">arts/crafts</option>
-                                    <option value="10">finance</option>
-                                    <option value="11">Training</option>
-                                    <option value="12">history</option>
-                                    <option value="13">enternaiment</option>
-                                    <option value="14">enviroment</option>
-                                    <option value="15">biography</option>
-                                    <option value="16">kids</option>
-                                    <option value="17">other</option>
+                                    <option value="select">Select Categories</option>
+                                    <option value="commerce">commerce</option>
+                                    <option value="science">science</option>
+                                    <option value="fiction/non fiction">fiction/non fiction</option>
+                                    <option value="arts/crafts">arts/crafts</option>
+                                    <option value="finance">finance</option>
+                                    <option value="Training">Training</option>
+                                    <option value="communication">communication</option>
+                                    <option value="arts/crafts">arts/crafts</option>
+                                    <option value="Maths">Maths</option>
+                                    <option value="IT">IT</option>
+                                    <option value="history">history</option>
+                                    <option value="enternaiment">enternaiment</option>
+                                    <option value="enviroment">enviroment</option>
+                                    <option value="biography">biography</option>
+                                    <option value="kids">kids</option>
+                                    <option value="other">other</option>
                                 </select>
                                 {% comment %} <div class="nice-select" tabindex="0"><span class="current">Select Categories</span>
-                                    <ul class="list" name="book_cat">
+                                    <!-- <ul class="list" name="book_cat">
                                         <li data-value="none" class="option selected">Select Categories</li>
                                         <li data-value="none" class="option">commerce</li>
                                         <li data-value="none" class="option">science</li>
@@ -178,7 +180,7 @@
                                         <li data-value="none" class="option">Services</li>
                                         <li data-value="none" class="option">kids</li>
                                         <li data-value="none" class="option">other</li>
-                                    </ul>
+                                    </ul> -->
                                 </div> {% endcomment %}
                             </div>
                             <div class="single_form">
