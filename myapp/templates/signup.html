@@ -67,7 +67,7 @@
                                                 <i class="fa-solid fa-layer-group"></i> My Ads</a></li>
                                             <li><a href="{% url 'payments' %}">
                                                 <i class="fa-solid fa-wallet"></i> Payments</a></li>
-                                            <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
+                                            <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out ({{request.session.fname}})</a></li>
                                             {% else %}
                                             <li><a href="{% url 'signin' %}">Sign In</a></li>
                                             <li><a href="{% url 'signup' %}">Sign Up</a></li>
