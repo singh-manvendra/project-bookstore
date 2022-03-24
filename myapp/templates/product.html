@@ -126,7 +126,7 @@
                                 
                                 <div class="card-header" id="headingOne">
                                   <a
-                                    href="{% url 'product' %}"
+                                    href="{% url 'product_details' %}"
                                     data-toggle="collapse"
                                     data-target="#collapseOne"
                                     aria-expanded="true"
@@ -245,7 +245,7 @@
                               <i class="fal fa-heart"></i></a>
                           </div>
                           <h4 class="title">
-                            <a href="{% url 'product_details' %}"
+                            <a href="{% url 'product_details' pk=i.pk %}"
                               >{{i.book_name}}</a
                             >
                           </h4>
