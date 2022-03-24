@@ -10,12 +10,38 @@ import random
 
 
 def index(request):
-    return render(request, 'index.html')
+    try:
+        books=Book.objects.all()
+        print('this is working ')
+        return render(request, 'index.html',{'books':books})    
+    except Exception as e:
+        print(e)
+        print('this is not working')
+        return render(request, 'index.html')
+    
 # Create your views here.
 
 
 def categories(request):
-    return render(request, 'categories.html')
+    try:
+        categories = Category.objects.all()
+        return render(request, 'categories.html',{'categories':categories})
+    except:
+        return render(request, 'categories.html')
+
+
+def cats(request,name):
+    try:
+        if (Category.objects.filter(name=name)):
+            catbook = Book.objects.filter(category__name=name)
+            
+            return render(request,'product.html',{'catbook':catbook})
+        else:
+            return render(request,'product.html')
+    except:
+        return render(request, 'categories.html')
+
+
 
 
 def about(request):
@@ -23,7 +49,16 @@ def about(request):
 
 
 def product(request):
-    return render(request, 'product.html')
+    
+    try:
+        cats = Category.objects.all()
+        books=Book.objects.all()
+        print('this is working ')
+        return render(request, 'product.html',{'books':books,'cats':cats})    
+    except Exception as e:
+        print(e)
+        print('this is not working')
+        return render(request, 'product.html')
 
 
 def signin(request):
@@ -85,16 +120,16 @@ def contact(request):
     return render(request, 'contact.html')
 
 
-def dashboard(request):
-    if request.method == 'POST':
-        try:
+# def dashboard(request):
+#     if request.method == 'POST':
+#         try:
             
-            return render(request, 'dashboard.html')
-        except:
+#             return render(request, 'dashboard.html')
+#         except:
 
-            return render(request, 'dashboard.html')
-    else:
-        return render(request, 'dashboard.html')
+#             return render(request, 'dashboard.html')
+#     else:
+#         return render(request, 'dashboard.html')
 
 
 def myads(request):
@@ -102,8 +137,7 @@ def myads(request):
         user=User.objects.get(email=request.session['email'])
         books=Book.objects.filter(book_sellr=user)
         print('this is working ')
-        return render(request, 'myads.html',{'books':books})
-        
+        return render(request, 'myads.html',{'books':books})    
     except Exception as e:
         print(e)
         print('this is not working')
@@ -117,35 +151,50 @@ def offers_msgs(request):
 def payments(request):
     return render(request, 'payments.html')
 
+def postads(request):
+    try:
+        cats = Category.objects.all()
+        return render(request,'post_ads.html',{'cats':cats})
+    except Exception as e:
+        print(e)
+        return render(request,'post_ads.html')
+
 
 def post_ads(request):
-    if request.method == "POST":
-        try:
-            user=User.objects.get(email=request.session['email'])
-            Book.objects.create(
-                book_sellr=user,
-                book_name=request.POST['book_name'],
-                book_cat=request.POST['book_cat'],
-                book_price=request.POST['book_price'],
-                book_description=request.POST['book_description'],
-                book_image=request.FILES['book_image'],
-                address=request.POST['address'],
-                country=request.POST['country'],
-                state=request.POST['state'],
-                city=request.POST['city']
-            )   
-            msg = "BOOK ADDED SUCCESSFULLY"
-            return render(request, 'post_ads.html', {'msg': msg})
-        except Exception as e:
-            print(e)
-            msg = "Did Nothing"
-            return render(request, 'post_ads.html', {'msg': msg})
-    else:
-
-        return render(request, 'post_ads.html')
+    try:
+        cats = Category.objects.all()
+        if request.method == "POST":
+            
+            try: 
+                user=User.objects.get(email=request.session['email'])
+                
+                Book.objects.create(
+                    book_sellr=user,
+                    
+                    book_name=request.POST['book_name'],
+                    book_cat=request.POST['book_cat'],
+                    book_price=request.POST['book_price'],
+                    book_description=request.POST['book_description'],
+                    book_image=request.FILES['book_image'],
+                    address=request.POST['address'],
+                    country=request.POST['country'],
+                    state=request.POST['state'],
+                    city=request.POST['city']
+                )   
+                msg = "BOOK ADDED SUCCESSFULLY"
+                return render(request, 'post_ads.html', {'msg': msg,'cats':cats})
+            except:
+                msg = "Did Nothing"
+                return render(request, 'post_ads.html', {'msg': msg,'cats':cats})
+        else:
+            return render(request, 'post_ads.html',{'cats':cats})
+        
+    except:
+        return render(request,'post_ads.html',{'cats':cats})
 
 
 def product_details(request):
+    
     return render(request, 'product_details.html')
 
 
@@ -306,6 +355,3 @@ def new_password(request):
     except:
         msg = "Invalid!"
         return render(request,'new_password.html',{'msg':msg})
-
-def category(self):
-    s=self.category

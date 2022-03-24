@@ -64,8 +64,7 @@
                                         <ul>
                                             
                                             {% if request.session.email %}
-                                            <li><a href="{% url 'dashboard' %}">
-                                                <i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                                            
                                             <li><a
                                                     href="{% url 'profile_settings' %}">
                                                     <i class="fa-solid fa-gear"></i> Profile Settings</a></li>
@@ -82,8 +81,11 @@
                                     </div>
                                 </div>
                             </li>
+                            {% if request.session.email %}
                             <li><a class="sign-up"
-                                    href="{% url 'post_ads' %}">Post Ads</a></li>
+                                href="{% url 'post_ads' %}">Post Ads</a></li>
+                           
+                            {% endif %}
                         </ul>
                     </div>
                 </nav>
@@ -120,12 +122,9 @@
                             </div>
                             <div class="user_list">
                                 <ul>
-                                    <li><a href="{% url 'dashboard' %}"><i
-                                                class="fal fa-tachometer-alt-average"></i> Dashboard</a></li>
-                                    <li><a href="{% url 'profile_settings' %}"><i
-                                                class="fal fa-cog"></i> Profile Settings</a></li>
-                                    <li><a href="{% url 'myads' %}"><i
-                                                class="fal fa-layer-group"></i> My Ads</a></li>
+                                    
+                                    <li><a href="{% url 'profile_settings' %}"><i class="fa-solid fa-gear"></i> Profile Settings</a></li>
+                                    <li><a href="{% url 'myads' %}"><i class="fa-solid fa-layer-group"></i> My Ads</a></li>
                                     <li><a class="active"
                                             href="{% url 'payments' %}"><i
                                                 class="fal fa-wallet"></i> Payments</a></li>

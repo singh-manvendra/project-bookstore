@@ -58,16 +58,14 @@
                                         <ul>
                                             
                                                 {% if request.session.email %}
-                                                <li><a href="{% url 'dashboard' %}">
-                                                    <i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                                                
                                                 <li><a
                                                         href="{% url 'profile_settings' %}">
                                                         <i class="fa-solid fa-gear"></i> Profile Settings</a></li>
                                                 <li><a href="{% url 'myads' %}">
                                                     <i class="fa-solid fa-layer-group"></i> My Ads</a></li>
                                                 
-                                                <li><a href="{% url 'payments' %}">
-                                                    <i class="fa-solid fa-wallet"></i> Payments</a></li>
+                                                
                                                 <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out ({{request.session.fname}})</a></li>
                                                 {% else %}
                                                 <li><a href="{% url 'signin' %}">Sign In</a></li>
@@ -77,8 +75,11 @@
                                     </div>
                                 </div>
                             </li>
+                            {% if request.session.email %}
                             <li><a class="sign-up"
-                                    href="{% url 'post_ads' %}">Post Ads</a></li>
+                                href="{% url 'post_ads' %}">Post Ads</a></li>
+                           
+                            {% endif %}
                         </ul>
                     </div>
                 </nav>
@@ -104,205 +105,224 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="grid-tab">
                     <div class="row">
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-plus-minus"></i>
+                        {% for i in categories %}
+                            {% if i.name == 'Commerce' %}
+                            <div class="col-lg-3 col-6">
+                                
+                                <div class="single_categories text-center mt-30">
+                                    <div class="categories_icon">
+                                        <i class="fa-solid fa-plus-minus"></i>
+                                    </div>
+                                    
+                                    <div class="categories_content">
+                                        <h5 class="title">Commerce</h5>
+                                        <p> B.com - M.com - Other</p>
+                                    </div>
+                                    <a href="{% url 'product'   %}"></a>
+                                </div>
+                            </div>
+                            {% elif i.name == 'Physics' %}
+                            
+                            <div class="col-lg-3 col-6">
+                                <div class="single_categories text-center mt-30">
+                                    <div class="categories_icon">
+                                        <i class="fa-solid fa-atom"></i>
+                                    </div>
+                                    <div class="categories_content">
+                                        <h5 class="title">Physics</h5>
+                                        <p>B.sc - M.sc - Other</p>
+                                    </div>
+                                    <a href="{% url 'product' %}"></a>
+                                </div>
+                            </div>
+                            {% elif i.name == 'Chemistry' %}
+                            
+                                <div class="col-lg-3 col-6">
+                                    <div class="single_categories text-center mt-30">
+                                        <div class="categories_icon">
+                                            <i class="fa-solid fa-flask-vial"></i>
+                                        </div>
+                                        <div class="categories_content">
+                                            <h5 class="title">Chemistry</h5>
+                                            <p>B.sc - M.sc - Other</p>
+                                        </div>
+                                        <a href="{% url 'product' %}"></a>
+                                    </div>
+                                </div>
+                                {% elif i.name == 'Biology' %}
+                                <div class="col-lg-3 col-6">
+                                    <div class="single_categories text-center mt-30">
+                                        <div class="categories_icon">
+                                            <i class="fa-solid fa-dna"></i>
+                                        </div>
+                                        <div class="categories_content">
+                                            <h5 class="title">Biology</h5>
+                                            <p>B.sc - M.sc - Other</p>
+                                        </div>
+                                        <a href="{% url 'product' %}"></a>
+                                    </div>
+                                </div>
+                                {% elif i.name == 'Computer' %}
+                                <div class="col-lg-3 col-6">
+                                    <div class="single_categories text-center mt-30">
+                                        <div class="categories_icon">
+                                            <i class="fa-solid fa-laptop-code"></i>
+                                        </div>
+                                        <div class="categories_content">
+                                            <h5 class="title">Computer</h5>
+                                            <p>BCA - MCA - Other</p>
+                                        </div>
+                                        <a href="{% url 'product' %}"></a>
+                                    </div>
+                                </div>
+                                {% elif i.name == 'Mathematics' %}
+                                <div class="col-lg-3 col-6">
+                                    <div class="single_categories text-center mt-30">
+                                        <div class="categories_icon">
+                                            <i class="fa-solid fa-square-root-variable"></i>
+                                        </div>
+                                        <div class="categories_content">
+                                            <h5 class="title">Maths</h5>
+                                            <p>B.tech - M.tech - Other</p>
+                                        </div>
+                                        <a href="{% url 'product' %}"></a>
+                                    </div>
+                                </div>
+                                {% elif i.name == 'Fiction' %}
+                                <div class="col-lg-3 col-6">
+                                    <div class="single_categories text-center mt-30">
+                                        <div class="categories_icon">
+                                            <i class="fa-solid fa-user-astronaut"></i>
+                                        </div>
+                                        <div class="categories_content">
+                                            <h5 class="title">Fiction/Nonfiction</h5>
+                                            <p>3 Ads</p>
+                                        </div>
+                                        <a href="{% url 'product' %}"></a>
+                                    </div>
+                                </div>
+                                {% elif i.name == 'Adventure/Sports' %}
+                                <div class="col-lg-3 col-6">
+                                    <div class="single_categories text-center mt-30">
+                                        <div class="categories_icon">
+                                            <i class="fa-solid fa-person-hiking"></i>
+                                        </div>
+                                        <div class="categories_content">
+                                            <h5 class="title">Adventure/Sports</h5>
+                                            <p>3 Ads</p>
+                                        </div>
+                                        <a href="{% url 'product' %}"></a>
+                                    </div>
+                                </div>
+                                {% elif i.name == 'Biography' %}
+                                <div class="col-lg-3 col-6">
+                                    <div class="single_categories text-center mt-30">
+                                        <div class="categories_icon">
+                                            <i class="fa-solid fa-book-bookmark"></i>
+                                        </div>
+                                        <div class="categories_content">
+                                            <h5 class="title">Biography</h5>
+                                            <p>3 Ads</p>
+                                        </div>
+                                        <a href="{% url 'product' %}"></a>
+                                    </div>
+                                </div>
+                                {% elif i.name == 'Finance' %}
+                                <div class="col-lg-3 col-6">
+                                    <div class="single_categories text-center mt-30">
+                                        <div class="categories_icon">
+                                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                                        </div>
+                                        <div class="categories_content">
+                                            <h5 class="title">Finance</h5>
+                                            <p>3 Ads</p>
+                                        </div>
+                                        <a href="{% url 'product' %}"></a>
+                                    </div>
+                                </div>
+                                {% elif i.name == 'Business' %}
+                                <div class="col-lg-3 col-6">
+                                    <div class="single_categories text-center mt-30">
+                                        <div class="categories_icon">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                        </div>
+                                        <div class="categories_content">
+                                            <h5 class="title">Bussiness</h5>
+                                            <p>3 Ads</p>
+                                        </div>
+                                        <a href="{% url 'product' %}"></a>
+                                    </div>
                                 </div>
                                 
-                                <div class="categories_content">
-                                    <h5 class="title">Commerce</h5>
-                                    <p> B.com - M.com - Other</p>
+                                {% elif i.name == 'Motivational' %}
+                                <div class="col-lg-3 col-6">
+                                    <div class="single_categories text-center mt-30">
+                                        <div class="categories_icon">
+                                            <i class="fa-solid fa-brain"></i>
+                                        </div>
+                                        <div class="categories_content">
+                                            <h5 class="title">Motivational</h5>
+                                            <p>3 Ads</p>
+                                        </div>
+                                        <a href="{% url 'product' %}"></a>
+                                    </div>
                                 </div>
-                                <a href="{% url 'category' s='commerce' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-atom"></i>
+                                {% elif i.name == 'Poetry/Story' %}
+                                <div class="col-lg-3 col-6">
+                                    <div class="single_categories text-center mt-30">
+                                        <div class="categories_icon">
+                                            <i class="fa-solid fa-book-open"></i>
+                                        </div>
+                                        <div class="categories_content">
+                                            <h5 class="title">Poetry/Story</h5>
+                                            <p>3 Ads</p>
+                                        </div>
+                                        <a href="{% url 'product' %}"></a>
+                                    </div>
                                 </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Physics</h5>
-                                    <p>B.sc - M.sc - Other</p>
+                                
+                                {% elif i.name == 'Arts/Crafts' %}
+                                <div class="col-lg-3 col-6">
+                                    <div class="single_categories text-center mt-30">
+                                        <div class="categories_icon">
+                                            <i class="fa-solid fa-palette"></i>
+                                        </div>
+                                        <div class="categories_content">
+                                            <h5 class="title">
+                                                Arts/Crafts</h5>
+                                            <p>3 Ads</p>
+                                        </div>
+                                        <a href="{% url 'product' %}"></a>
+                                    </div>
                                 </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-flask-vial"></i>
+                                {% elif i.name == 'Diploma Courses' %}
+                                <div class="col-lg-3 col-6">
+                                    <div class="single_categories text-center mt-30">
+                                        <div class="categories_icon">
+                                            <i class="fa-solid fa-graduation-cap"></i>
+                                        </div>
+                                        <div class="categories_content">
+                                            <h5 class="title">Diploma Courses</h5>
+                                            <p>3 Ads</p>
+                                        </div>
+                                        <a href="{% url 'product' %}"></a>
+                                    </div>
                                 </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Chemistry</h5>
-                                    <p>B.sc - M.sc - Other</p>
+                                {% elif i.name == 'Other Books' %}
+                                <div class="col-lg-3 col-6">
+                                    <div class="single_categories text-center mt-30">
+                                        <div class="categories_icon">
+                                            <i class="fa-solid fa-book"></i>
+                                        </div>
+                                        <div class="categories_content">
+                                            <h5 class="title">Other Books</h5>
+                                            <p>3 Ads</p>
+                                        </div>
+                                        <a href="{% url 'product' %}"></a>
+                                    </div>
                                 </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-dna"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Biology</h5>
-                                    <p>B.sc - M.sc - Other</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-laptop-code"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Computer</h5>
-                                    <p>BCA - MCA - Other</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-square-root-variable"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Maths</h5>
-                                    <p>B.tech - M.tech - Other</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-user-astronaut"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Fiction/Nonfiction</h5>
-                                    <p>3 Ads</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-person-hiking"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Adventure/Sports</h5>
-                                    <p>3 Ads</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-book-bookmark"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Biography</h5>
-                                    <p>3 Ads</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-indian-rupee-sign"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Finance</h5>
-                                    <p>3 Ads</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-briefcase"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Bussiness</h5>
-                                    <p>3 Ads</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-brain"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Motivational</h5>
-                                    <p>3 Ads</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-book-open"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Poetry/Story</h5>
-                                    <p>3 Ads</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-palette"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">
-                                        Arts/Crafts</h5>
-                                    <p>3 Ads</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-graduation-cap"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Diploma Courses</h5>
-                                    <p>3 Ads</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-3 col-6">
-                            <div class="single_categories text-center mt-30">
-                                <div class="categories_icon">
-                                    <i class="fa-solid fa-book"></i>
-                                </div>
-                                <div class="categories_content">
-                                    <h5 class="title">Other Books</h5>
-                                    <p>3 Ads</p>
-                                </div>
-                                <a href="{% url 'product' %}"></a>
-                            </div>
-                        </div>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="tab-pane fade" id="list" role="tabpanel" aria-labelledby="list-tab">

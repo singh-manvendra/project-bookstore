@@ -58,15 +58,13 @@
                                         <ul>
                                             
                                             {% if request.session.email %}
-                                            <li><a href="{% url 'dashboard' %}">
-                                                <i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                                            
                                             <li><a
                                                     href="{% url 'profile_settings' %}">
                                                     <i class="fa-solid fa-gear"></i> Profile Settings</a></li>
                                             <li><a href="{% url 'myads' %}">
                                                 <i class="fa-solid fa-layer-group"></i> My Ads</a></li>
-                                            <li><a href="{% url 'payments' %}">
-                                                <i class="fa-solid fa-wallet"></i> Payments</a></li>
+                                            
                                             <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
                                             {% else %}
                                             <li><a href="{% url 'signin' %}">Sign In</a></li>
@@ -76,8 +74,11 @@
                                     </div>
                                 </div>
                             </li>
+                            {% if request.session.email %}
                             <li><a class="sign-up"
-                                    href="{% url 'post_ads' %}">Post Ads</a></li>
+                                href="{% url 'post_ads' %}">Post Ads</a></li>
+                           
+                            {% endif %}
                         </ul>
                     </div>
                 </nav>
@@ -114,14 +115,10 @@
                             </div>
                             <div class="user_list">
                                 <ul>
-                                    <li><a href="{% url 'dashboard' %}"><i
-                                                class="fal fa-tachometer-alt-average"></i> Dashboard</a></li>
-                                    <li><a href="{% url 'profile_settings' %}"><i
-                                                class="fal fa-cog"></i> Profile Settings</a></li>
-                                    <li><a href="{% url 'myads' %}"><i
-                                                class="fal fa-layer-group"></i> My Ads</a></li>
-                                    <li><a href="{% url 'payments' %}"><i
-                                                class="fal fa-wallet"></i> Payments</a></li>
+                                    
+                                    <li><a href="{% url 'profile_settings' %}"><i class="fa-solid fa-gear"></i> Profile Settings</a></li>
+                                    <li><a href="{% url 'myads' %}"><i class="fa-solid fa-layer-group"></i> My Ads</a></li>
+                                    
                                                 {% if request.session.email %}
                                             
                                                 <li><a href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a></li>
@@ -139,7 +136,7 @@
                         <div class="post_title">
                             <h5 class="title">Ad Detail</h5>
                         </div>
-                        <form action="{% url 'post_ads' %}" method="Post" enctype="multipart/form-data">
+                        <form action="{% url 'post_ads' %} " method="Post" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="single_form">
                                 {% if msg %}
@@ -151,10 +148,13 @@
                                 <input type="hidden" placeholder="Book Name" name={{"email"}}>
                             </div>
                             <div class="single_form">
+                                
                                  <select style="display: none;" name="book_cat">
+                                    
                                     <option value="select">Select Categories</option>
-                                    <option value="commerce">commerce</option>
-                                    <option value="science">science</option>
+                                    {% for i in cats %}
+                                    <option value="{{i.name}}">{{i.name}}</option>
+                                    {% comment %} <option value="science">science</option>
                                     <option value="fiction/non fiction">fiction/non fiction</option>
                                     <option value="arts/crafts">arts/crafts</option>
                                     <option value="finance">finance</option>
@@ -168,8 +168,10 @@
                                     <option value="enviroment">enviroment</option>
                                     <option value="biography">biography</option>
                                     <option value="kids">kids</option>
-                                    <option value="other">other</option>
+                                    <option value="other">other</option> {% endcomment %}
+                                    {% endfor %}
                                 </select>
+                                
                                 {% comment %} <div class="nice-select" tabindex="0"><span class="current">Select Categories</span>
                                     <!-- <ul class="list" name="book_cat">
                                         <li data-value="none" class="option selected">Select Categories</li>
@@ -218,58 +220,31 @@
                             
                             <div class="single_form">
                                 <select style="display: none;" name="country">
-                                    {% comment %} <option value="none">Select Country</option> {% endcomment %}
-                                    <option value="1">India</option>
+                                    <option value="none">Select Country</option>
+                                    <option value="India" name="country">India</option>
                                     
                                 </select>
-                                {% comment %} <div class="nice-select" tabindex="0"><span class="current">Select Country</span>
-                                    <ul class="list">
-                                        <li data-value="none" class="option selected">Select Country</li>
-                                        
-                                        <li data-value="1" class="option">India</li>
-                                        
-                                    </ul>
-                                </div> {% endcomment %}
                             </div>
                             <div class="single_form">
                                 <select style="display: none;" name="state">
-                                    <option value="1">Gujarat</option>
-                                    <option value="2">Rajasthan</option>
-                                    <option value="3">UP</option>
+                                    <option value="none">Select State</option>
+                                    <option value="Gujarat" name="state">Gujarat</option>
+                                    <option value="Rajasthan" name="state">Rajasthan</option>
+                                    <option value="UP" name="state">UP</option>
                                 </select>
-                                {% comment %} <div class="nice-select" tabindex="0"><span class="current" >Select State</span>
-                                    <ul class="list" name="State" >
-                                        <li data-value="none" class="option selected">Select State</li>
-                                        
-                                        <li data-value="1" class="option">Gujarat</li>
                                 
-                                        <li data-value="2" class="option">Maharashtra</li>
-                                        
-                                        <li data-value="3" class="option">Rajasthan </li>
-                                       
-                                        <li data-value="4" class="option"> Uttar Pradesh</li>
-                                        <li data-value="5" class="option">Uttarakhand</li>
-                                        <li data-value="6" class="option">West Bengal </li>
-                                        
-                                        
-
-                                    </ul> {% endcomment %}
+                            </div>
+                            <div class="single_form">
+                                {% comment %} <div class="nice-select" tabindex="0"> {% endcomment %}
+                                    <select style="display: none;" name="city">
+                                        <option value="none">Select City</option>
+                                        <option value="Ahmedabad">Ahmedabad</option>
+                                        <option value="Surat">Surat</option>
+                                        <option value="Vadodara">Vadodara</option>
+                                    </select>
                                 {% comment %} </div> {% endcomment %}
                             </div>
-                            <div class="single_form">
-                                <div class="nice-select" tabindex="0">
-                                    <select style="display: none;" name="city">
-                                        <option value="1">ahmdabad</option>
-                                        <option value="2">surat</option>
-                                        <option value="3">modasa</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="single_form">
-                                <input type="checkbox" name="checkbox" id="checkbox2">
-                                <label for="checkbox2"></label>
-                                <span>I agree to all Terms of Use &amp; Posting Rules</span>
-                            </div>
+                            
                             <div class="single_form">
                                 <button class="main-btn" type="submit" name="action">Post Ad</button>
                             </div>

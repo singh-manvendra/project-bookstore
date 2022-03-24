@@ -209,7 +209,7 @@ p {
 
 .pagination_wrapper .pagination li .Previous:hover,
 .pagination_wrapper .pagination li .next:hover {
-    color: #463ce5;
+    color: #023047;
 }
 
 .pagination_wrapper .pagination li .number {
@@ -236,8 +236,8 @@ p {
 
 .pagination_wrapper .pagination li .number.active,
 .pagination_wrapper .pagination li .number:hover {
-    background-color: #463ce5;
-    border-color: #463ce5;
+    background-color: #023047;
+    border-color: #023047;
     color: #fff;
 }
 
@@ -1354,7 +1354,7 @@ p {
 
 .header_search {
     background-color: #fff;
-    background-color: #463ce5;
+    background-color: #023047;
     padding: 5px 10px 20px;
     border-radius: 5px;
     margin-top: 70px;
@@ -1900,6 +1900,11 @@ p {
 .single_ads_card .ads_card_image {
     position: relative;
     overflow: hidden;
+    /* max-width: 80px; */
+    height: 200px;
+    width: 270px;
+    object-fit: cover;
+    object-position: 0 0;
 }
 
 .single_ads_card .ads_card_image .sticker {
@@ -1916,7 +1921,7 @@ p {
 }
 
 .single_ads_card .ads_card_image .sticker.sticker_color-1 {
-    background-color: #463ce5;
+    background-color: #023047;
 }
 
 .single_ads_card .ads_card_image .sticker.sticker_color-2 {
@@ -1966,7 +1971,7 @@ p {
 .single_ads_card .ads_card_content .title a {
     font-size: 16px;
     font-weight: 500;
-    color: #463ce5;
+    color: #023047;
     margin-top: 20px;
     -webkit-transition: all 0.3s ease-out 0s;
     -moz-transition: all 0.3s ease-out 0s;
@@ -2167,7 +2172,7 @@ p {
 }
 
 .choose_content .list li:nth-child(3n + 1) i {
-    background-color: #463ce5;
+    background-color: #023047;
 }
 
 .choose_content .list li:nth-child(3n + 2) i {
@@ -2224,7 +2229,7 @@ p {
 .single_locations .locations_content .title a {
     font-size: 22px;
     font-weight: 700;
-    color: #463ce5;
+    color: #023047;
 }
 
 .single_locations .locations_content .title a i {
@@ -2294,7 +2299,7 @@ p {
 }
 
 .counter_wrapper {
-    background-color: #463ce5;
+    background-color: #023047;
     padding: 25px;
     padding-top: 0;
     border-radius: 5px;
@@ -2653,7 +2658,7 @@ p {
 .single_blog .blog_content .title a {
     font-size: 16px;
     font-weight: 500;
-    color: #463ce5;
+    color: #023047;
     -webkit-transition: all 0.3s ease-out 0s;
     -moz-transition: all 0.3s ease-out 0s;
     -ms-transition: all 0.3s ease-out 0s;
@@ -2852,7 +2857,7 @@ p {
 }
 
 .footer_copyright {
-    background-color: #463ce5;
+    background-color: #023047;
 }
 
 .copyright p,
@@ -3700,7 +3705,7 @@ p {
 
 .sidebar_price_range .range-slider .irs-bar {
     height: 10px;
-    background-color: #463ce5;
+    background-color: #023047;
 }
 
 .sidebar_price_range .range-slider .irs-handle {
@@ -4042,7 +4047,7 @@ p {
 }
 
 .product_image .tab-pane .sticker li:nth-child(3n + 2) {
-    background-color: #463ce5;
+    background-color: #023047;
 }
 
 .product_image .tab-pane .sticker li:nth-child(3n + 3) {
@@ -4096,7 +4101,7 @@ p {
 .product_details_meta .product_price .price {
     font-size: 50px;
     font-weight: 700;
-    color: #463ce5;
+    color: #023047;
     line-height: 55px;
 }
 
@@ -4583,7 +4588,7 @@ p {
 }
 
 .product_sidebar_owner .product_owner_wrapper .owner_call .main-btn {
-    background-color: #463ce5;
+    background-color: #023047;
     width: 100%;
 }
 
@@ -4802,7 +4807,7 @@ p {
 }
 
 .blog_details .blog_details_image .sticker li:nth-child(3n + 2) {
-    background-color: #463ce5;
+    background-color: #023047;
 }
 
 .blog_details .blog_details_image .sticker li:nth-child(3n + 3) {
@@ -5067,7 +5072,7 @@ p {
 }
 
 .blog_details_tips .tips_list li:nth-child(3n + 1) i {
-    background-color: #463ce5;
+    background-color: #023047;
 }
 
 .blog_details_tips .tips_list li:nth-child(3n + 2) i {
@@ -6312,7 +6317,7 @@ p {
 }
 
 .outgoing_msg .outgoing_msg_content p {
-    background-color: #463ce5;
+    background-color: #023047;
     font-size: 14px;
     padding: 10px;
     color: #fff;
@@ -6351,7 +6356,7 @@ p {
     height: 45px;
     padding: 0;
     border: 0;
-    background-color: #463ce5;
+    background-color: #023047;
     color: #fff;
     font-size: 20px;
     border-radius: 50%;

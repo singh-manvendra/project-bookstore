@@ -6,6 +6,7 @@ from email.mime import image
 from tkinter import CASCADE
 from unicodedata import category
 from django.db import models
+from django_resized import ResizedImageField
 
 
 # Create your models here.
@@ -22,9 +23,28 @@ class User(models.Model):
         return self.fname+" - "+self.email
 
 
+
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    subject = models.CharField(max_length=100)
+    remarks = models.TextField()
+
+    def __str__(self):
+        return self.name
+    
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.name
+
 class Book(models.Model):
     book_sellr = models.ForeignKey(User,on_delete=models.CASCADE)
     book_name = models.CharField(max_length=100)
+    
     book_cat = models.CharField(max_length=100)
     book_price = models.IntegerField()
     book_description = models.TextField()
@@ -36,13 +56,3 @@ class Book(models.Model):
 
     def __str__(self):
         return self.book_name
-
-
-class Contact(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.CharField(max_length=100)
-    subject = models.CharField(max_length=100)
-    remarks = models.TextField()
-
-    def __str__(self):
-        return self.name
