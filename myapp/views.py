@@ -99,13 +99,13 @@ def dashboard(request):
 
 def myads(request):
     try:
-        # email = request.session['email']
-        books = Book.objects.filter(book_sell=request.session['email'])
-        
+        user=User.objects.get(email=request.session['email'])
+        books=Book.objects.filter(book_sellr=user)
         print('this is working ')
         return render(request, 'myads.html',{'books':books})
         
-    except:
+    except Exception as e:
+        print(e)
         print('this is not working')
         return render(request, 'myads.html')
 
@@ -123,7 +123,7 @@ def post_ads(request):
         try:
             user=User.objects.get(email=request.session['email'])
             Book.objects.create(
-                book_sell=user,
+                book_sellr=user,
                 book_name=request.POST['book_name'],
                 book_cat=request.POST['book_cat'],
                 book_price=request.POST['book_price'],

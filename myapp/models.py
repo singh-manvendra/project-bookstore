@@ -23,7 +23,7 @@ class User(models.Model):
 
 
 class Book(models.Model):
-    book_sell = models.CharField(max_length=100)
+    book_sellr = models.ForeignKey(User,on_delete=models.CASCADE)
     book_name = models.CharField(max_length=100)
     book_cat = models.IntegerField()
     book_price = models.IntegerField()

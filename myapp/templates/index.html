@@ -103,45 +103,10 @@
                 <div class="header_search">
                     <form action="{% url 'index' %}">
                         <div class="search_wrapper d-flex flex-wrap">
-                            <div class="search_column d-flex flex-wrap">
-                                <div class="search_select mt-15">
-                                    <select style="display: none;">
-                                        <option value="0">Select a Location</option>
-                                        <option value="1">Some option</option>
-                                        <option value="2">Another option</option>
-                                        <option value="4">Potato</option>
-                                    </select>
-                                    <div class="nice-select" tabindex="0"><span class="current">Select a Location</span>
-                                        <ul class="list">
-                                            <li data-value="0" class="option selected">Select a Location</li>
-                                            <li data-value="1" class="option">Some option</li>
-                                            <li data-value="2" class="option">Another option</li>
-                                            <li data-value="4" class="option">Potato</li>
-                                        </ul>
-                                    </div>
-                                    <i class="fa-solid fa-location-dot"></i>
-                                </div>
-                                <div class="search_select mt-15">
-                                    <select style="display: none;">
-                                        <option value="0">Select Category</option>
-                                        <option value="1">Some option</option>
-                                        <option value="2">Another option</option>
-                                        <option value="4">Potato</option>
-                                    </select>
-                                    <div class="nice-select" tabindex="0"><span class="current">Select Category</span>
-                                        <ul class="list">
-                                            <li data-value="0" class="option selected">Select Category</li>
-                                            <li data-value="1" class="option">Some option</li>
-                                            <li data-value="2" class="option">Another option</li>
-                                            <li data-value="4" class="option">Potato</li>
-                                        </ul>
-                                    </div>
-                                    <i class="fa-solid fa-tags"></i>
-                                </div>
-                            </div>
+                            
                             <div class="search_column d-flex flex-wrap">
                                 <div class="search_form mt-15">
-                                    <input type="text" placeholder="Type Your Keyword">
+                                    <input type="text" placeholder="Type Book Name" name="book_name">
                                     <i class="fa-solid fa-i-cursor"></i>
                                 </div>
                                 <div class="search_btn mt-15">
@@ -153,15 +118,10 @@
                     <div class="header_keyword d-sm-flex">
                         <span class="title">Trending Keywords:</span>
                         <ul class="tags media-body">
-                            <li><a href="{% url 'index' %}">Camera</a></li>
-                            <li><a href="{% url 'index' %}">Mobile</a></li>
-                            <li><a href="{% url 'index' %}">DSLR</a></li>
-                            <li><a href="{% url 'index' %}">Packet</a></li>
-                            <li><a href="{% url 'index' %}">Dress</a></li>
-                            <li><a href="{% url 'index' %}">Shirt</a></li>
-                            <li><a href="{% url 'index' %}">Pant</a></li>
-                            <li><a href="{% url 'index' %}">Shoe</a></li>
-                            <li><a href="{% url 'index' %}">Table</a></li>
+                            <li><a href="{% url 'index' %}">Python</a></li>
+                            <li><a href="{% url 'index' %}">Java</a></li>
+                            <li><a href="{% url 'index' %}">PHP</a></li>
+                            
                         </ul>
                     </div>
                 </div>
