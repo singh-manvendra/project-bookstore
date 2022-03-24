@@ -6,7 +6,6 @@ from email.mime import image
 from tkinter import CASCADE
 from unicodedata import category
 from django.db import models
-from django_resized import ResizedImageField
 
 
 # Create your models here.
