@@ -193,11 +193,11 @@ def post_ads(request):
         return render(request,'post_ads.html',{'cats':cats})
 
 
-def product_details(request,pk):
+def product_details(request):
     try:
         # cats = Category.objects.all()
-        
-        books=Book.objects.get(pk=pk)
+        user=User.objects.get(email=request.session['email'])
+        books=Book.objects.all()
         request.session['fname'] = user.fname
         request.session['email'] = user.email
         request.session['user_img'] = user.user_img.url

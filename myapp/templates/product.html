@@ -86,7 +86,7 @@
                 </li>
                 {% if request.session.email %}
                             <li><a class="sign-up"
-                                href="{% url 'post_ads' %}">Post Ads</a></li>
+                                href="{% url 'post_ads' %}">Post Book</a></li>
                            
                             {% endif %}
               </ul>
@@ -126,7 +126,7 @@
                                 
                                 <div class="card-header" id="headingOne">
                                   <a
-                                    href="{% url 'product_details' %}"
+                                    href="{% url 'product' %}"
                                     data-toggle="collapse"
                                     data-target="#collapseOne"
                                     aria-expanded="true"
@@ -245,7 +245,7 @@
                               <i class="fal fa-heart"></i></a>
                           </div>
                           <h4 class="title">
-                            <a href="{% url 'product_details' pk=i.pk %}"
+                            <a href="{% url 'product_details' %}"
                               >{{i.book_name}}</a
                             >
                           </h4>
