@@ -125,14 +125,19 @@
                               <div class="card">
                                 
                                 <div class="card-header" id="headingOne">
-                                  <a
-                                    href="{% url 'product' %}"
+                                  
+                                  {% comment %} <a
+                                    href="{% url 'product' %}?category={{i.id}}"
                                     data-toggle="collapse"
                                     data-target="#collapseOne"
                                     aria-expanded="true"
                                     aria-controls="collapseOne"
-                                    >{% if i.name == 'Commerce' %}
+                                    > {% endcomment %}
+                                    <a href="{% url 'product' %}?category={{i.id}}">
+                                    {% if i.name == 'Commerce' %}
+                                    
                                     <i class="fa-solid fa-plus-minus"></i>
+                                    
 
                                     {% elif i.name == 'Physics' %}
                                     <i class="fa-solid fa-atom"> </i>
@@ -177,8 +182,10 @@
                                     {% elif i.name == 'Other Books' %}
                                     <i class="fa-solid fa-book"></i>
                                     {% endif %}
-                                    {{i.name}}</a
-                                  >
+                                    {{i.name}}
+                                  </a>
+                                    {% comment %} </a {% endcomment %}
+                                  
                                 </div>
                                 
                                 <div

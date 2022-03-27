@@ -164,7 +164,7 @@
                                             
                                         </div>
                                         <h4 class="title"><a
-                                                href="{% url 'product_details' %}">{{i.book_name}}</a></h4>
+                                                href="{% url 'product_details' %}?product={{i.id}}">{{i.book_name}}</a></h4>
                                         <p><i class="fa-solid fa-map-location-dot"></i>{{i.city}} , {{i.state}}</p>
                                         <div class="ads_price_date d-flex justify-content-between">
                                             <span class="price">{{i.book_price}}</span>
