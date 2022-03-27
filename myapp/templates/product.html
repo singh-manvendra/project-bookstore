@@ -240,12 +240,12 @@
                         </div>
                         <div class="ads_card_content">
                           <div class="meta d-flex justify-content-between">
-                            <p>{{i.book_cat}}</p>
+                            <p>{{i.category}}</p>
                             <a class="like" href="{% url 'product' %}">
                               <i class="fal fa-heart"></i></a>
                           </div>
                           <h4 class="title">
-                            <a href="{% url 'product_details' %}"
+                            <a href="{% url 'product_details' %}?product={{i.id}}"
                               >{{i.book_name}}</a
                             >
                           </h4>

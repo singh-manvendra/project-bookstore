@@ -118,7 +118,7 @@
                                         <h5 class="title">Commerce</h5>
                                         <p> B.com - M.com - Other</p>
                                     </div>
-                                    <a href="{% url 'product'   %}"></a>
+                                    <a href="{% url 'product'   %}?category={{i.id}}"></a>
                                 </div>
                             </div>
                             {% elif i.name == 'Physics' %}
@@ -132,7 +132,7 @@
                                         <h5 class="title">Physics</h5>
                                         <p>B.sc - M.sc - Other</p>
                                     </div>
-                                    <a href="{% url 'product' %}"></a>
+                                    <a href="{% url 'product' %}?category={{i.id}}"></a>
                                 </div>
                             </div>
                             {% elif i.name == 'Chemistry' %}
@@ -146,7 +146,7 @@
                                             <h5 class="title">Chemistry</h5>
                                             <p>B.sc - M.sc - Other</p>
                                         </div>
-                                        <a href="{% url 'product' %}"></a>
+                                        <a href="{% url 'product' %}?category={{i.id}}"></a>
                                     </div>
                                 </div>
                                 {% elif i.name == 'Biology' %}
@@ -159,7 +159,7 @@
                                             <h5 class="title">Biology</h5>
                                             <p>B.sc - M.sc - Other</p>
                                         </div>
-                                        <a href="{% url 'product' %}"></a>
+                                        <a href="{% url 'product' %}?category={{i.id}}"></a>
                                     </div>
                                 </div>
                                 {% elif i.name == 'Computer' %}
@@ -172,7 +172,7 @@
                                             <h5 class="title">Computer</h5>
                                             <p>BCA - MCA - Other</p>
                                         </div>
-                                        <a href="{% url 'product' %}"></a>
+                                        <a href="{% url 'product' %}?category={{i.id}}"></a>
                                     </div>
                                 </div>
                                 {% elif i.name == 'Mathematics' %}
@@ -185,7 +185,7 @@
                                             <h5 class="title">Maths</h5>
                                             <p>B.tech - M.tech - Other</p>
                                         </div>
-                                        <a href="{% url 'product' %}"></a>
+                                        <a href="{% url 'product' %}?category={{i.id}}"></a>
                                     </div>
                                 </div>
                                 {% elif i.name == 'Fiction' %}
@@ -198,7 +198,7 @@
                                             <h5 class="title">Fiction/Nonfiction</h5>
                                             <p>3 Ads</p>
                                         </div>
-                                        <a href="{% url 'product' %}"></a>
+                                        <a href="{% url 'product' %}?category={{i.id}}"></a>
                                     </div>
                                 </div>
                                 {% elif i.name == 'Adventure/Sports' %}
@@ -211,7 +211,7 @@
                                             <h5 class="title">Adventure/Sports</h5>
                                             <p>3 Ads</p>
                                         </div>
-                                        <a href="{% url 'product' %}"></a>
+                                        <a href="{% url 'product' %}?category={{i.id}}"></a>
                                     </div>
                                 </div>
                                 {% elif i.name == 'Biography' %}
@@ -224,7 +224,7 @@
                                             <h5 class="title">Biography</h5>
                                             <p>3 Ads</p>
                                         </div>
-                                        <a href="{% url 'product' %}"></a>
+                                        <a href="{% url 'product' %}?category={{i.id}}"></a>
                                     </div>
                                 </div>
                                 {% elif i.name == 'Finance' %}
@@ -237,7 +237,7 @@
                                             <h5 class="title">Finance</h5>
                                             <p>3 Ads</p>
                                         </div>
-                                        <a href="{% url 'product' %}"></a>
+                                        <a href="{% url 'product' %}?category={{i.id}}"></a>
                                     </div>
                                 </div>
                                 {% elif i.name == 'Business' %}
@@ -250,7 +250,7 @@
                                             <h5 class="title">Bussiness</h5>
                                             <p>3 Ads</p>
                                         </div>
-                                        <a href="{% url 'product' %}"></a>
+                                        <a href="{% url 'product' %}?category={{i.id}}"></a>
                                     </div>
                                 </div>
                                 
@@ -264,7 +264,7 @@
                                             <h5 class="title">Motivational</h5>
                                             <p>3 Ads</p>
                                         </div>
-                                        <a href="{% url 'product' %}"></a>
+                                        <a href="{% url 'product' %}?category={{i.id}}"></a>
                                     </div>
                                 </div>
                                 {% elif i.name == 'Poetry/Story' %}
@@ -277,7 +277,7 @@
                                             <h5 class="title">Poetry/Story</h5>
                                             <p>3 Ads</p>
                                         </div>
-                                        <a href="{% url 'product' %}"></a>
+                                        <a href="{% url 'product' %}?category={{i.id}}"></a>
                                     </div>
                                 </div>
                                 
@@ -292,7 +292,7 @@
                                                 Arts/Crafts</h5>
                                             <p>3 Ads</p>
                                         </div>
-                                        <a href="{% url 'product' %}"></a>
+                                        <a href="{% url 'product' %}?category={{i.id}}"></a>
                                     </div>
                                 </div>
                                 {% elif i.name == 'Diploma Courses' %}
@@ -305,7 +305,7 @@
                                             <h5 class="title">Diploma Courses</h5>
                                             <p>3 Ads</p>
                                         </div>
-                                        <a href="{% url 'product' %}"></a>
+                                        <a href="{% url 'product' %}?category={{i.id}}"></a>
                                     </div>
                                 </div>
                                 {% elif i.name == 'Other Books' %}
@@ -318,7 +318,7 @@
                                             <h5 class="title">Other Books</h5>
                                             <p>3 Ads</p>
                                         </div>
-                                        <a href="{% url 'product' %}"></a>
+                                        <a href="{% url 'product' %}?category={{i.id}}"></a>
                                     </div>
                                 </div>
                             {% endif %}

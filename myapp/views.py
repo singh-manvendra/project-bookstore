@@ -50,7 +50,12 @@ def product(request):
 
     try:
         cats = Category.objects.all()
-        books = Book.objects.all()
+        books = None
+        category = request.GET.get('category')
+        if category:
+            books = Book.objects.filter(category_id=category)
+        else:
+            books = Book.objects.all()
         print('this is working ')
         return render(request, 'product.html', {'books': books, 'cats': cats})
     except Exception as e:
@@ -166,12 +171,11 @@ def post_ads(request):
 
             try:
                 user = User.objects.get(email=request.session['email'])
-
+                category = Category.objects.get(name=request.POST['category'])
                 Book.objects.create(
                     book_sellr=user,
-
-                    book_name=request.POST['book_name'],
-                    book_cat=request.POST['book_cat'],
+                    category=category,
+                    book_name=request.POST['book_name'], 
                     book_price=request.POST['book_price'],
                     book_description=request.POST['book_description'],
                     book_image=request.FILES['book_image'],
@@ -182,7 +186,8 @@ def post_ads(request):
                 )
                 msg = "BOOK ADDED SUCCESSFULLY"
                 return render(request, 'post_ads.html', {'msg': msg, 'cats': cats})
-            except:
+            except Exception as e:
+                print(e)
                 msg = "Did Nothing"
                 return render(request, 'post_ads.html', {'msg': msg, 'cats': cats})
         else:
@@ -192,21 +197,23 @@ def post_ads(request):
         return render(request, 'post_ads.html', {'cats': cats})
 
 
-def product_details(request, pk):
-    # try:
-    # cats = Category.objects.all()
-    # user=User.objects.get(email=request.session['email'])
-    books = Book.objects.get(pk=pk)
-    # request.session['fname'] = user.fname
-    # request.session['email'] = user.email
-    # request.session['user_img'] = user.user_img.url
-    # print('this is working ')
-    return render(request, 'product_details.html', {'books':books})
-    # except Exception as e:
-    #     print(e)
-    #     print('this is not working')
-    #     return render(request, 'product_details.html')
-
+def product_details(request):
+    try:
+        
+        books = None
+        product = request.GET.get('product')
+        user = User.objects.all()
+        if product:
+            
+            books = Book.objects.filter(id=product)
+        else:
+            books = Book.objects.all()
+        print('this is working ')
+        return render(request, 'product_details.html', {'books': books,'user':user})
+    except Exception as e:
+        print(e)
+        print('this is not working')
+        return render(request, 'product_details.html')
 
 def profile_settings(request):
     if request.method == "POST":

@@ -43,8 +43,8 @@ class Category(models.Model):
 class Book(models.Model):
     book_sellr = models.ForeignKey(User,on_delete=models.CASCADE)
     book_name = models.CharField(max_length=100)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE)
     
-    book_cat = models.CharField(max_length=100)
     book_price = models.IntegerField()
     book_description = models.TextField()
     book_image = models.ImageField(upload_to='images/', default="images/author-1.jpg", null=True, blank=True)
@@ -55,3 +55,5 @@ class Book(models.Model):
 
     def __str__(self):
         return self.book_name
+    
+    

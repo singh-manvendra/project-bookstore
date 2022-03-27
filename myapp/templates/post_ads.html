@@ -136,7 +136,7 @@
                         <div class="post_title">
                             <h5 class="title">Ad Detail</h5>
                         </div>
-                        <form action="{% url 'post_ads' %} " method="Post" enctype="multipart/form-data">
+                        <form action="{% url 'post_ads' %}?category={{i.name}}" method="Post" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="single_form">
                                 {% if msg %}
@@ -145,45 +145,20 @@
 
                                 {% endif %}
                                 <input type="text" placeholder="Book Name" name="book_name">
-                                <input type="hidden" placeholder="Book Name" name={{"email"}}>
+                                <input type="hidden" placeholder="Seller" name={{request.session.email}}>
                             </div>
                             <div class="single_form">
                                 
-                                 <select style="display: none;" name="book_cat">
+                                 <select style="display: none;" name="category">
                                     
                                     <option value="select">Select Categories</option>
                                     {% for i in cats %}
                                     <option value="{{i.name}}">{{i.name}}</option>
-                                    {% comment %} <option value="science">science</option>
-                                    <option value="fiction/non fiction">fiction/non fiction</option>
-                                    <option value="arts/crafts">arts/crafts</option>
-                                    <option value="finance">finance</option>
-                                    <option value="Training">Training</option>
-                                    <option value="communication">communication</option>
-                                    <option value="arts/crafts">arts/crafts</option>
-                                    <option value="Maths">Maths</option>
-                                    <option value="IT">IT</option>
-                                    <option value="history">history</option>
-                                    <option value="enternaiment">enternaiment</option>
-                                    <option value="enviroment">enviroment</option>
-                                    <option value="biography">biography</option>
-                                    <option value="kids">kids</option>
-                                    <option value="other">other</option> {% endcomment %}
+                                    
                                     {% endfor %}
                                 </select>
                                 
-                                {% comment %} <div class="nice-select" tabindex="0"><span class="current">Select Categories</span>
-                                    <!-- <ul class="list" name="book_cat">
-                                        <li data-value="none" class="option selected">Select Categories</li>
-                                        <li data-value="none" class="option">commerce</li>
-                                        <li data-value="none" class="option">science</li>
-                                        <li data-value="none" class="option">arts/crafts</li>
-                                        <li data-value="none" class="option">enternaiment</li>
-                                        <li data-value="none" class="option">Services</li>
-                                        <li data-value="none" class="option">kids</li>
-                                        <li data-value="none" class="option">other</li>
-                                    </ul> -->
-                                </div> {% endcomment %}
+                                
                             </div>
                             <div class="single_form">
                                 <input type="text" placeholder="Book Price" name="book_price">

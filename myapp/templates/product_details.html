@@ -87,11 +87,12 @@
         <div class="page_banner bg_cover" style="background-image: url({% static 'images/page-banner.jpg' %}' %})">
             <div class="container">
                 <div class="page_banner_content">
-                    <h3 class="title">{{books.book_name}}</h3>
+                    {%for i in books %}
+                    <h3 class="title">{{i.book_name}}</h3>
                     <ul class="breadcrumb">
                         {% comment %} <li><a href="{% url 'product_details'%}">Home</a></li>
                         <li><a href="{% url 'product_details'%}">Product details</a></li> {% endcomment %}
-                        <li>{{books.book_name}}</li>
+                        <li>{{i.category}}</li>
                     </ul>
                 </div>
             </div>
@@ -105,12 +106,12 @@
             <div class="row">
                 <div class="col-lg-9">
                     <div class="product_details mt-50">
-
+                        
                         <div class="product_image">
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="details-1" role="tabpanel"
                                     aria-labelledby="details-1-tab">
-                                    <img src="{{books.book_image.url}}"
+                                    <img src="{{i.book_image.url}}"
                                         alt="product details">
                                 </div>
                                 <div class="tab-pane fade" id="details-2" role="tabpanel"
@@ -132,7 +133,7 @@
                         </div>
                         <div class="product_details_meta d-sm-flex justify-content-between align-items-end">
                             <div class="product_price">
-                                <span class="price">{{books.book_price}}</span>
+                                <span class="price">{{i.book_price}}</span>
                                 <p>Negotiable</p>
                             </div>
                         </div>
@@ -140,7 +141,7 @@
                             <div class="product_details_title">
                                 <h5 class="title">Description :</h5>
                             </div>
-                            <p>{{books.book_description}}</p>
+                            <p>{{i.book_description}}</p>
                         </div>
                     </div>
                 </div>
@@ -153,30 +154,25 @@
                             <div class="product_owner_wrapper mt-20">
                                 <div class="owner_author d-flex align-items-center">
                                     <div class="author_image">
-                                        <img src="{{request.session.user_img}}" alt="author">
+                                        <img src="{{i.book_sellr.user_img.url}}" alt="author">
                                     </div>
                                     <div class="author_content media-body">
-                                        <h5 class="author_name">{{request.session.fname}}</h5>
+                                        <h5 class="author_name">{{i.book_sellr.fname}}</h5>
                                         <p>Member Since 2014</p>
                                     </div>
                                 </div>
-                                {% for i in books %}
+                                
                                 <div class="owner_address d-flex">
                                     <div class="address_icon">
-                                        <i class="far fa-map-marker-alt"></i>
+                                        <i class="fa-solid fa-map-location-dot"></i>
                                     </div>
                                     <div class="address_content media-body">
-                                        <p>{{books.city}}</p>
-                                        <a href="{% url 'product_details'%}">View
-                                            Store</a>
+                                        <p>{{i.book_sellr.city}}</p>
+                                        
                                     </div>
                                 </div>
-                                {% endfor %}
-                                <div class="owner_call">
-                                    <a class="main-btn"
-                                        href="{% url 'product_details'%}"><i
-                                            class="fal fa-phone"></i> Click to See Number</a>
-                                </div>
+                                
+                                
                             </div>
                         </div>
                         <div class="product_sidebar_contact mt-30">
@@ -201,6 +197,7 @@
                                 </form>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
