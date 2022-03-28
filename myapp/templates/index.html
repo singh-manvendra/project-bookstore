@@ -38,7 +38,7 @@
                             
                             <li><a href="{% url 'about' %}">About<span
                                 class="line"></span></a></a></li>
-                            <li><a href="{% url 'product' %}">Products<span
+                            <li><a href="{% url 'product' %}">Books<span
                                 class="line"></span></a></a>
                             </li>
                             
@@ -167,8 +167,8 @@
                                                 href="{% url 'product_details' %}?product={{i.id}}">{{i.book_name}}</a></h4>
                                         <p><i class="fa-solid fa-map-location-dot"></i>{{i.city}} , {{i.state}}</p>
                                         <div class="ads_price_date d-flex justify-content-between">
-                                            <span class="price">{{i.book_price}}</span>
-                                            <span class="date">25 Jan, 2023</span>
+                                            <span class="price"><i class="fa-solid fa-indian-rupee-sign"></i>{{i.book_price}}</span>
+                                            <span class="date">{{i.date}}</span>
                                         </div>
                                     </div>
                                 </div>

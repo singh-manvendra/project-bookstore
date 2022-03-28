@@ -6,7 +6,7 @@ from email.mime import image
 from tkinter import CASCADE
 from unicodedata import category
 from django.db import models
-
+import datetime
 
 # Create your models here.
 class User(models.Model):
@@ -15,6 +15,7 @@ class User(models.Model):
     email = models.CharField(max_length=100)
     mobile = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
+    date = models.DateField(auto_now_add=True)
     cpassword = models.CharField(max_length=100)
     user_img = models.ImageField(upload_to='images/', default="images/author-1.jpg", null=True, blank=True)
 
@@ -47,6 +48,7 @@ class Book(models.Model):
     active = models.BooleanField(default=True)
     book_price = models.IntegerField()
     book_description = models.TextField()
+    date = models.DateField(auto_now_add=True)
     book_image = models.ImageField(upload_to='images/', default="images/author-1.jpg", null=True, blank=True)
     address = models.TextField(default="ahemdabad")
     country = models.CharField(max_length=100)

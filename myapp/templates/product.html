@@ -42,7 +42,7 @@
                   
                   <li><a  href="{% url 'about' %}">About<span
                       class="line"></span></a></a></li>
-                  <li><a class="active" href="{% url 'product' %}">Products<span
+                  <li><a class="active" href="{% url 'product' %}">Books<span
                       class="line"></span></a></a>
                   </li>
                   
@@ -100,10 +100,10 @@
       >
         <div class="container">
           <div class="page_banner_content">
-            <h3 class="title">Product Products</h3>
+            <h3 class="title">Books</h3>
             <ul class="breadcrumb">
               <li><a href="{% url 'product' %}">Home</a></li>
-              <li>Product Products</li>
+              <li>Books</li>
             </ul>
           </div>
         </div>
@@ -265,7 +265,7 @@
                             class="ads_price_date d-flex justify-content-between"
                           >
                             <span class="price"><i class="fa-solid fa-indian-rupee-sign"></i> {{i.book_price}}</span>
-                            <span class="date">25 Jan, 2023</span>
+                            <span class="date">{{i.date}}</span>
                           </div>
                         </div>
                       </div>

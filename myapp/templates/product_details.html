@@ -40,7 +40,7 @@
                             
                             <li><a href="{% url 'about' %}">About<span
                                 class="line"></span></a></a></li>
-                            <li><a class="active" href="{% url 'product' %}">Products<span
+                            <li><a class="active" href="{% url 'product' %}">Books<span
                                 class="line"></span></a></a>
                             </li>
                             
@@ -158,7 +158,7 @@
                                     </div>
                                     <div class="author_content media-body">
                                         <h5 class="author_name">{{i.book_sellr.fname}}</h5>
-                                        <p>Member Since 2014</p>
+                                        <p>Member Since {{i.book_sellr.date}}</p>
                                     </div>
                                 </div>
                                 
