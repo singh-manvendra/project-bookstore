@@ -44,7 +44,7 @@ class Book(models.Model):
     book_sellr = models.ForeignKey(User,on_delete=models.CASCADE)
     book_name = models.CharField(max_length=100)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
-    
+    active = models.BooleanField(default=True)
     book_price = models.IntegerField()
     book_description = models.TextField()
     book_image = models.ImageField(upload_to='images/', default="images/author-1.jpg", null=True, blank=True)

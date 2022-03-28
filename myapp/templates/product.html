@@ -237,8 +237,10 @@
               >
                 <div class="product_grid">
                   <div class="row">
-                    {% for i in books %}
+                    
+                      {% for i in books %}
                       
+
                     <div class="col-xl-4 col-sm-6">
                       <div class="single_ads_card mt-30">
                         
@@ -249,7 +251,7 @@
                           <div class="meta d-flex justify-content-between">
                             <p>{{i.category}}</p>
                             <a class="like" href="{% url 'product' %}">
-                              <i class="fal fa-heart"></i></a>
+                              
                           </div>
                           <h4 class="title">
                             <a href="{% url 'product_details' %}?product={{i.id}}"
@@ -269,8 +271,8 @@
                       </div>
                       
                     </div>
+                    {% endfor %}
                     
-                  {% endfor %}
                 </div>
               </div>
               <div

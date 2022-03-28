@@ -21,6 +21,40 @@ def index(request):
 
 # Create your views here.
 
+def searched(request):
+    if request.method == 'POST':
+        try:
+            searched = request.POST['searched']
+            books = Book.objects.filter(book_name__contains=searched)
+            print(books)
+            return render(request,'product.html',{'books':books})
+        except Exception as e:
+            print(e)
+            return render(request,'product.html')
+    else:
+        return render(request,'product.html')
+
+
+def delete(request):
+    try:
+        
+        user = User.objects.get(email=request.session['email'])
+        books = Book.objects.filter(book_sellr=user)
+        product = request.GET.get('product')
+        if product:
+            
+            book = Book.objects.get(id=product).delete()
+            
+            print('Record Deleted successfully!')
+            msg = " Book deleted successfully!"
+            return render(request, 'myads.html', {'books': books,'msg':msg})
+        else:
+            return render(request, 'myads.html',{'books':books,'user':user})
+    except Exception as e:
+        print(e)
+        print('this is not working')
+        return render(request, 'myads.html',{'books':books,'user':user})
+        
 
 def categories(request):
     try:
@@ -50,12 +84,13 @@ def product(request):
 
     try:
         cats = Category.objects.all()
+        
         books = None
         category = request.GET.get('category')
         if category:
-            books = Book.objects.filter(category_id=category)
+            books = Book.objects.filter(category_id=category,active=True)
         else:
-            books = Book.objects.all()
+            books = Book.objects.filter(active=True)
         print('this is working ')
         return render(request, 'product.html', {'books': books, 'cats': cats})
     except Exception as e:
@@ -138,18 +173,55 @@ def contact(request):
 def myads(request):
     try:
         user = User.objects.get(email=request.session['email'])
-        books = Book.objects.filter(book_sellr=user)
+        books = Book.objects.filter(book_sellr=user,active=True)
+        active = Book.objects.filter(active=True).count()
+        sold = Book.objects.filter(active=False).count()
         print('this is working ')
-        return render(request, 'myads.html', {'books': books})
+        return render(request, 'myads.html', {'books': books,'active':active,'sold':sold})
     except Exception as e:
         print(e)
         print('this is not working')
         return render(request, 'myads.html')
+    
+def soldh(request):
+    try:
+        user = User.objects.get(email=request.session['email'])
+        books = Book.objects.filter(book_sellr=user,active=False)
+        active = Book.objects.filter(active=True).count()
+        sold = Book.objects.filter(active=False).count()
+        print('this is working ')
+        return render(request, 'soldh.html', {'books': books,'active':active,'sold':sold})
+    except Exception as e:
+        print(e)
+        print('this is not working')
+        return render(request, 'soldh.html')
 
 
 def offers_msgs(request):
     return render(request, 'offers_msgs.html')
 
+
+def sold(request):
+    try:
+        
+        user = User.objects.get(email=request.session['email'])
+        books = Book.objects.filter(book_sellr=user)
+        product = request.GET.get('product')
+        if product:
+            
+            book = Book.objects.get(id=product)
+            book.active = False
+            book.save()
+            print('Books Updated successfully!')
+            msg = "Books Updated successfully!"
+            return render(request, 'myads.html', {'books': books,'msg':msg})
+        else:
+            return render(request, 'myads.html',{'books':books,'user':user})
+    except Exception as e:
+        print(e)
+        print('this is not working')
+        return render(request, 'myads.html',{'books':books,'user':user})
+        
 
 def payments(request):
     return render(request, 'payments.html')
@@ -175,6 +247,7 @@ def post_ads(request):
                 Book.objects.create(
                     book_sellr=user,
                     category=category,
+                    active=True,
                     book_name=request.POST['book_name'], 
                     book_price=request.POST['book_price'],
                     book_description=request.POST['book_description'],

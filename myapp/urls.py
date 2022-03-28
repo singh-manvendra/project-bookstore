@@ -11,7 +11,7 @@ urlpatterns = [
     path('signin/',views.signin,name='signin'),
     path('index/',views.signout,name='signout'),
     path('myads/',views.myads,name='myads'),
-    path('offers_msgs/',views.offers_msgs,name='offers_msgs'),
+    path('searched/',views.searched,name='searched'),
     path('payments/',views.payments,name='payments'),
     path('post_ads/',views.post_ads,name='post_ads'),
     path('postads/',views.postads,name='postads'),
@@ -21,7 +21,9 @@ urlpatterns = [
     path('profile_settings/',views.profile_settings,name='profile_settings'),
     path('forgot_password/',views.forgot_password,name='forgot_password'),
     path('otp/',views.otp,name='otp'),
-    
+    path('delete/',views.delete,name='delete'),
+    path('sold/',views.sold,name='sold'),
+    path('soldh/',views.soldh,name='soldh'),
     path('new_password/',views.new_password,name='new_password'),
     
 ]

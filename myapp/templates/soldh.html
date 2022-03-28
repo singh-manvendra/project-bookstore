@@ -137,8 +137,9 @@
             {% endif %}
             <div class="my_ads_menu">
               <ul class="ads_menu">
+                
                 <li><a href="{% url 'myads' %}">Active ({{active}})</a></li>
-                <li><a href="{% url 'soldh' %}">Sold ({{sold}})</a></li>
+                <li><a class="active" href="{% url 'soldh' %}">Sold ({{sold}})</a></li>
                 
               </ul>
             </div>
@@ -192,11 +193,7 @@
                           
                             <a href="{% url 'product_details' %}?product={{i.id}}"><i class="fa-solid fa-eye"></i></a>
                           </li>
-                          <li >
-                            
-                            <a style='width: 50px; ' href="{% url 'sold' %}?product={{i.id}}"> Sold </a>
-                            
-                          </li> 
+                          
                           <li>
                             <a href="{% url 'delete' %}?product={{i.id}}"><i class="fa-solid fa-trash-can"></i></a>
                           </li>
