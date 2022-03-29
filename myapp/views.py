@@ -22,11 +22,12 @@ def index(request):
 # Create your views here.
 
 def searched(request):
+    print("Searched Called")
     if request.method == 'POST':
         try:
-            searched = request.POST['searched']
+            searched = request.POST['search']
             books = Book.objects.filter(book_name__contains=searched)
-            print(books)
+            print("Books : ",books)
             return render(request,'product.html',{'books':books})
         except Exception as e:
             print(e)
