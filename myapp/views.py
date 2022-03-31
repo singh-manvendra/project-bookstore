@@ -175,8 +175,8 @@ def myads(request):
     try:
         user = User.objects.get(email=request.session['email'])
         books = Book.objects.filter(book_sellr=user,active=True)
-        active = Book.objects.filter(active=True).count()
-        sold = Book.objects.filter(active=False).count()
+        active = Book.objects.filter(book_sellr=user,active=True).count()
+        sold = Book.objects.filter(book_sellr=user,active=False).count()
         print('this is working ')
         return render(request, 'myads.html', {'books': books,'active':active,'sold':sold})
     except Exception as e:
