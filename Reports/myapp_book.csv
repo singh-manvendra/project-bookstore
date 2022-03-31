@@ -1,0 +1,8 @@
+id,book_name,book_price,book_description,book_image,address,country,state,city,book_sellr_id,category_id,active,date
+6,C LANGUAGE ,150,C language for bca sem 1,images/1602746426.jpg,Maninagar,India,Gujarat,Ahmedabad,1,5,1,2022-03-30
+7,The Psychology of Money by Morgan Housel,455,"The Psychology of money is a book written by morgan housel , it is about money and expenses and everything related to how and where to utilise money.",images/The-Psychology-of-Money-by-Morgan-Housel-768x1187.jpg,Maninagar,India,Gujarat,Ahmedabad,1,12,1,2022-03-30
+8,"Rich Dad , Poor Dad",345,Book is brand new,images/OIP.jpg,Bapunagar,India,Gujarat,Ahmedabad,4,10,1,2022-03-30
+9,Basic Engineering Mathematics,650,Maths book of btech,images/R.jpg,Bapunagar,India,Gujarat,Ahmedabad,4,6,1,2022-03-30
+10,Software Testing,130,Software testing book for BCA,images/OIP_1.jpg,Bapunagar,India,Gujarat,Ahmedabad,4,5,1,2022-03-30
+11,C For Dummies,500,C language book for dummies,images/s-l640.jpg,Jivraj,India,Gujarat,Ahmedabad,5,5,1,2022-03-30
+12,Quantum Physics,455,Quantum Physics book,images/phys.jpg,Jivraj,India,Gujarat,Ahmedabad,5,2,1,2022-03-30

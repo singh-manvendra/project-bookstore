@@ -1,0 +1,4 @@
+id,book_name,book_price,book_description,book_image,address,country,state,city,book_sellr_id,category_id,active,date
+2,Anything,123,dsgafgag,images/Screenshot_34_tZQ3oNt.png,Afgsaf,India,Gujarat,Ahmedabad,1,1,1,2022-03-29
+4,Pshychology of money,123,asfaf,images/Screenshot_35_FaTsXGf.png,afsfa,India,Gujarat,Ahmedabad,1,5,1,2022-03-29
+5,Chemi,111,safaf,images/Screenshot_33_uiAWsrq.png,sfaf,India,Gujarat,Ahmedabad,1,5,1,2022-03-29
